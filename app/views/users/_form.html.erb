@@ -1,0 +1,73 @@
+<%= form_for(@user, :as => 'user', url => registration_path(@user)) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age , :value => 20, :min =>15  %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :semester %><br />
+    <%= f.number_field :semester %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :extra_phone %><br />
+    <%= f.text_field :extra_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :linkedin %><br />
+    <%= f.text_field :linkedin %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :motivation %><br />
+    <%= range_field :motivation, 5, :min => 0, :max => 10 %>
+  </div>
+  <div class="field">
+    <%= f.label :faculty_id %><br />
+    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
+  </div>
+  <div class="field">
+    <%= f.label :application_id %><br />
+    <%= f.number_field :application_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_profile_id %><br />
+    <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description ) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

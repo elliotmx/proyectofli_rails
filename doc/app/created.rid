@@ -1,0 +1,21 @@
+Sat, 16 Feb 2013 20:04:31 -0600
+doc/README_FOR_APP	Tue, 05 Feb 2013 22:48:28 -0600
+app/controllers/application_controller.rb	Tue, 05 Feb 2013 22:48:26 -0600
+app/controllers/applications_controller.rb	Wed, 06 Feb 2013 22:34:04 -0600
+app/controllers/colleges_controller.rb	Tue, 05 Feb 2013 23:44:10 -0600
+app/controllers/faculties_controller.rb	Wed, 06 Feb 2013 00:27:34 -0600
+app/controllers/home_controller.rb	Tue, 05 Feb 2013 22:59:54 -0600
+app/controllers/info_fields_controller.rb	Wed, 06 Feb 2013 23:58:26 -0600
+app/controllers/users_controller.rb	Tue, 05 Feb 2013 23:14:02 -0600
+app/helpers/application_helper.rb	Tue, 05 Feb 2013 22:48:26 -0600
+app/helpers/applications_helper.rb	Wed, 06 Feb 2013 22:34:05 -0600
+app/helpers/colleges_helper.rb	Tue, 05 Feb 2013 23:44:10 -0600
+app/helpers/faculties_helper.rb	Wed, 06 Feb 2013 00:27:35 -0600
+app/helpers/home_helper.rb	Tue, 05 Feb 2013 22:59:56 -0600
+app/helpers/info_fields_helper.rb	Wed, 06 Feb 2013 23:58:27 -0600
+app/helpers/users_helper.rb	Tue, 05 Feb 2013 23:14:03 -0600
+app/models/application.rb	Wed, 06 Feb 2013 22:34:03 -0600
+app/models/college.rb	Tue, 05 Feb 2013 23:44:09 -0600
+app/models/faculty.rb	Wed, 06 Feb 2013 00:27:34 -0600
+app/models/info_field.rb	Wed, 06 Feb 2013 23:58:26 -0600
+app/models/user.rb	Tue, 05 Feb 2013 23:14:02 -0600
