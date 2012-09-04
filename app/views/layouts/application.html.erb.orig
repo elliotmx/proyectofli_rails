@@ -7,15 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
 
-</header>
-
+		<%= render 'layouts/header' %>
+		
 <h1>Hola mundo</h1>
 <h1>:D</h1>
-
 <%= yield %>
 
 </body>

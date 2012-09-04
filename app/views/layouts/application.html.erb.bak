@@ -12,7 +12,6 @@
         <%= render 'layouts/messages' %>
 
 </header>
-
 <h1>Hola mundo</h1>
 <h1>:D</h1>
 
