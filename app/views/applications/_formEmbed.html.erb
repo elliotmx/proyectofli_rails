@@ -12,18 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name,:class=>'inputs normal', :placeholder=>'Nombre' %>
   </div>
   <div class="field">
-    <%= f.label :short_description %><br />
-    <%= f.text_field :short_description %>
+    <%= f.text_area :short_description, :rows => '4',:style => 'resize: none;',:class=>'inputs normal', :placeholder=>'Descripción corta' %>
   </div>
   <div class="field">
     <%= f.label :tags %><br />
     <%= f.text_field :tags %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear",:class => 'button loginb'%>
   </div>
 <% end %>
