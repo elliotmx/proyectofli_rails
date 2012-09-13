@@ -1,5 +1,9 @@
 Fli::Application.routes.draw do
 
+  resources :questions
+
+  resources :sections
+
   devise_for :users ,:path_prefix => 'auth'#, :skip =>[:sessions]
 
   resources :users
