@@ -1,0 +1,11 @@
+<%= form_tag('/answers') do %>
+	<% questionsIn.each do |i| %>
+		<% fields_for "report", i do |report_fields| %>
+		<tr>
+			<td><%= report_fields.check_box :active %></td>
+			<td><%= report_fields.text_field :spa_description %></td>
+		</tr>
+		<% end %>
+		<p> <%= i.spa_description%> </p>
+	<% end %> 
+<% end %>

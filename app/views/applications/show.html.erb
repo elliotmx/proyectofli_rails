@@ -17,5 +17,7 @@
 <% end %>
 <%= link_to 'Agrega un Colaborador', new_user_path() %>
 
+<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.all} %>
+
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>
