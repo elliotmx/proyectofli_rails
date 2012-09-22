@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   	# Setup accessible (or protected) attributes for your model  
     # :password_confirmation
   	attr_accessible :email, :password, :name, :application_id, 
-    :age, :address, :semester, :phone, :extra_phone, 
+    :age, :address, :semester, :phone, :extra_phone, :photo,
     :twitter, :linkedin, :faculty_id,:user_profile_id, :password_confirmation
 
     validates_uniqueness_of :email, :case_sensitive => false
