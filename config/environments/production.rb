@@ -12,7 +12,7 @@ Fli::Application.configure do
   config.serve_static_assets = false
 
   #config.assets.precompile += %w(slider/sequence.jquery-min.js slider/sequencejs-options.sliding-horizontal-parallax.js)
-  config.assets.precompile = ['*.js', '*.css', '*.png']
+  config.assets.precompile = ['*.js', '*.css', '*.png','*.ico']
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
