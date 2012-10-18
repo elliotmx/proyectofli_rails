@@ -2,6 +2,15 @@
 <html>
 <head>
   <title>Fli</title>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,800" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Oleo+Script:400" rel="stylesheet" type="text/css" />
+
+
+  <%= javascript_include_tag "slider/sequence.jquery-min" %>
+  <%= javascript_include_tag "slider/sequencejs-options.sliding-horizontal-parallax" %>
+  <%= stylesheet_link_tag    "slider/sequencejs-theme.sliding-horizontal-parallax" %>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,11 +18,11 @@
 <body>
 <header>
 		<%= render 'layouts/header' %>
-        <%= render 'layouts/navigation' %>
+    <!-- <%= render 'layouts/navigation' %> -->
         <%= render 'layouts/messages' %>
 </header>
 
-<%= render 'layouts/footer' %>
+<!-- <%= render 'layouts/footer' %> -->
 <%= yield %>
 
 </body>
