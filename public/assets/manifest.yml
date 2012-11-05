@@ -1,4 +1,63 @@
 ---
+<<<<<<< HEAD
+1.png: 1-6a30e376d2befb8dc32686fbece7ee67.png
+2.png: 2-6aefb3c224d171c4d1476f303a76f75a.png
+3.png: 3-8585054318a412ff0441a94cf908d887.png
+4.png: 4-aac1d667e5385ab6aec42e57bc6b9c49.png
+5.png: 5-f0fe1fa35c929dbb951d4dacfcc0c397.png
+6.png: 6-020cda02bd282267867df8517e1cc62b.png
+7.png: 7-b7af82dc4d9eaedd22bf81c68aacb23d.png
+8.png: 8-58b0a270d9e48ef997446a027da899b0.png
+9.png: 9-09d8656a8025421bab92ed8da54a71c1.png
+favicon.ico: favicon-565aa3d8c64563c0b3779d230639e165.ico
+icons.png: icons-6cea898a9b995b5f9e28de3cfb7ad6a6.png
+logo.png: logo-34d206a3805647e07afefcd13cce46d7.png
+logo2.png: logo2-98268131a4e4e06c23fd4cebde0eaa7d.png
+rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
+slider/bg-sky.png: slider/bg-sky-6cb14380414e9b1e619fe9426375f232.png
+slider/bt-next.png: slider/bt-next-ac5bf5320462b598f307dcc5490c41a7.png
+slider/bt-prev.png: slider/bt-prev-73e0e6c2f0fe3a1e04d399b7cf479763.png
+slider/mapa.png: slider/mapa-2ed15d2ba84e574efaef760f63eb9d2b.png
+slider/pre.png: slider/pre-dd7d52dcffdf837fd515435f9838a9e5.png
+slider/que.png: slider/que-e6f62b9802c6862c3a254971c6bd5fba.png
+answers.js: answers-3af39f1da6f167c2cbf453ed74daff3d.js
+application.js: application-42a56d54d6db22bddc0c0f55fbe306d4.js
+applications.js: applications-3af39f1da6f167c2cbf453ed74daff3d.js
+colleges.js: colleges-3af39f1da6f167c2cbf453ed74daff3d.js
+comments.js: comments-3af39f1da6f167c2cbf453ed74daff3d.js
+custom_application.js: custom_application-6e9d1c5bd951c39336d28f3d09074824.js
+faculties.js: faculties-3af39f1da6f167c2cbf453ed74daff3d.js
+home.js: home-3af39f1da6f167c2cbf453ed74daff3d.js
+markets.js: markets-3af39f1da6f167c2cbf453ed74daff3d.js
+questions.js: questions-3af39f1da6f167c2cbf453ed74daff3d.js
+sections.js: sections-3af39f1da6f167c2cbf453ed74daff3d.js
+service_types.js: service_types-3af39f1da6f167c2cbf453ed74daff3d.js
+slider/sequence.jquery-min.js: slider/sequence.jquery-min-44d5cc567a73c4e01549df46a6be8e64.js
+slider/sequencejs-options.sliding-horizontal-parallax.js: slider/sequencejs-options.sliding-horizontal-parallax-d9c6e9fb3344ae9ad54b025b4daddcf6.js
+user_profiles.js: user_profiles-3af39f1da6f167c2cbf453ed74daff3d.js
+users.js: users-3af39f1da6f167c2cbf453ed74daff3d.js
+answers.css: answers-7270767b2a9e9fff880aa5de378ca791.css
+application.css: application-ba9eb48be674555d8e8f9e98f153654a.css
+applications.css: applications-7270767b2a9e9fff880aa5de378ca791.css
+colleges.css: colleges-7270767b2a9e9fff880aa5de378ca791.css
+comments.css: comments-7270767b2a9e9fff880aa5de378ca791.css
+faculties.css: faculties-7270767b2a9e9fff880aa5de378ca791.css
+home.css: home-7270767b2a9e9fff880aa5de378ca791.css
+markets.css: markets-7270767b2a9e9fff880aa5de378ca791.css
+questions.css: questions-7270767b2a9e9fff880aa5de378ca791.css
+scaffolds.css: scaffolds-3c9de844c270a7d8bc32c9e7e7684900.css
+sections.css: sections-7270767b2a9e9fff880aa5de378ca791.css
+service_types.css: service_types-7270767b2a9e9fff880aa5de378ca791.css
+slider/sequencejs-theme.sliding-horizontal-parallax.css: slider/sequencejs-theme.sliding-horizontal-parallax-ac23f336d4d81c6d93225c3733e76a9a.css
+user_profiles.css: user_profiles-7270767b2a9e9fff880aa5de378ca791.css
+users.css: users-7270767b2a9e9fff880aa5de378ca791.css
+jquery-ui.js: jquery-ui-b72b8fa88678c4854c8005bd7405e032.js
+jquery-ui.min.js: jquery-ui.min-e3f77a17a33f54a54ec34245b327d75f.js
+jquery.js: jquery-4921e65edfc150dec2b5dc22c94a9d86.js
+jquery.min.js: jquery.min-08a79166ce3610b97546bf2ec6190038.js
+jquery_ujs.js: jquery_ujs-b622ae8bf8201d0766cc779998edfb9f.js
+coffee-script.js: coffee-script-7fa376506e451a0e8613440eda43472f.js
+=======
 !binary "MS5wbmc=": 1-0167af091b5eb7279dd85ade19221054.png
 !binary "ZmF2aWNvbi5pY28=": favicon-565aa3d8c64563c0b3779d230639e165.ico
 !binary "aWNvbnMucG5n": icons-6cea898a9b995b5f9e28de3cfb7ad6a6.png
@@ -187,3 +246,4 @@
 !binary "anF1ZXJ5Lm1pbi5qcw==": jquery.min-08a79166ce3610b97546bf2ec6190038.js
 !binary "anF1ZXJ5X3Vqcy5qcw==": jquery_ujs-b622ae8bf8201d0766cc779998edfb9f.js
 !binary "Y29mZmVlLXNjcmlwdC5qcw==": coffee-script-7fa376506e451a0e8613440eda43472f.js
+>>>>>>> 542c412b226f375e3f8c1aa0ff17c0909daab809

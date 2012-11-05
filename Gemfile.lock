@@ -142,7 +142,6 @@ DEPENDENCIES
   jquery-ui-rails
   mysql2
   paperclip (= 3.0.4)
-  pg
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
   seed_dumper
