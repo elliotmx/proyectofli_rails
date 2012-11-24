@@ -1,4 +1,4 @@
-<%= form_for(userinput, :remote => true, :html => { :'data-type' => 'html', :id => 'add_user_to_app' }) do |f| %>
+<%= form_for(userinput, :html => { :'data-type' => 'html', :id => 'add_user_to_app', :multipart => true}) do |f| %>
   <% if userinput.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(userinput.errors.count, "error") %> prohibited this user from being saved:</h2>
