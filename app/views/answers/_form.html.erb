@@ -2,7 +2,7 @@
 	<% questionsIn.each do |i| %>
 		<p> <%=i.spa_description %>
 		<p> <%= puts "#{i}" %>
-		<%= text_field_tag(i.id), :value => Answer.find(:question_id =>i.id).value %></p>
+		<%= text_field_tag(i.id) %></p>
 	<% end %>
 	<%= submit_tag('Guardar') %>
 <% end %>
