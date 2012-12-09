@@ -13,47 +13,47 @@
 <div class="centrarEspacio">
   <div class="field">
     <%= f.label :Nombre %><br />
-    <%= f.text_field :name,:class => "inputs normal" %>
+    <%= f.text_field :name,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Edad %><br />
-    <%= f.number_field :age , :value => 20, :min =>15,:class => "inputs normal"  %>
+    <%= f.number_field :age , :value => 20, :min =>15,:class => "inputs formNormal"  %>
   </div>
   <div class="field">
     <%= f.label :Dirección %><br />
-    <%= f.text_field :address,:class => "inputs normal" %>
+    <%= f.text_field :address,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Email %><br />
-    <%= f.text_field :email,:class => "inputs normal" %>
+    <%= f.text_field :email,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Semestre %><br />
-    <%= f.number_field :semester,:class => "inputs normal" %>
+    <%= f.number_field :semester,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Telefono %><br />
-    <%= f.text_field :phone,:class => "inputs normal" %>
+    <%= f.text_field :phone,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Telefono_2 %><br />
-    <%= f.text_field :extra_phone,:class => "inputs normal" %>
+    <%= f.text_field :extra_phone,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Twitter %><br />
-    <%= f.text_field :twitter,:class => "inputs normal" %>
+    <%= f.text_field :twitter,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Linkedin %><br />
-    <%= f.text_field :linkedin,:class => "inputs normal" %>
+    <%= f.text_field :linkedin,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Foto %><br />
-    <%= f.file_field :photo,:class => "normal" %>
+    <%= f.file_field :photo,:class => "formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Motivación %><br />
-    <%= f.number_field :motivation , :value => 8, :min =>0,:class => "inputs normal"  %>
+    <%= f.number_field :motivation , :value => 8, :min =>0,:class => "inputs formNormal"  %>
   </div>
   <div class="field">
     <%= f.label :Facultad %><br />
@@ -64,10 +64,12 @@
     <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description) %>
   </div>
   <%= f.hidden_field :create_from , :value => 'user_form'  %>
-<div id="botonLeft" style="margin-left:10%">
+<div id="botonCentral" style="margin-bottom:20px;">
   <div class="actions">
-    <%= f.submit :class => "button loginb" %>
+
+    <%= f.submit :Guardar,:class => "button loginb" %>
     <input type="button" onclick="hideUserEditForm();" class="button loginb" value="Cancelar">
+
   </div>
 </div>
 </div>

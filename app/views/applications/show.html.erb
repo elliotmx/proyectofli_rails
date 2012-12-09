@@ -23,8 +23,11 @@
 	<% else %>
 		<p> no tienes Colaboradores aun </p>
 	<% end %>
-<div id="botonCentral">
+
+<div id="botonCentral" style="margin-top:-20px;">
+
 	<input type="button" id="btn_agrega_colaborador" onclick="$('#formNewUser').show()" class="button loginb" value="Agrega Colaborador">
+
 </div>
 	<div style="display:none" id="formNewUser">
 		<%= render :partial => 'users/form_embed', :locals => {:userinput  => 	User.new} %>

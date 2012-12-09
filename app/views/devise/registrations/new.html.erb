@@ -16,11 +16,11 @@
 
   <div class="field">
     <%= f.label 'Facultad : ' %>
-    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
+    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name,:class => 'inputs normal' ) %>
   </div>
   <%= f.hidden_field :user_profile_id, :value => 2 %>
-
-<fieldset id="actions">
+<br/><br/>
+<fieldset id="actions" style="margin-top: 20px;">
   <%= f.submit "Registrar",:class => 'button loginb'  %>
 <% end %>
 
