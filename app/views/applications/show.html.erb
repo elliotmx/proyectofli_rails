@@ -17,11 +17,14 @@
 	</span>
 	<% if @application.users.all.count > 0 %>
 		<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
+		<div id="">
+			<%= render :partial => 'users/editappmembers', :locals => {:users => @application.users.all} %>
+		 </div>
 	<% else %>
 		<p> no tienes Colaboradores aun </p>
 	<% end %>
 <div id="botonCentral">
-	<input type="button" onclick="$('#formNewUser').show()" class="button loginb" value="Agrega Colaborador">
+	<input type="button" id="btn_agrega_colaborador" onclick="$('#formNewUser').show()" class="button loginb" value="Agrega Colaborador">
 </div>
 	<div style="display:none" id="formNewUser">
 		<%= render :partial => 'users/form_embed', :locals => {:userinput  => 	User.new} %>
