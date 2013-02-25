@@ -13,5 +13,6 @@ class User < ActiveRecord::Base
   
   	# Setup accessible (or protected) attributes for your model  
     # :password_confirmation
-  	attr_accessible :email, :password_salt
+  	attr_accessible :email, :password_salt, :name
+    validates_uniqueness_of :email, :case_sensitive => false
 end
