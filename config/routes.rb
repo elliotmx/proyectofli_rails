@@ -16,6 +16,15 @@ Fli::Application.routes.draw do
 
   root :to => "home#index"
 
+
+  #Add a route method for RESTFUL DELETE
+  #map.connect '/users(.:format)',
+   # :controller => 'users'
+
+  #------ end route
+  
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -30,6 +39,10 @@ Fli::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+devise_for :users, :skip =>[:sessions]
+as :user do
+  get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
+end
   # Sample resource route with options:
   #   resources :products do
   #     member do
