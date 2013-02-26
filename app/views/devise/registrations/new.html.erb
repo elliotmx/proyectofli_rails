@@ -19,6 +19,7 @@
     <%= f.label :faculty_id %><br />
     <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
   </div>
+  <%= f.hidden_field :user_profile_id, :value => 2 %>
 
   <div><%= f.submit "Registrar" %></div>
 <% end %>
