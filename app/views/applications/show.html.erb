@@ -10,11 +10,9 @@
   <%= @application.short_description %>
 </p>
 
-<p>
-  <b>Iduser:</b>
-  <%= @application.iduser %>
-</p>
 
+<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
+<%= link_to 'Agrega un Colaborador', new_user_path %>
 
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>

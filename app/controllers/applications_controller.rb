@@ -1,9 +1,9 @@
 class ApplicationsController < ApplicationController
-  
+  before_filter :authenticate_user!, :except => [:show, :user]
   # GET /applications
   # GET /applications.json
   def index
-    @applications = Application.all
+    @applications = current_user.applications.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +26,6 @@ class ApplicationsController < ApplicationController
   # GET /applications/new.json
   def new
     @application = Application.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @application }
@@ -41,8 +40,9 @@ class ApplicationsController < ApplicationController
   # POST /applications
   # POST /applications.json
   def create
-    @application = Application.new(params[:application])
+    #@application = Application.new(params[:application])
 
+    @application = current_user.applications.create(params[:application])
     respond_to do |format|
       if @application.save
         format.html { redirect_to @application, notice: 'Application was successfully created.' }

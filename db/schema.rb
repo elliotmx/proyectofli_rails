@@ -11,15 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218215909) do
+ActiveRecord::Schema.define(:version => 20130218215915) do
 
   create_table "applications", :force => true do |t|
     t.string   "name"
     t.string   "short_description"
-    t.integer  "iduser"
     t.string   "video_url"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "applications_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "application_id"
   end
 
   create_table "colleges", :force => true do |t|
@@ -63,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20130218215909) do
     t.string   "photo"
     t.integer  "motivation"
     t.integer  "faculty_id"
-    t.integer  "application_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.integer  "user_profile_id"
