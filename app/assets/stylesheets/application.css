@@ -11,3 +11,147 @@
  *= require_self
  *= require_tree .
 */
+
+
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header-wrapper
+	{
+		padding: 4.5em 0 1em 0;
+	}
+
+	#logo_fi
+	{
+	border-radius:12px;
+	width: 230px;
+	position: fixed;
+	float: left;
+	left: 40px;
+	z-index:26;
+	top:2px;
+	}
+
+	#logo_fi a.ct-logo
+	{
+	background:url(../images/logo.png) no-repeat
+	no-repeat 0px 0px;
+	width: 313px;
+	height: 64px;
+	float: left;
+	outline: none;
+	text-indent: -9000px;
+	}
+
+	#logo_fi a.ct-logo:hover
+	{
+	background:url(../images/logo2.png) no-repeat
+	no-repeat 0px 0px;
+	width: 313px;
+	height: 64px;
+	float: left;
+	outline: none;
+	text-indent: -9000px;
+	}
+
+
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+	#footer
+	{
+		width:100%;
+		height:70px;
+		background:#10313a;
+		border-top: 10px solid #fd7121;
+	}
+	
+	#footer h2
+	{
+		font-size: 1.35em;
+	}
+
+	#footer a
+	{
+		color: inherit;
+	}
+
+	#copyright
+	{
+		padding: 1em 0 0 0;
+		text-align: center;
+		color: #aaa;
+	}
+
+	#copyright a
+	{
+		color: inherit;
+	}
+
+/*********************************************************************************/
+/* Widgets Footer                                                                */
+/*********************************************************************************/
+
+	.widget-contact
+	{
+		padding-left:50px;
+		position:absolute;
+	}
+	
+	.widget-contact ul
+	{
+		overflow: hidden;
+		position: relative;
+		left: -4px;
+		top: 4px;
+	}
+		
+	.widget-contact ul li
+	{
+		display: block;
+		float: left;
+	}
+
+	.widget-contact ul li a
+	{
+		display: block;
+		width: 48px;
+		height: 48px;
+		background: url('images/icons.png');
+		text-indent: -9999em;
+		outul line: 0;
+		opacity: 0.75;
+		-moz-transition: opacity .25s ease-in-out;
+		-webkit-transition: opacity .25s ease-in-out;
+		-o-transition: opacity .25s ease-in-out;
+		-ms-transition: opacity .25s ease-in-out;
+		transition: opacity .25s ease-in-out;			
+	}
+				
+	.widget-contact ul li a:hover
+	{
+	opacity: 1.0;
+	}
+				
+	.widget-contact ul li a.twitter
+	{
+	background-position: -48px -48px;
+	}
+				
+	.widget-contact ul li a.facebook
+	{
+	background-position: -96px -48px;
+	}
+				
+	.widget-contact ul li a.googleplus
+	{
+	background-position: -192px -48px;
+	}
+
+	
+	
+		
