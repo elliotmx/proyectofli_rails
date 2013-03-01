@@ -60,10 +60,6 @@
     <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
   </div>
   
-  <!--<div class="field">
-    <%= f.label :application_id %><br />
-    <%= f.number_field :application_id %>
-  </div> -->
   <div class="field">
     <%= f.label :user_profile_id %><br />
     <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description ) %>

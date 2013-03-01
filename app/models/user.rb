@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	belongs_to :user_profile
 	belongs_to :faculty
+  has_and_belongs_to_many :applications
 	accepts_nested_attributes_for :user_profile
 
 	has_attached_file :photo

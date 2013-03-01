@@ -10,11 +10,12 @@
   <%= @application.short_description %>
 </p>
 
-<p>
-  <b>Iduser:</b>
-  <%= @application.iduser %>
-</p>
-
+<% if @application.users.all.count > 0 %>
+	<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
+<% else %>
+	<%= no tienes Colaboradores aun %>
+<% end %>
+<%= link_to 'Agrega un Colaborador', new_user_path(:app_id => @application.id) %>
 
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>

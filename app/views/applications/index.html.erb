@@ -14,7 +14,7 @@
   <tr>
     <td><%= application.name %></td>
     <td><%= application.short_description %></td>
-    <td><%= application.iduser %></td>
+    <td><%= application.users.name %></td>
     <td><%= link_to 'Show', application %></td>
     <td><%= link_to 'Edit', edit_application_path(application) %></td>
     <td><%= link_to 'Destroy', application, confirm: 'Are you sure?', method: :delete %></td>
@@ -24,4 +24,9 @@
 
 <br />
 
-<%= link_to 'New Application', new_application_path %>
+<% if current_user %>
+  <p> Cuentanos tu proyecto!</p>
+  <%= render :partial => 'formEmbed', :locals => {:application => Application.new, :iduser => current_user.id} %>
+<% else %>
+  <p> ya tienes aplicaciones</p>
+<% end %>

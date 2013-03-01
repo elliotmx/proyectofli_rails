@@ -1,0 +1,44 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Semester</th>
+    <th>Phone</th>
+    <th>Extra phone</th>
+    <th>Twitter</th>
+    <th>Linkedin</th>
+    <th>Photo</th>
+    <th>Motivation</th>
+    <th>Faculty</th>
+    <th>Application</th>
+    <th>User Profile</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.age %></td>
+    <td><%= user.address %></td>
+    <td><%= user.email %></td>
+    <td><%= user.semester %></td>
+    <td><%= user.phone %></td>
+    <td><%= user.extra_phone %></td>
+    <td><%= user.twitter %></td>
+    <td><%= user.linkedin %></td>
+    <td><%= image_tag user.photo.url %></td>
+    <td><%= user.motivation %></td>
+    <td><%= user.faculty.name %></td>
+    <td><%= user.user_profile.description %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
