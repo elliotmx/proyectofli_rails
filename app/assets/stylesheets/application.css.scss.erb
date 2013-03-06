@@ -8,8 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
 */
 
 
@@ -36,7 +34,7 @@
 
 	#logo_fi a.ct-logo
 	{
-	background: url(<% = asset_data_uri 'logo.png' %>) no-repeat;
+	background: url(<%= asset_data_uri 'logo.png' %>) no-repeat;
 	width: 313px;
 	height: 64px;
 	float: left;
@@ -46,7 +44,7 @@
 
 	#logo_fi a.ct-logo:hover
 	{
-	background:url(<% = asset_data_uri 'logo2.png'%>) no-repeat;
+	background:url(<%= asset_data_uri 'logo2.png'%>) no-repeat;
 	width: 313px;
 	height: 64px;
 	float: left;
@@ -185,9 +183,8 @@
 		display: block;
 		width: 48px;
 		height: 48px;
-		background: url(<% = asset_data_uri 'icons.png' %>);
+		background: url(<%= asset_data_uri 'icons.png' %>);
 		text-indent: -9999em;
-		outul line: 0;
 		opacity: 0.75;
 		-moz-transition: opacity .25s ease-in-out;
 		-webkit-transition: opacity .25s ease-in-out;
