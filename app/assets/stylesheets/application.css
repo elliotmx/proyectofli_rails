@@ -36,7 +36,7 @@
 
 	#logo_fi a.ct-logo
 	{
-	background:url(<% = asset_path 'logo.png' %>) no-repeat
+	background:url(<% = asset_data_uri 'logo.png' %>) no-repeat
 	no-repeat 0px 0px;
 	width: 313px;
 	height: 64px;
@@ -47,7 +47,7 @@
 
 	#logo_fi a.ct-logo:hover
 	{
-	background:url(<% = asset_path 'logo2.png'%>) no-repeat
+	background:url(<% = asset_data_uri 'logo2.png'%>) no-repeat
 	no-repeat 0px 0px;
 	width: 313px;
 	height: 64px;
@@ -187,7 +187,7 @@
 		display: block;
 		width: 48px;
 		height: 48px;
-		background: url(<% = asset_path 'icons.png' %>);
+		background: url(<% = asset_data_uri 'icons.png' %>);
 		text-indent: -9999em;
 		outul line: 0;
 		opacity: 0.75;
