@@ -36,7 +36,7 @@
 
 	#logo_fi a.ct-logo
 	{
-	background:url(<% = asset_data_uri 'logo.png' %>) no-repeat
+	background: url(<% = asset_data_uri 'logo.png' %>)
 	no-repeat 0px 0px;
 	width: 313px;
 	height: 64px;
