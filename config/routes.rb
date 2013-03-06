@@ -1,12 +1,12 @@
 Fli::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users ,:path_prefix => 'auth'#, :skip =>[:sessions]
+
+  resources :users
 
   resources :comments
 
   resources :user_profiles
-
-  resources :users
 
   resources :applications
 
@@ -17,7 +17,7 @@ Fli::Application.routes.draw do
   root :to => "home#index"
 
 #Add a route method for close session
-devise_for :users, :skip =>[:sessions]
+#devise_for :users, 
 as :user do
     get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
 end  

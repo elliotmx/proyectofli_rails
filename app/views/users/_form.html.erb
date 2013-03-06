@@ -53,17 +53,17 @@
   </div>
   <div class="field">
     <%= f.label :motivation %><br />
-    <%= range_field :motivation, 5, :min => 0, :max => 10 %>
+    <%= f.number_field :motivation , :value => 8, :min =>0  %>
   </div>
   <div class="field">
     <%= f.label :faculty_id %><br />
     <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
-  </div>
-  
+  </div>  
   <div class="field">
     <%= f.label :user_profile_id %><br />
     <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description ) %>
   </div>
+  <%= f.hidden_field :create_from , :value => 'user_form'  %>
   <div class="actions">
     <%= f.submit %>
   </div>
