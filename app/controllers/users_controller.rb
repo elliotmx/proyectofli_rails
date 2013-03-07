@@ -35,17 +35,27 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    #if params[:user][:password].blank?
+      #params[:user].delete(:password)
+      #params[:user].delete(:password_confirmation)
+    #end
+      @user = User.find(params[:id])
   end
 
   # POST /users
   # POST /users.json
   def create
-    @user = Application.find(app_id).users.create(params[:user])
+    if params[:user][:create_from] = 'user_form'
+      params[:user][:password] = "sinpass"
+      params[:user].delete(:create_from)
+    end
+    @app = Application.find(current_user.applications.first.id)
+    @user =  @app.users.create(params[:user])
+    #logger.debug {@user.attributes.inspect}
     #@user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @app, notice: 'User was successfully created.'  }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -57,6 +67,11 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+      params[:user].delete(:create_from)
+    end
     @user = User.find(params[:id])
 
     respond_to do |format|

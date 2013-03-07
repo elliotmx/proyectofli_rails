@@ -24,7 +24,7 @@
 
 <br />
 
-<% if current_user %>
+<% if current_user.applications.all.count <= 0 %>
   <p> Cuentanos tu proyecto!</p>
   <%= render :partial => 'formEmbed', :locals => {:application => Application.new, :iduser => current_user.id} %>
 <% else %>

@@ -13,9 +13,9 @@
 <% if @application.users.all.count > 0 %>
 	<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
 <% else %>
-	<%= no tienes Colaboradores aun %>
+	<p> no tienes Colaboradores aun </p>
 <% end %>
-<%= link_to 'Agrega un Colaborador', new_user_path(:app_id => @application.id) %>
+<%= link_to 'Agrega un Colaborador', new_user_path() %>
 
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>
