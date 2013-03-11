@@ -7,7 +7,6 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- *
 */
 
 body
@@ -21,14 +20,14 @@ body
 	h1, h2, h3, h4, h5, h6
 	{
 		color: #444;
-		font-weight: 800;
+		
 	}
 
 	h2
 	{
 		font-size: 2.25em;
 		margin: 0 0 1.1em 0;
-		line-height: 1em;
+		
 	}
 	
 	h3
@@ -338,7 +337,7 @@ body
 	h1, h2, h3, h4, h5, h6
 	{
 		color: #444;
-		font-weight: 800;
+		
 	}
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
 	{
@@ -1015,14 +1014,14 @@ body
 	h1, h2, h3, h4, h5, h6
 	{
 		color: #444;
-		font-weight: 800;
+		
 	}
 
 	h2
 	{
 		font-size: 2.25em;
 		margin: 0 0 1.1em 0;
-		line-height: 1em;
+		
 	}
 	
 	h3
@@ -1323,3 +1322,177 @@ body
 		{
 			color: inherit;
 		}
+#login
+{
+background-color: #fff;
+    height: 320px;
+    width: 418px;
+    margin: -150px 0 0 -230px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;  
+    -webkit-box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),
+          0 1px 1px rgba(0, 0, 0, .2);
+         
+    -moz-box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),  
+          1px 1px   0 rgba(0,   0,   0,   .1);
+          
+    box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),  
+          0 1px 1px rgba(0, 0, 0, .2);
+}
+#login:before
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /*border: 1px dashed #ccc;*/
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    -moz-box-shadow: 0 0 0 1px #fff;
+    -webkit-box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #fff;
+}
+fieldset
+{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+#actions {
+margin: 10px 0 0 0;
+}
+#actions a {
+color: #3151A2;
+float: right;
+line-height: 35px;
+margin-left: 10px;
+font-size: 12px;
+}
+.ico
+{
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 10px 15px 10px 30px;
+    margin: 0 0 10px 0;
+    width: 355px; /* 353 + 2 + 45 = 400 */
+    font-size: 14px;
+}
+.username
+{
+    background-position: 5px -2px !important;
+}
+
+.password
+{
+    background-position: 5px -52px !important;
+}
+
+.loginb
+{		
+    height: 35px;
+    padding: 0;
+    width: 120px;
+    cursor: pointer;
+   font-size: 16px;
+   
+}
+
+.h1login, .h1registro
+{
+    /*text-transform: uppercase;*/
+    text-align: center;
+    margin: 0 0 30px 0;
+    letter-spacing: 4px;
+    position: relative;
+}
+
+.h1login:after, .h1login:before 
+{
+    background-color: #777;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 15px;
+    width: 100px;   
+}
+.h1registro:after, .h1registro:before 
+{
+    background-color: #777;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 15px;
+    width: 60px;   
+}
+
+.h1login:after,.h1registro:after
+{ 
+    background-image: -webkit-gradient(linear, left top, right top, from(#777), to(#fff));
+    background-image: -webkit-linear-gradient(left, #777, #fff);
+    background-image: -moz-linear-gradient(left, #777, #fff);
+    background-image: -ms-linear-gradient(left, #777, #fff);
+    background-image: -o-linear-gradient(left, #777, #fff);
+    background-image: linear-gradient(left, #777, #fff);      
+    right: 0;
+}
+
+.h1login:before, .h1registro:before 
+{
+    background-image: -webkit-gradient(linear, right top, left top, from(#777), to(#fff));
+    background-image: -webkit-linear-gradient(right, #777, #fff);
+    background-image: -moz-linear-gradient(right, #777, #fff);
+    background-image: -ms-linear-gradient(right, #777, #fff);
+    background-image: -o-linear-gradient(right, #777, #fff);
+    background-image: linear-gradient(right, #777, #fff);
+    left: 0;
+}
+
+#registro
+{
+background-color: #fff;
+    height: 420px;
+    width: 418px;
+    margin: -150px 0 0 -230px;
+    padding: 30px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    z-index: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;  
+    -webkit-box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),
+          0 1px 1px rgba(0, 0, 0, .2);
+         
+    -moz-box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),  
+          1px 1px   0 rgba(0,   0,   0,   .1);
+          
+    box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),  
+          0 1px 1px rgba(0, 0, 0, .2);
+}
+#registro:before
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /*border: 1px dashed #ccc;*/
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    -moz-box-shadow: 0 0 0 1px #fff;
+    -webkit-box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #fff;
+}
