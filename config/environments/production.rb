@@ -11,6 +11,8 @@ Fli::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
+  #config.assets.precompile += %w(slider/sequence.jquery-min.js slider/sequencejs-options.sliding-horizontal-parallax.js)
+  config.assets.precompile = ['*.js', '*.css', '*.png','*.ico']
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
