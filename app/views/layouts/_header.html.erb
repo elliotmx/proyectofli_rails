@@ -6,12 +6,24 @@
 	<nav id="nav">
 		<ul>
 			<li class="current_page_item"><a href="#">Inicio</a></li>
-			<li><a href="#">Somos Fi</a></li>
+			<li><a href="#">Somos Fli</a></li>
 			<li><a href="#">Proyectos</a></li>
 			<li><a href="#">Tutorial</a></li>
-		</ul>
+			</ul>
+
 	</nav>		
 	<div id="btn_subeIdea">
 		<%= link_to 'Sube tu Idea!',  new_user_session_path, :class => 'button'%>
 	</div>
+
+			<% if user_signed_in? %>
+					<div style="z-index: 1000; position: fixed;">
+	    			<h4><%= current_user.name %>
+	    			 <%= link_to 'Logout', destroy_user_session_path, :method=>:get , :class =>'button' ,:style=>'margin-left:5px'%></h4>
+	    			</div>
+  			<% else %>
+    			<li style="display:none">
+    				<%= link_to 'Login', new_user_session_path %>
+    			</li>
+	  		<% end %>
 </div>

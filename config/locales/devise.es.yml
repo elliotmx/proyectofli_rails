@@ -1,6 +1,13 @@
 # Additional translations at http://github.com/plataformatec/devise/wiki/I18n
  
 es:
+  activerecord:
+          errors:
+            models:
+                user:
+                  attributes:
+                          email:
+                              taken: 'Ups, alguien te ganó, ya existe ese correo'
   errors:
     messages:
       expired: "ha expirado, por favor pida uno nuevo"
