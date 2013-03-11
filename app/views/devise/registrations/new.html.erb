@@ -1,27 +1,29 @@
-<h2>Sign up</h2>
+ <div id="registro" class="box">
+  <div class= "h1registro">
+  <h2>Registrate</h2>
+</div>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <h4><%= devise_error_messages! %></h4>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name, :autofocus => true %></div>
+  <%= f.text_field :name, :autofocus => true, :class => 'inputs normal',:placeholder => "Nombre" %>
   	
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <%= f.email_field :email, :class => 'inputs normal',:placeholder => "Correo Electrónico"  %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password, :class => 'inputs normal',:placeholder => "Contraseña" %>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <%= f.password_field :password_confirmation, :class => 'inputs normal',:placeholder => "Confirmar Contraseña" %>
 
   <div class="field">
-    <%= f.label :faculty_id %><br />
+    <%= f.label 'Facultad : ' %>
     <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
   </div>
   <%= f.hidden_field :user_profile_id, :value => 2 %>
 
-  <div><%= f.submit "Registrar" %></div>
+<fieldset id="actions">
+  <%= f.submit "Registrar",:class => 'button loginb'  %>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</fieldset>
+</div>
