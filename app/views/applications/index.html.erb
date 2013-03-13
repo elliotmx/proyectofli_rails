@@ -1,32 +1,28 @@
-<h1>Listing applications</h1>
+<div id="banner-wrapper" style="margin-top:-30px;"> 
+
+<div id="aplicacion" class="box">
+
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Short description</th>
-    <th>Iduser</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @applications.each do |application| %>
-  <tr>
-    <td><%= application.name %></td>
-    <td><%= application.short_description %></td>
-    <td><%= application.users.name %></td>
-    <td><%= link_to 'Show', application %></td>
-    <td><%= link_to 'Edit', edit_application_path(application) %></td>
-    <td><%= link_to 'Destroy', application, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+    <span style="text-align: center;"><h2><%= application.name %></h2></span>
+    <span style="text-align: justify;"><%= application.short_description %></span>
+    <br/><br/>
+    <span style="float: right;"><%= link_to 'Ver', application %>
+    <%= link_to 'Editar', edit_application_path(application) %>
+    <%= link_to 'Eliminar', application, confirm: '¿Estás seguro de eliminar?', method: :delete %></span>
+  
 <% end %>
 </table>
 
-<br />
 
 <% if current_user.applications.all.count <= 0 %>
-  <p> Cuentanos tu proyecto!</p>
+<span style="text-align: center;">
+  <h2> Cuentanos tu proyecto!</h2>
+</span>
   <%= render :partial => 'formEmbed', :locals => {:application => Application.new, :iduser => current_user.id} %>
 <% else %>
-  <p> ya tienes aplicaciones</p>
+  
 <% end %>
+</div>
+</div>

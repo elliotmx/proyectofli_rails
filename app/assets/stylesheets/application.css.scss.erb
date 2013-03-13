@@ -1413,6 +1413,7 @@ font-size: 12px;
     margin: 0 0 30px 0;
     letter-spacing: 4px;
     position: relative;
+
 }
 
 .h1login:after, .h1login:before 
@@ -1483,6 +1484,46 @@ background-color: #fff;
           0 1px 1px rgba(0, 0, 0, .2);
 }
 #registro:before
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    /*border: 1px dashed #ccc;*/
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    -moz-box-shadow: 0 0 0 1px #fff;
+    -webkit-box-shadow: 0 0 0 1px #fff;
+    box-shadow: 0 0 0 1px #fff;
+}
+#aplicacion
+{
+background-color: #fff;
+    height: auto;
+    width: 450px;
+    margin: -150px 0 0 -230px;
+    padding: 30px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    z-index: 0;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;  
+    -webkit-box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),
+          0 1px 1px rgba(0, 0, 0, .2);
+         
+    -moz-box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),  
+          1px 1px   0 rgba(0,   0,   0,   .1);
+          
+    box-shadow:
+          0 0 2px rgba(0, 0, 0, 0.2),  
+          0 1px 1px rgba(0, 0, 0, .2);
+}
+#aplicacion:before
 {
     content: '';
     position: absolute;
