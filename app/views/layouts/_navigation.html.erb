@@ -1,21 +1,21 @@
 <ul class="nav">
   <% if user_signed_in? %>
-    <li> 
-    <%= current_user.name %>     
+    <li style="float:right"> 
+    <h3><%= current_user.name %></h3>
     <%= link_to 'Logout', destroy_user_session_path, :method=>:get %>
     </li>
   <% else %>
-    <li>
-    <%= link_to 'Login :D', new_user_session_path %>
+    <li style="display:none">
+    <%= link_to 'Login', new_user_session_path %>
     </li>
   <% end %>
   <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
+    <li style="display:none">
+    <%= link_to 'Editar Cuenta', edit_user_registration_path %>
     </li>
   <% else %>
-    <li>
-    <%= link_to 'Sign up :D', new_user_registration_path %>
+    <li style="display:none">
+    <%= link_to 'Registrate', new_user_registration_path %>
     </li>
   <% end %>
 </ul>

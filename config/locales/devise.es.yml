@@ -1,6 +1,13 @@
 # Additional translations at http://github.com/plataformatec/devise/wiki/I18n
  
 es:
+  activerecord:
+          errors:
+            models:
+                user:
+                  attributes:
+                          email:
+                              taken: 'Ups, alguien te ganó, ya existe ese correo'
   errors:
     messages:
       expired: "ha expirado, por favor pida uno nuevo"
@@ -10,7 +17,6 @@ es:
       not_saved:
         one: "1 error evitó que este %{resource} fuera guardado:"
         other: "%{count} errores evitaron que este %{resource} fuera guardado:"
- 
   devise:
     failure:
       already_authenticated: 'Ya está dentro del sistema.'
@@ -21,6 +27,8 @@ es:
       invalid_token: 'Ficha de autenticación invalida.'
       timeout: 'Su sesión ha expirado, por favor ingrese nuevamente para continuar.'
       inactive: 'Su cuenta aún no ha sido activada.'
+      user:
+        not_found_in_database: 'No estás registrado' 
     sessions:
       signed_in: 'Ingreso exitoso.'
       signed_out: 'Usted ha salido del sistema.'
