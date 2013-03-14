@@ -1,6 +1,12 @@
-<h1>Editing application</h1>
+<div id="aplicacion" class="box">
+	<span style="text-align: center;">
+		<h1>Editar Proyecto</h1>
+	</span>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Show', @application %> |
-<%= link_to 'Back', applications_path %>
+	<span style="float: right;">
+		<%= link_to 'Ver', @application %> |
+		<%= link_to 'Atras', applications_path %>
+	<span>
+</div>

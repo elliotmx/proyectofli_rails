@@ -12,18 +12,20 @@
 			</ul>
 
 	</nav>		
-	<div id="btn_subeIdea">
-		<%= link_to 'Sube tu Idea!',  new_user_session_path, :class => 'button'%>
-	</div>
+	
 
 			<% if user_signed_in? %>
-					<div style="z-index: 1000; position: fixed;">
-	    			<h4><%= current_user.name %>
-	    			 <%= link_to 'Logout', destroy_user_session_path, :method=>:get , :class =>'button' ,:style=>'margin-left:5px'%></h4>
+					<div id="btn_subeIdea">
+						<span style="float: left; position: relative; top: 5px; right: 20px;">
+							<h4 style="color: #fff !important;"><%= current_user.name %></h4>
+						</span>
+	    			
+	    			 <%= link_to 'Salir', destroy_user_session_path, :method=>:get , :class =>'button' %>
 	    			</div>
   			<% else %>
-    			<li style="display:none">
-    				<%= link_to 'Login', new_user_session_path %>
-    			</li>
+		  			<div id="btn_subeIdea">
+						<%= link_to 'Sube tu Idea!',  new_user_session_path, :class => 'button'%>
+					</div>
+    
 	  		<% end %>
 </div>

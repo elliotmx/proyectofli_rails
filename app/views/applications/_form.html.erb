@@ -12,14 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label "Nombre:" %><br />
+    <%= f.text_field :name,:class=>'inputs normal', :placeholder=>'Nombre' %>
   </div>
   <div class="field">
-    <%= f.label :short_description %><br />
-    <%= f.text_field :short_description %>
+    <%= f.label "Descripción corta:"%><br />
+    <%= f.text_area :short_description, :rows => '4',:style => 'resize: none;',:class=>'inputs normal', :placeholder=>'Descripción corta' %>
   </div>
+  <div class="field">
+    <%= f.label "Etiquetas" %><br />
+    <%= f.text_field :tags,:class=>'inputs normal', :placeholder=>'Etiquetas'  %>
+  </div>
+  <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Actualizar",:class => 'button loginb' %>
   </div>
 <% end %>

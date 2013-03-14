@@ -12,7 +12,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218215915) do
+ActiveRecord::Schema.define(:version => 20130311083214) do
+
+  create_table "answers", :force => true do |t|
+    t.string   "value"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "question_id"
+    t.integer  "application_id"
+  end
 
   create_table "applications", :force => true do |t|
     t.string   "name"
@@ -20,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130218215915) do
     t.string   "video_url"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "tags"
   end
 
   create_table "applications_users", :id => false, :force => true do |t|
@@ -49,6 +58,23 @@ ActiveRecord::Schema.define(:version => 20130218215915) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "questions", :force => true do |t|
+    t.string   "spa_description"
+    t.string   "eng_description"
+    t.boolean  "active"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "section_id"
+    t.string   "html_for_field"
+    t.string   "field_type"
+  end
+
+  create_table "sections", :force => true do |t|
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "user_profiles", :force => true do |t|
     t.string   "description"
     t.datetime "created_at",  :null => false
@@ -68,9 +94,9 @@ ActiveRecord::Schema.define(:version => 20130218215915) do
     t.string   "photo"
     t.integer  "motivation"
     t.integer  "faculty_id"
-    t.integer  "user_profile_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "user_profile_id"
     t.string   "photo_file_name"
     t.integer  "photo_content_type"
     t.integer  "photo_file_size"
@@ -188,9 +214,9 @@ ActiveRecord::Schema.define(:version => 20130218215921) do
     t.string   "photo"
     t.integer  "motivation"
     t.integer  "faculty_id"
+    t.integer  "user_profile_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.integer  "user_profile_id"
     t.string   "photo_file_name"
     t.integer  "photo_content_type"
     t.integer  "photo_file_size"
@@ -213,4 +239,4 @@ ActiveRecord::Schema.define(:version => 20130218215921) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
->>>>>>> 8ffe0ae76a384379617e6d4c380db89a893ebb0e
+>>>>>>> 1dc1cd78bf5a0e3119ce429872ef3f7b36de2b73
