@@ -18,6 +18,8 @@ Fli::Application.routes.draw do
 
   resources :colleges
 
+  resources :answers
+
   root :to => "home#index"
 
 #Add a route method for close session
