@@ -1,6 +1,7 @@
-<%= form_tag('/answers') do %>
+<%= form_tag('/answers', :remote => true) do %>
 	<% questionsIn.each do |i| %>
-		<p> <%=i.spa_description %> </p>
-		<p><%= text_field_tag(i.id) %></p>
-	<% end %> 
+		<p> <%=i.spa_description %>
+		<%= text_field_tag(i.id) %></p>
+	<% end %>
+	<%= submit_tag('Guardar') %>
 <% end %>
