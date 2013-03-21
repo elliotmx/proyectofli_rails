@@ -26,9 +26,17 @@ end
 
 def create
     #@comment = Answer.new(params[:comment])
-    puts params.inspect
+    #puts params.inspect
     params.each do |i,v|
-      puts "parametro#{i} texto: #{v}"
+      #if i!="utf8" || i!="authencity_token"
+      if (i.to_s != "utf8".to_s)||(i.to_s != "authencity_token".to_s)
+        
+        puts "parametro #{i} texto: #{v} entero"
+      #if i.is_a? Integer
+        
+      #else
+      #  puts "no integer"
+      end
     	#@comment = Answer.new(:question_id => v[0], :value => v[1], :application_id => current_user.applications.first.id)	
     end
 
