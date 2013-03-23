@@ -1,14 +1,21 @@
+<div id="banner-wrapper" style="margin-top:-30px;">			
+	<div id="faqBody">
+		<div id="flota" class="leftBar">
+		</div>
+		<div class="rightBar">
+
+<div class="box">
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<span style="position:relative; top: -30px; font-size:12px;">
+	<h2>Colaboradores</h2>
+  <!--<b>Proyecto:</b>
   <%= @application.name %>
-</p>
-
-<p>
-  <b>Short description:</b>
-  <%= @application.short_description %>
-</p>
+  <br/>
+  <b>Descripción Corta:</b>
+  <%= @application.short_description %> -->
+</span>
 
 <% if @application.users.all.count > 0 %>
 	<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
@@ -25,3 +32,8 @@
 
 <%= link_to 'Editar', edit_application_path(@application) %> |
 <%= link_to 'Atras', applications_path %>
+</div>
+
+		</div>
+	</div>
+</div>

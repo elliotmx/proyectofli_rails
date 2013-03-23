@@ -1,44 +1,42 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Address</th>
-    <th>Email</th>
-    <th>Semester</th>
-    <th>Phone</th>
-    <th>Extra phone</th>
-    <th>Twitter</th>
-    <th>Linkedin</th>
-    <th>Photo</th>
-    <th>Motivation</th>
-    <th>Faculty</th>
-    <th>Application</th>
-    <th>User Profile</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.age %></td>
-    <td><%= user.address %></td>
-    <td><%= user.email %></td>
-    <td><%= user.semester %></td>
-    <td><%= user.phone %></td>
-    <td><%= user.extra_phone %></td>
-    <td><%= user.twitter %></td>
-    <td><%= user.linkedin %></td>
-    <td><%= image_tag user.photo.url %></td>
-    <td><%= user.motivation %></td>
-    <td><%= user.faculty.name %></td>
-    <td><%= user.user_profile.description %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+
+<!--Start vcard wrapper-->
+         <div class="vcard-freebie">
+            <!--Start content-wrapper-front-->
+            <div class="content-wrapper-front">
+               <div class="header">
+                  <span class="nombre"><%= user.name %></span>
+                  <span class="perfil"><%= user.user_profile.description %></span>
+                  <div class="underline"></div>
+               </div>
+               <div class="avatar">
+                    <%= image_tag user.photo.url, :style => 'width:120px;height:120px;' %>
+               </div>
+                <div class="datos">
+                  <div id="text"><strong>Edad: </strong><%= user.age %></div>
+                  <!--<div id="text"><strong>Dirección: </strong><%= user.address %></div>-->
+                  <div id="text"><strong>Email: </strong><%= user.email %></div>
+                  <div id="text"><strong>Telefono: </strong><%= user.phone %></div>
+                  <div id="text"><strong>Twitter: </strong><%= user.twitter %></div>
+                </div>
+
+                <div style="clear:both;"></div>
+                  <div style="float:left;margin-left: 7px;font-weight: 500;font-size: 14px;color: #7B8F9F;text-shadow: 0px 1px white;"><strong>Facultad: </strong><%= user.faculty.name %></div>
+                  <div style="float:right;font-weight: 500;font-size: 14px;color: #7B8F9F;text-shadow: 0px 1px white;"><strong>Semestre: </strong><%= user.semester %></div>
+
+               <div style="clear:both;"></div>
+               <span style="float:left;margin-left: 7px;font-weight: 500;font-size: 14px;color: #7B8F9F;text-shadow: 0px 1px white;"><strong>Motivación: </strong><%= user.motivation %></span>
+               <span style="float:right;">
+                <!--<%= link_to 'Show', user %>-->
+                <%= link_to 'Editar', edit_user_path(user) %>                
+                <%= link_to 'Eliminar', user, confirm: '¿Estas seguro de Eliminar a este colaborador?', method: :delete %>
+               </span>
+            </div>
+            <!--End content-wrapper-front -->
+         </div>
+          <!--End vcard wrapper-->
 <% end %>
-</table>
 
 <br />
