@@ -1,8 +1,15 @@
 <%= form_tag('/answers', :remote => true) do %>
 	<% questionsIn.each do |i| %>
 		<p> <%=i.spa_description %>
-		<p> <%= puts "#{i}" %>
-		<%= text_field_tag(i.id, Answer.where("question_id = ?" , i.id).first.value) %></p>
+		<p>
+	<%=
+	@respuesta = ""
+	unless Answer.where("question_id = ?" , i.id).first.nil?
+		@respuesta = Answer.where("question_id = ?" , i.id).first.value
+	end
+	%>
+	<%= text_field_tag(i.id, @respuesta) %>
+	</p>
 	<% end %>
 	<%= submit_tag('Guardar') %>
 <% end %>
