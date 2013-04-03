@@ -16,7 +16,7 @@
 //= require /slider
 $(document).ready(function(){
 
-  $('#add_user_to_app')
+  $('#respond_application_form')
     .bind("ajax:beforeSend", function(evt, xhr, settings){
       var $submitButton = $(this).find('input[name="commit"]');
 
@@ -34,7 +34,7 @@ $(document).ready(function(){
       $form.find('div.validation-error').empty();
 
       // Insert response partial into page below the form.
-      $('#comments').append(xhr.responseText);
+      $('#commentShow').append(xhr.responseText);
 
     })
     .bind('ajax:complete', function(evt, xhr, status){

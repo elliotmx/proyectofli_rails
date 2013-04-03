@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+respond_to :html ,:js
 
 def index
 	@answers = Answer.all
@@ -27,26 +28,22 @@ def create
         puts "parametro #{i} texto: #{v} entero"
 
         @comment = Answer.find_or_create_by_question_id(:question_id => i.to_i, :value => v,:application_id => current_user.applications.first.id )
+        
         if @comment.new_record?
           puts "es nuevo record => #{@comment}" 
-          @comment.save
+          #@comment.save
         else
           @comment.update_attributes(:value => v)
         end
+
       end
-    	#@comment = Answer.new(:question_id => v[0], :value => v[1], :application_id => current_user.applications.first.id)	
+    	
     end
+    
+    flash[:notice] = "Comment successfully created" #if @comment
+    puts "request #{request.xhr?}  => 5"
+    #respond_with( current_user.applications.first)
+    respond_with( current_user.applications.first , :layout => !request.xhr?)
+  end #end of create method
 
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
-end
+end #end of the class

@@ -13,9 +13,8 @@
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.spa_description %></td>
-    <td><%= question.eng_description %></td>
     <td><%= question.field_type %></td>
-    <td><%= question.active %></td>
+    <td><%= question.section.description %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>
