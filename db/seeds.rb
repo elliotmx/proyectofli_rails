@@ -6,6 +6,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+=begin
 Market.create(:id => 1, :description => "Automotriz")
 Market.create(:id => 2, :description => "Comunicaciones y Conectividad")
 Market.create(:id => 3, :description => "Desarrollo de Software")
@@ -35,6 +36,7 @@ Market.create(:id => 26, :description => "Servicios sectoriales para las empresa
 Market.create(:id => 27, :description => "Tecnologías Limpias")
 Market.create(:id => 28, :description => "Viajes, Turismo, Hotelería")
 Market.create(:id => 29, :description => "Alimentos")
+=end
 
 #==
 Question.create(:id => 1, :spa_description => "¿De qué se trata tu idea de proyecto? (Como si se lo estuvieras contando a un amigo tuyo: claro y conciso)", :active => true, :section_id => 2, :field_type => "text_field")
@@ -55,6 +57,7 @@ Question.create(:id => 16, :spa_description => "Necesidades/Problema detectado "
 Question.create(:id => 17, :spa_description => "¿Por qué es valioso tu proyecto?", :eng_description => "¿Why your project is valuable?", :active => true, :section_id => 3, :field_type => "text_area")
 Question.create(:id => 18, :spa_description => "¿Cuál es el mercado o área específica en la que encaja tu proyecto?", :active => true, :section_id => 3, :html_for_field => "Market", :field_type => "radio")
 
+=begin
 Section.create(:id => 1, :description => "Registro Involucrados")
 Section.create(:id => 2, :description => "Conociendo Mejor")
 Section.create(:id => 3, :description => "Primero lo primero")
@@ -64,7 +67,9 @@ Section.create(:id => 6, :description => "Riesgos")
 Section.create(:id => 7, :description => "Comentarios Finales")
 Section.create(:id => 8, :description => "Redacción Proyecto")
 Section.create(:id => 9, :description => "Conexiones")
+=end
 
+=begin
 ServiceType.create(:id => 1, :description => "Aplicaciones Moviles")
 ServiceType.create(:id => 2, :description => "Crowdsourcing")
 ServiceType.create(:id => 3, :description => "Gestión de Relación con clientes(CRM)")
@@ -79,8 +84,10 @@ ServiceType.create(:id => 11, :description => "Redes Sociales y Comunidades")
 ServiceType.create(:id => 12, :description => "Servicios y Aplicaciones en el punto de venta")
 ServiceType.create(:id => 13, :description => "Consultoría")
 ServiceType.create(:id => 14, :description => "Consultoría Digital")
+=end
 
-
+=begin
 UserProfile.create(:id => 1, :description => "Co-worker")
 UserProfile.create(:id => 2, :description => "Lider")
 UserProfile.create(:id => 3, :description => "Tutor")
+=end
