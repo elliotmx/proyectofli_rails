@@ -10,7 +10,7 @@
 <p id="notice"><%= notice %></p>
 
 <span style="position:relative; top: -30px; font-size:12px;">
-	<h2>Colaboradores</h2>
+	<h2 id="commentShow">Colaboradores</h2>
   <!--<b>Proyecto:</b>
   <%= @application.name %>
   <br/>
@@ -23,16 +23,19 @@
 <% else %>
 	<p> no tienes Colaboradores aun </p>
 <% end %>
+
 <input type="button" onclick="$('#formNewUser').show()" value="Agrega Colaborador">
 
 <div style="display:none" id="formNewUser">
 	<%= render :partial => 'users/form_embed', :locals => {:userinput  => 	User.new} %>
 </div>
 
-<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.all} %>
+<div style="margin-top: 10px">
+	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.all} %>
 
-<%= link_to 'Editar', edit_application_path(@application) %> |
-<%= link_to 'Atras', applications_path %>
+	<%= link_to 'Editar', edit_application_path(@application) %> |
+	<%= link_to 'Atras', applications_path %>
+</div>
 
 		</div>
 	</div>

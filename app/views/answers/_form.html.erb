@@ -1,7 +1,37 @@
-<%= form_tag('/answers', :remote => true) do %>
+<%= form_tag('/answers', :remote => true,:html => { :id => 'respond_application_form' }) do %>
+
+
 	<% questionsIn.each do |i| %>
-		<p> <%=i.spa_description %>
-		<%= text_field_tag(i.id) %></p>
-	<% end %>
-	<%= submit_tag('Guardar') %>
+
+		<% if i.field_type == "radio" %> 
+			<p>
+			<%= i.spa_description %>
+			<ul>
+			<% "Market".constantize.all.each do |radioOption| %>
+				<li>
+					<%= radio_button_tag(i.id, radioOption.id) %>
+					<%= label_tag(radioOption.id, radioOption.description) %>
+				</li>
+
+			<% end %>
+			</ul></p>
+		<% elsif i.field_type == "text_field" %>
+			<p> 
+			<%= i.spa_description %>
+
+			<%	#@respuesta = "" unless Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
+				if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
+					@respuesta = ""				
+				else
+					@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.value
+				end
+			 %>
+			<p> <b> application id: </b><%= current_user.applications.first.id %> </p>
+
+			<%= text_field_tag(i.id ,@respuesta) %>
+			</p>
+		<% end %>
+		<% end %>
+
+	<%= submit_tag('Guardar', :onclick =>"alert('Guardado')" ) %>
 <% end %>

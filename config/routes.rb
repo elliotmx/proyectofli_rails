@@ -1,5 +1,9 @@
 Fli::Application.routes.draw do
 
+  resources :service_types
+
+  resources :markets
+
   resources :questions
 
   resources :sections
