@@ -18,12 +18,13 @@
   <b>Descripción Corta:</b>
   <%= @application.short_description %> -->
 </span>
-
+<div id="width:100%;">
 <% if @application.users.all.count > 0 %>
 	<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
 <% else %>
 	<p> no tienes Colaboradores aun </p>
 <% end %>
+</div>
 
 <input type="button" onclick="$('#formNewUser').show()" value="Agrega Colaborador">
 

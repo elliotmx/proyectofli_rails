@@ -2,36 +2,46 @@
 
 
 	<% questionsIn.each do |i| %>
-
-		<% if i.field_type == "radio" %> 
-			<p>
-			<%= i.spa_description %>
-			<ul>
-			<% "Market".constantize.all.each do |radioOption| %>
-				<li>
-					<%= radio_button_tag(i.id, radioOption.id) %>
-					<%= label_tag(radioOption.id, radioOption.description) %>
-				</li>
-
-			<% end %>
-			</ul></p>
-		<% elsif i.field_type == "text_field" %>
-			<p> 
-			<%= i.spa_description %>
-
-			<%	#@respuesta = "" unless Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
-				if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
+		<%	
+		if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
 					@respuesta = ""				
 				else
 					@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.value
 				end
-			 %>
-			<p> <b> application id: </b><%= current_user.applications.first.id %> </p>
+		%>
+		<% if i.field_type == "radio" %> 
+			<p>
+			<%= i.spa_description %>
+			<ul>
+			<% i.html_for_field.constantize.all.each do |radioOption| %>
+				<li>
+					<% @id = radioOption.id %>
+					<%= radio_button_tag(i.id, @id) %>
+					<%= label_tag(@id, radioOption.description) %>
+				</li>
 
-			<%= text_field_tag(i.id ,@respuesta) %>
+			<% end %>
+			</ul></p>
+		<% elsif i.field_type == "label" %>
+			<p> 
+			<%= i.spa_description %>
+			</p>
+		<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or "number_field" %>
+			<p> 
+			 <%= i.spa_description %>
+
+			 <% if i.field_type == "text_field" %>
+					<%= text_field_tag(i.id ,@respuesta) %>
+			<% elsif i.field_type == "text_area" %>
+					<%= text_area_tag(i.id ,@respuesta) %>
+			<% elsif i.field_type == "hidden_field" %>
+					<%= text_field_tag(i.id ,@respuesta) %>	
+			<% elsif i.field_type == "number_field" %>
+					<%= number_field_tag(i.id ,@respuesta) %>	
+			<% end %>
 			</p>
 		<% end %>
 		<% end %>
 
-	<%= submit_tag('Guardar', :onclick =>"alert('Guardado')" ) %>
+	<%= submit_tag('Guardar') %>
 <% end %>

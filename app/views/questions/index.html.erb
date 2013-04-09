@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Spa description</th>
     <th>Eng description</th>
     <th>Active</th>
@@ -12,6 +13,7 @@
 
 <% @questions.each do |question| %>
   <tr>
+    <td><%= question.id %></td>
     <td><%= question.spa_description %></td>
     <td><%= question.field_type %></td>
     <td><%= question.section.description %></td>
