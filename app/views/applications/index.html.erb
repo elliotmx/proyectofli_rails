@@ -1,27 +1,27 @@
 <div id="banner-wrapper" style="margin-top:-30px;"> 
 
-<div id="aplicacion" class="box">
+	<div id="aplicacion" class="">
+		<table>
+		<% @applications.each do |application| %>
+		    <span style="text-align: center;"><h2><%= application.name %></h2></span>
+		    <span style="text-align: justify;"><%= application.short_description %></span>
+		    <br/><br/>
+		    <span style="float: right;"><%= link_to 'Ver', application %>
+		    <%= link_to 'Editar', edit_application_path(application) %>
+		    <%= link_to 'Eliminar', application, confirm: '¿Estás seguro de eliminar?', method: :delete %></span>
+		  
+		<% end %>
+		</table>
 
-<table>
-<% @applications.each do |application| %>
-    <span style="text-align: center;"><h2><%= application.name %></h2></span>
-    <span style="text-align: justify;"><%= application.short_description %></span>
-    <br/><br/>
-    <span style="float: right;"><%= link_to 'Ver', application %>
-    <%= link_to 'Editar', edit_application_path(application) %>
-    <%= link_to 'Eliminar', application, confirm: '¿Estás seguro de eliminar?', method: :delete %></span>
-  
-<% end %>
-</table>
 
+		<% if current_user.applications.all.count <= 0 %>
+		<span style="text-align: center;">
+		  <h2> Cuentanos tu proyecto!</h2>
+		</span>
+		  <%= render :partial => 'formEmbed', :locals => {:application => Application.new, :iduser => current_user.id} %>
+		<% else %>
+		  
+		<% end %>
+	</div>
 
-<% if current_user.applications.all.count <= 0 %>
-<span style="text-align: center;">
-  <h2> Cuentanos tu proyecto!</h2>
-</span>
-  <%= render :partial => 'formEmbed', :locals => {:application => Application.new, :iduser => current_user.id} %>
-<% else %>
-  
-<% end %>
-</div>
 </div>
