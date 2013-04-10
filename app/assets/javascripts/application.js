@@ -14,13 +14,3 @@
 //= require jquery_ujs
 //= require_tree .
 //= require /slider
-$(document).ready(function(){
-
-  $(".btnHowTo").hover(function(){
-
-  $(this).children('.unoI').toggle('slow');
-  $(this).children('.uno').toggle('slow');
-
-  });
-
-});

@@ -1,11 +1,11 @@
 var el = $('#respond_application_form');
 
-<% if @comment.errors.any? %>
+<% if @answer.errors.any? %>
 
   // Create a list of errors
   var errors = $('<ul />');
 
-  <% @comment.errors.full_messages.each do |error| %>
+  <% @answer.errors.full_messages.each do |error| %>
     errors.append('<li><%= escape_javascript( error ) %></li>');
   <% end %>
 
@@ -14,10 +14,7 @@ var el = $('#respond_application_form');
 
 <% else %>
 
-  // We could also render a partial to display the comment here
-  //$('#error_explanation').append("<%= escape_javascript( 
- //     simple_format( @comment.body ) 
-   // ) %>");
+  
 alert("Guardado Correctamente");
 
   // Clear form

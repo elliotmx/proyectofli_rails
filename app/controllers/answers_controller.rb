@@ -27,20 +27,15 @@ def create
       if (i != "utf8") && (i != "authenticity_token") &&  (i != "commit") && (i != "action") && (i != "controller")
         puts "parametro #{i} texto: #{v} entero"
 
-        @comment = Answer.find_or_create_by_question_id(:question_id => i.to_i, :value => v,:application_id => current_user.applications.first.id )
-        
-        if @comment.new_record?
-          puts "es nuevo record => #{@comment}" 
-          #@comment.save
-        else
-          @comment.update_attributes(:value => v)
+        @answer = Answer.where(:application_id =>current_user.applications.first.id, :question_id => i.to_i ).first_or_create do |ans|
+            ans.value = v
         end
 
       end
     	
     end
     
-    flash[:notice] = "Comment successfully created" #if @comment
+    #flash[:notice] = "Comment successfully created" #if @comment
     puts "request #{request.xhr?}  => 5"
     #respond_with( current_user.applications.first)
     respond_with( current_user.applications.first , :layout => !request.xhr?)
