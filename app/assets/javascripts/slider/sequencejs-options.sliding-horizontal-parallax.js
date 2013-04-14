@@ -8,7 +8,7 @@ $(document).ready(function(){
     };
     var sequence = $("#sequence").sequence(options).data("sequence");
 
-    sequence.afterLoaded = function(){
-        $(".prev, .next").fadeIn(500);
-    }
+    // sequence.afterLoaded = function(){
+    //     $(".prev, .next").fadeIn(500);
+    // }
 });

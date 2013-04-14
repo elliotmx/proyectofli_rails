@@ -29,6 +29,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'paperclip', '3.0.4'
 gem 'devise', '2.2'
 #gem 'yaml_db'
