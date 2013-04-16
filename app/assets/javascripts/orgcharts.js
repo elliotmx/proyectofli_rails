@@ -2,12 +2,13 @@ $(document).ready(function(){
 
 $("#botonGraficas").click(function(){ 
 
+
     var options = new primitives.orgdiagram.Config(); 
 
     var rootItem = new primitives.orgdiagram.ItemConfig(); 
     rootItem.title = "Scott Aasrud"; 
-    rootItem.description = "VP, Public Sector"; 
-    rootItem.image = "http://www.basicprimitives.com/demo/images/photos/a.png"; 
+    rootItem.description = $("#7").val(); 
+    rootItem.image = null;
 
     var itemB = new primitives.orgdiagram.ItemConfig(); 
     itemB.title = "Ted Lucas"; 
