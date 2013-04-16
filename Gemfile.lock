@@ -76,11 +76,8 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
-<<<<<<< HEAD
-=======
     pg (0.14.1)
     pg (0.14.1-x86-mingw32)
->>>>>>> 542c412b226f375e3f8c1aa0ff17c0909daab809
     polyglot (0.3.3)
     rack (1.4.4)
     rack-cache (1.2)
