@@ -32,8 +32,7 @@
 </div>
 
 <div style="margin-top: 10px">
-	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.all} %>
-
+	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.order(:id).all} %>
 	<%= link_to 'Editar', edit_application_path(@application) %> |
 	<%= link_to 'Atras', applications_path %>
 </div>
