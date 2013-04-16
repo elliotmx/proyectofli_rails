@@ -29,14 +29,15 @@ $("#botonGraficas").click(function(){
     rootItem.items.push(itemD);   
   
     var buttons = []; 
-    buttons.push(new primitives.orgdiagram.ButtonConfig("delete", "ui-icon-close", "Delete")); 
+    
     buttons.push(new primitives.orgdiagram.ButtonConfig("add", "ui-icon-person", "Add")); 
+    buttons.push(new primitives.orgdiagram.ButtonConfig("delete", "ui-icon-close", "Delete")); 
 
     options.rootItem = rootItem; 
     options.cursorItem = rootItem; 
     options.buttons = buttons; 
     options.hasButtons = primitives.common.Enabled.Auto;   
-    options.hasSelectorCheckbox = primitives.common.Enabled.True; 
+    options.hasSelectorCheckbox = primitives.common.Enabled.False; 
     options.leavesPlacementType = primitives.orgdiagram.ChildrenPlacementType.Matrix; 
 
     options.onButtonClick = function(e, data) 
