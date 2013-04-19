@@ -39,8 +39,8 @@
 			<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
 			<% elsif i.field_type == "diagram_field" %>
-					<input type="button" id="botonGraficas"  value="Cargar Diagramita"/>
-					 <%= render :partial => 'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>
+				<input type="button" class="btnDiagramas" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/>
+				 <%= render :partial =>'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>
 			<% end %>
 			</p>
 		<% end %>
