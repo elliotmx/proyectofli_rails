@@ -4,8 +4,22 @@ $(".btnDiagramas").click(function(e){
 
 
     var idElemento = $(e.currentTarget).attr("rel");
+    var titleItem;
+    var colorItem;
 
+    //itemB.itemTitleColor = primitives.common.Colors.Green;
     //diagramaCausas
+    if (idElemento == "diagramaCausas"){
+        titleItem ="Causa";
+        colorItem = primitives.common.Colors.Red;
+    }else if(idElemento =="diagramaConsecuencias"){
+        titleItem ="Efecto";
+        colorItem = primitives.common.Colors.Red;
+    }else if(idElemento == "diagramaObjetivos"){
+        titleItem ="Objetivo";
+        colorItem = primitives.common.Colors.Blue;
+    }
+
     //diagramaConsecuencias
     //diagramaObjetivos
 
@@ -15,20 +29,24 @@ $(".btnDiagramas").click(function(e){
     rootItem.title = "Problema"; 
     rootItem.description = $("#7").val(); 
     rootItem.image = null;
+    //rootItem.itemTitleColor = colorItem;
 
     var itemB = new primitives.orgdiagram.ItemConfig(); 
-    itemB.title = "Causa"; 
+    itemB.title = titleItem;
     itemB.description = "Da clic para modificarme"; 
+    //itemB.itemTitleColor = colorItem;
     rootItem.items.push(itemB); 
 
     var itemC = new primitives.orgdiagram.ItemConfig(); 
-    itemC.title = "Causa"; 
+    itemC.title = titleItem; 
     itemC.description = "Da clic para modificarme"; 
+    //itemC.itemTitleColor = colorItem;
     rootItem.items.push(itemC); 
 
     var itemD = new primitives.orgdiagram.ItemConfig(); 
-    itemD.title = "Causa"; 
+    itemD.title = titleItem;
     itemD.description = "Da clic para modificarme"; 
+    //itemD.itemTitleColor = colorItem;
     rootItem.items.push(itemD);   
   
     var buttons = []; 
@@ -40,9 +58,12 @@ $(".btnDiagramas").click(function(e){
     options.rootItem = rootItem; 
     options.cursorItem = rootItem; 
     options.buttons = buttons; 
+    options.itemTitleColor = colorItem;
     options.hasButtons = primitives.common.Enabled.Auto;   
     options.hasSelectorCheckbox = primitives.common.Enabled.False; 
     options.leavesPlacementType = primitives.orgdiagram.ChildrenPlacementType.Matrix; 
+
+
     options.onMouseClick = function(e, data){}
 
     options.onButtonClick = function(e, data) 
@@ -65,7 +86,7 @@ $(".btnDiagramas").click(function(e){
             
             case "add": 
                 var itemZ = new primitives.orgdiagram.ItemConfig(); 
-                itemZ .title = "Causa"; 
+                itemZ .title = titleItem;
                 var newInput = prompt("¿Qué crees que es la causa de :?");
                 if(newInput!= null && newInput!=""){
                     itemZ .description = newInput;
