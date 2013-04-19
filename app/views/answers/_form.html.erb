@@ -2,6 +2,7 @@
 
 
 	<% questionsIn.each do |i| %>
+		
 		<%	
 		if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
 					@respuesta = ""				
