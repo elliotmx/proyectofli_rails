@@ -3,44 +3,43 @@
 
 	<% questionsIn.each do |i| %>
 		
-		<%	
-		if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
-					@respuesta = ""				
-				else
-					@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.value
-				end
-		%>
+	<%	
+	if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
+			@respuesta = ""				
+	else
+		@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.value
+	end 
+	%>
 		<% if i.field_type == "radio" %> 
-			<p>
-			<b> <%= i.spa_description %></b>
-			<ul>
-			<% i.html_for_field.constantize.all.each do |radioOption| %>
-				<li>
-					<% @id = radioOption.id %>
-					<%= radio_button_tag(i.id, @id) %>
-					<%= label_tag(@id, radioOption.description) %>
-				</li>
-
+		<p>
+		<b> <%= i.spa_description %></b>
+		<ul>
+		<% i.html_for_field.constantize.all.each do |radioOption| %>
+			<li>
+				<% @id = radioOption.id %>
+				<%= radio_button_tag(i.id, @id) %>
+				<%= label_tag(@id, radioOption.description) %>
+			</li>
 			<% end %>
-			</ul></p>
-		<% elsif i.field_type == "label" %>
-			<p> 
-			<%= i.spa_description %>
-			</p>
-		<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or "number_field" %>
-			<p> 
-			 <b><%= i.spa_description %></b>
+		</ul></p>
+	<% elsif i.field_type == "label" %>
+		<p> <%= i.spa_description %></p>
+	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or "number_field" %>
+		<p> 
+		 <b><%= i.spa_description %></b>
 
-			 <% if i.field_type == "text_field" %>
+		 <% if i.field_type == "text_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>
-			<% elsif i.field_type == "text_area" %>
+		<% elsif i.field_type == "text_area" %>
 					<%= text_area_tag(i.id ,@respuesta) %>
-			<% elsif i.field_type == "hidden_field" %>
+		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
-			<% elsif i.field_type == "number_field" %>
+		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
-			<% elsif i.field_type == "diagram_field" %>
-				<input type="button" class="btnDiagramas" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/>
+		<% elsif i.field_type == "diagram_field" %>
+			<input type="button" class="btnDiagramas" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/>
+			<input type="button" value="guardarDiagrama" id="btnGuardar_<%= i.html_for_field %>" />
+				 <%= text_field_tag(i.id ,@respuesta) %>
 				 <%= render :partial =>'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>
 			<% end %>
 			</p>

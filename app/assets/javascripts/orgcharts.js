@@ -1,5 +1,35 @@
 $(document).ready(function(){
 
+
+$("#btnGuardar_diagramaCausas").on("click",function(){
+
+    alert("hola, entra a este");
+    
+
+    var selectedItems = $("#diagramaCausas").orgDiagram("option", "rootItem");
+    var childrens = selectedItems.orgDiagram("option", "items");
+    //var selectedItems = data.context.items;
+    var message;
+    alert(selectedItems);
+    console.log("root  " + selectedItems);
+    console.log("items" + childrens);
+    
+    for(var index = 0; index< selectedItems.length; index++)
+    {
+      var itemConfig = selectedItems[index];
+      
+      if( message != "" )
+        {
+           message += ", ";
+        }
+        message += "<b>'" + itemConfig.title + "'</b>";
+    }
+
+    $("#8").empty().append("User selected next items: " + message);
+});
+
+
+
 $(".btnDiagramas").click(function(e){ 
 
 
@@ -62,9 +92,7 @@ $(".btnDiagramas").click(function(e){
     options.hasButtons = primitives.common.Enabled.Auto;   
     options.hasSelectorCheckbox = primitives.common.Enabled.False; 
     options.leavesPlacementType = primitives.orgdiagram.ChildrenPlacementType.Matrix; 
-
-
-    options.onMouseClick = function(e, data){}
+    options.orientation = primitives.common.HorizontalAlignmentType.Center;
 
     options.onButtonClick = function(e, data) 
     { 
