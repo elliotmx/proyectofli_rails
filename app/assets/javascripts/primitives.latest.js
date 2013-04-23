@@ -7235,20 +7235,25 @@ primitives.orgdiagram.Template.prototype._getDefaultItemTemplate = function () {
 			height: "60px"
 		}).addClass("bp-item bp-photo-frame");
 
-	itemTemplate.append(photoborder);
+	//itemTemplate.append(photoborder);
 
 	photo = jQuery('<img name="photo" alt=""></img>')
 		.css({
 			width: "50px",
 			height: "60px"
 		});
-	photoborder.append(photo);
+	//photoborder.append(photo);
 
+	//top: 24px;
+	//left: 27px;
+	//width: 73px;
+	//height: 74px;
 	description = jQuery('<div name="description"></div>')
 	.css({
 		top: "24px",
-		left: "56px",
-		width: (contentSize.width - 4 - 56) + "px",
+		left: "15px",
+		//width: (contentSize.width - 4 - 56) + "px",
+		width: (contentSize.width -30) + "px",
 		height: "74px"
 	}).addClass("bp-item bp-description");
 
