@@ -9,33 +9,34 @@
 
 <p id="notice"><%= notice %></p>
 
-<span style="position:relative; top: -30px; font-size:12px;">
-	<h2 id="commentShow">Colaboradores</h2>
-  <!--<b>Proyecto:</b>
-  <%= @application.name %>
-  <br/>
-  <b>Descripción Corta:</b>
-  <%= @application.short_description %> -->
-</span>
-<div id="width:100%;">
-<% if @application.users.all.count > 0 %>
-	<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
-<% else %>
-	<p> no tienes Colaboradores aun </p>
+
+<div style="width:100%; display:none" id="section_1" class="questions_section">
+
+	<span style="position:relative; top: -30px; font-size:12px;">
+		<h2 id="commentShow">Colaboradores</h2>
+	</span>
+	<% if @application.users.all.count > 0 %>
+		<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
+	<% else %>
+		<p> no tienes Colaboradores aun </p>
+	<% end %>
+
+	<input type="button" onclick="$('#formNewUser').show()" value="Agrega Colaborador">
+
+	<div style="display:none" id="formNewUser">
+		<%= render :partial => 'users/form_embed', :locals => {:userinput  => 	User.new} %>
+	</div>
+</div>
+
+<!-- iterar secciones para DIV -->
+<% Section.all.each do |section| %>
+	<div style="margin-top: 10px; display:none" id="section_<%= section.id %>" class="questions_section">
+		<span style="position:relative; top: -30px; font-size:12px;">
+			<h2 id="commentShow"><%= section.description %></h2>
+		</span>
+	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.where(:section_id => section.id).order(:id).all} %>
+	</div>
 <% end %>
-</div>
-
-<input type="button" onclick="$('#formNewUser').show()" value="Agrega Colaborador">
-
-<div style="display:none" id="formNewUser">
-	<%= render :partial => 'users/form_embed', :locals => {:userinput  => 	User.new} %>
-</div>
-
-<div style="margin-top: 10px">
-	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.order(:id).all} %>
-	<%= link_to 'Editar', edit_application_path(@application) %> |
-	<%= link_to 'Atras', applications_path %>
-</div>
 
 		</div>
 	</div>

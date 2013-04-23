@@ -25,18 +25,21 @@ def create
     params.each do |i,v|
       #if i!="utf8" || i!="authencity_token"
       if (i != "utf8") && (i != "authenticity_token") &&  (i != "commit") && (i != "action") && (i != "controller")
-        puts "parametro #{i} texto: #{v} entero"
+        puts "parametro #{i} texto: #{v}"
 
-        @answer = Answer.where(:application_id =>current_user.applications.first.id, :question_id => i.to_i ).first_or_create do |ans|
-            ans.value = v
+        @answer = Answer.where(:application_id =>current_user.applications.first.id, :question_id => i.to_i ).first_or_create! do |ans|
+            ans.value = v.to_s
+            puts " dentro de update answe #{ans.inspect}"
         end
+
+        puts "la variable #{@answer.inspect}"
 
       end
     	
     end
     
     #flash[:notice] = "Comment successfully created" #if @comment
-    puts "request #{request.xhr?}  => 5"
+    #puts "request #{request.xhr?}  => 5"
     #respond_with( current_user.applications.first)
     respond_with( current_user.applications.first , :layout => !request.xhr?)
   end #end of create method

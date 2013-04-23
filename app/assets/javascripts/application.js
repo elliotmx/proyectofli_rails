@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery.ui.core
+//= require jquery.ui.widget
+//= require jquery.ui.button
 //= require_tree .
 //= require /slider
