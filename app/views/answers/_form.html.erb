@@ -1,4 +1,4 @@
-<%= form_tag('/answers', :remote => true,:html => { :id => 'respond_application_form' }) do %>
+<%= form_tag('/answers', :remote => true) do %>
 
 
 	<% questionsIn.each do |i| %>
@@ -24,7 +24,7 @@
 		</ul></p>
 	<% elsif i.field_type == "label" %>
 		<p> <%= i.spa_description %></p>
-	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or "number_field" %>
+	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field"%>
 		<p> 
 		 <b><%= i.spa_description %></b>
 
