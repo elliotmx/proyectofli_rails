@@ -29,9 +29,9 @@
 		 <b><%= i.spa_description %></b>
 
 		 <% if i.field_type == "text_field" %>
-					<%= text_field_tag(i.id ,@respuesta) %>
+					<%= text_field_tag(i.id ,@respuesta,:class => "inputs") %>
 		<% elsif i.field_type == "text_area" %>
-					<%= text_area_tag(i.id ,@respuesta) %>
+					<%= text_area_tag(i.id ,@respuesta,:class => "inputs") %>
 		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
 		<% elsif i.field_type == "number_field" %>

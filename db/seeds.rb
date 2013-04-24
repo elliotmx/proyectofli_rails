@@ -38,7 +38,7 @@ Market.create(:id => 28, :description => "Viajes, Turismo, Hotelería")
 Market.create(:id => 29, :description => "Alimentos")
 =end
 
-#==
+=begin
 Question.create(:id => 1, :spa_description => "¿De qué se trata tu idea de proyecto? (Como si se lo estuvieras contando a un amigo tuyo: claro y conciso)", :active => true, :section_id => 2, :field_type => "text_field")
 Question.create(:id => 2, :spa_description => "¿De donde surgió tu idea? ", :active => true, :section_id => 2, :field_type => "text_field")
 Question.create(:id => 3, :spa_description => "¿Sabias que un alto porcentaje de los proyectos que se realizan fracasan solo por no identificar correctamente el problema o necesidad? (Muchas veces buscamos soluciones sin identificar primero el problema o necesidad real)", :active => true, :section_id => 2, :field_type => "label")
@@ -56,8 +56,8 @@ Question.create(:id => 15, :spa_description => "Platícanos en que consiste tu p
 Question.create(:id => 16, :spa_description => "Necesidades/Problema detectado ", :eng_description => "Needings/ Problem detected", :active => true, :section_id => 3, :field_type => "text_area")
 Question.create(:id => 17, :spa_description => "¿Por qué es valioso tu proyecto?", :eng_description => "¿Why your project is valuable?", :active => true, :section_id => 3, :field_type => "text_area")
 Question.create(:id => 18, :spa_description => "¿Cuál es el mercado o área específica en la que encaja tu proyecto?", :active => true, :section_id => 3, :html_for_field => "Market", :field_type => "radio")
+=end
 
-=begin
 Section.create(:id => 1, :description => "Registro Involucrados")
 Section.create(:id => 2, :description => "Conociendo Mejor")
 Section.create(:id => 3, :description => "Primero lo primero")
@@ -67,7 +67,6 @@ Section.create(:id => 6, :description => "Riesgos")
 Section.create(:id => 7, :description => "Comentarios Finales")
 Section.create(:id => 8, :description => "Redacción Proyecto")
 Section.create(:id => 9, :description => "Conexiones")
-=end
 
 =begin
 ServiceType.create(:id => 1, :description => "Aplicaciones Moviles")
