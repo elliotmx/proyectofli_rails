@@ -17,7 +17,13 @@
 		<% i.html_for_field.constantize.all.each do |radioOption| %>
 			<li>
 				<% @id = radioOption.id %>
-				<%= radio_button_tag(i.id, @id) %>
+				
+				<% if @id == @respuesta.to_i %>
+					<%= radio_button_tag( i.id , @id, :checked ) %>
+				<% else %>
+					<%= radio_button_tag(i.id, @id) %>
+				<% end %>
+
 				<%= label_tag(@id, radioOption.description) %>
 			</li>
 			<% end %>
