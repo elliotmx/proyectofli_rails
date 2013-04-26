@@ -25,26 +25,27 @@
 	<% elsif i.field_type == "label" %>
 		<p> <%= i.spa_description %></p>
 	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field"%>
+
 		<p> 
 		 <b><%= i.spa_description %></b>
-
+		 <br/>
 		 <% if i.field_type == "text_field" %>
-					<%= text_field_tag(i.id ,@respuesta,:class => "inputs") %>
+					<%= text_field_tag(i.id ,@respuesta,:class => "inputs ochenta") %>
 		<% elsif i.field_type == "text_area" %>
-					<%= text_area_tag(i.id ,@respuesta,:class => "inputs") %>
+					<%= text_area_tag(i.id ,@respuesta,:class => "inputs",:style => "margin: 0px 0px 10px; width: 80%; min-width: 950px; height: 120px; resize: none") %>
 		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
-			<input type="button" class="btnDiagramas" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/>
+			<input type="button" class="btnDiagramas" class="button loginb" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/>
 			<input type="button" value="guardarDiagrama" id="btnGuardar_<%= i.html_for_field %>" />
 				 <%= text_field_tag(i.id ,@respuesta) %>
 				 <%= render :partial =>'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>
 			<% end %>
-			</p>
+		</p>
 		<% end %>
 		<% end %>
 
-	<%= submit_tag('Guardar') %>
+	<%= submit_tag('Guardar',:class => "button loginb") %>
 <% end %>

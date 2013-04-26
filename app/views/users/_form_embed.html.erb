@@ -10,61 +10,64 @@
       </ul>
     </div>
   <% end %>
-
+<did class="centrarEspacio">
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age , :value => 20, :min =>15  %>
+    <%= f.label :Edad %><br />
+    <%= f.number_field :age , :value => 20, :min =>15,:class => "inputs normal"  %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.label :Dirección %><br />
+    <%= f.text_field :address,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.label :Email %><br />
+    <%= f.text_field :email,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :semester %><br />
-    <%= f.number_field :semester %>
+    <%= f.label :Semestre %><br />
+    <%= f.number_field :semester,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.label :Telefono %><br />
+    <%= f.text_field :phone,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :extra_phone %><br />
-    <%= f.text_field :extra_phone %>
+    <%= f.label :Telefono_2 %><br />
+    <%= f.text_field :extra_phone,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
+    <%= f.label :Twitter %><br />
+    <%= f.text_field :twitter,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :linkedin %><br />
-    <%= f.text_field :linkedin %>
+    <%= f.label :Linkedin %><br />
+    <%= f.text_field :linkedin,:class => "inputs normal" %>
   </div>
   <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
+    <%= f.label :Foto %><br />
+    <%= f.file_field :photo,:class => "normal" %>
   </div>
   <div class="field">
-    <%= f.label :motivation %><br />
-    <%= f.number_field :motivation , :value => 8, :min =>0  %>
+    <%= f.label :Motivación %><br />
+    <%= f.number_field :motivation , :value => 8, :min =>0,:class => "inputs normal"  %>
   </div>
   <div class="field">
-    <%= f.label :faculty_id %><br />
-    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
+    <%= f.label :Facultad %><br />
+    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name) %>
   </div>  
   <div class="field">
-    <%= f.label :user_profile_id %><br />
-    <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description ) %>
+    <%= f.label :Perfil %><br />
+    <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description) %>
   </div>
   <%= f.hidden_field :create_from , :value => 'user_form'  %>
+<div id="botonLeft" style="margin-left:10%">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "button loginb" %>
   </div>
+</div>
+</div>
 <% end %>
