@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-<did class="centrarEspacio">
+<div class="centrarEspacio">
   <div class="field">
     <%= f.label :Nombre %><br />
     <%= f.text_field :name,:class => "inputs formNormal" %>
@@ -66,7 +66,10 @@
   <%= f.hidden_field :create_from , :value => 'user_form'  %>
 <div id="botonCentral" style="margin-bottom:20px;">
   <div class="actions">
+
     <%= f.submit :Guardar,:class => "button loginb" %>
+    <input type="button" onclick="hideUserEditForm();" class="button loginb" value="Cancelar">
+
   </div>
 </div>
 </div>

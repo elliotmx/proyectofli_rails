@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
       format.json { render json: @question }
     end
   end
+  
 
   # GET /questions/new
   # GET /questions/new.json

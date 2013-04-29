@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  respond_to :html ,:js
   # GET /users
   # GET /users.json
   def index
@@ -76,7 +77,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to current_user.applications.first, notice: 'Usuario Actualizado' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

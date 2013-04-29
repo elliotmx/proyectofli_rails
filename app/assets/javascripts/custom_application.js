@@ -53,7 +53,25 @@ $(document).ready(function(){
   					}
   	});
 
+$("#btn_agrega_colaborador").on("click",function(){
+    $(this).hide();
 });
+
+});
+
+
+function showUserEditForm(userId){
+    $("#btn_agrega_colaborador").hide();
+    $(".user_edit_forms").hide();
+    $('#edit_form_'+userId).show();
+}
+
+function hideUserEditForm(){
+    $("#formNewUser").hide();
+    $(".user_edit_forms").hide();
+    $("#btn_agrega_colaborador").show();
+}
+
 
 // registroInvolcradosBtn
 // conociendoMejorBtn

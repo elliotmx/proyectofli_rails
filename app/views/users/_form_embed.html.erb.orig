@@ -1,0 +1,89 @@
+<%= form_for(userinput, :html => { :'data-type' => 'html', :id => 'add_user_to_app', :multipart => true}) do |f| %>
+  <% if userinput.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(userinput.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% userinput.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<did class="centrarEspacio">
+  <div class="field">
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Edad %><br />
+    <%= f.number_field :age , :value => 20, :min =>15,:class => "inputs normal"  %>
+  </div>
+  <div class="field">
+    <%= f.label :Dirección %><br />
+    <%= f.text_field :address,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br />
+    <%= f.text_field :email,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Semestre %><br />
+    <%= f.number_field :semester,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Telefono %><br />
+    <%= f.text_field :phone,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Telefono_2 %><br />
+    <%= f.text_field :extra_phone,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Twitter %><br />
+    <%= f.text_field :twitter,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Linkedin %><br />
+    <%= f.text_field :linkedin,:class => "inputs normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Foto %><br />
+    <%= f.file_field :photo,:class => "normal" %>
+  </div>
+  <div class="field">
+    <%= f.label :Motivación %><br />
+    <%= f.number_field :motivation , :value => 8, :min =>0,:class => "inputs normal"  %>
+  </div>
+  <div class="field">
+<<<<<<< HEAD
+    <%= f.label :faculty_id %><br />
+    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name ) %>
+  </div>
+  <!-- ocultar elemento si el usuario es el LIDER -->
+  <div class="field">
+     <%= f.label :user_profile_id %><br />
+     <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description ) %>
+=======
+    <%= f.label :Facultad %><br />
+    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name) %>
+  </div>  
+  <div class="field">
+    <%= f.label :Perfil %><br />
+    <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description) %>
+>>>>>>> 423a89fc9c5cb7fd5612e7c4b312f46de490cf81
+  </div>
+
+  <%= f.hidden_field :create_from , :value => 'user_form'  %>
+<div id="botonLeft" style="margin-left:10%">
+  <div class="actions">
+<<<<<<< HEAD
+    <%= f.submit "Agregar", :class=>"button loginb" %>
+    <input type="button" onclick="hideUserEditForm();" class="button loginb" value="Cancelar">
+=======
+    <%= f.submit :class => "button loginb" %>
+>>>>>>> 423a89fc9c5cb7fd5612e7c4b312f46de490cf81
+  </div>
+</div>
+</div>
+<% end %>

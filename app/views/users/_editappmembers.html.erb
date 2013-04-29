@@ -1,0 +1,7 @@
+
+
+<% users.each do |user| %>
+    <div class="user_edit_forms" id="edit_form_<%= user.id %>" style ="display:none">
+    <%= render :partial => 'users/form_embed', :locals => {:userinput => user} %>
+    </div>
+<% end %>
