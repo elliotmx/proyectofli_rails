@@ -4,8 +4,10 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :applications
 	accepts_nested_attributes_for :user_profile
 
-	has_attached_file :photo
-
+	has_attached_file :photo, 
+    :styles  => {:small => "300X300>", :thumbnail => "80x80#"},
+    :default_url => ActionController::Base.helpers.asset_path("missing_original.png")
+  
 	# Include default devise modules. Others available are:  
   	# :token_authenticatable, :lockable, :timeoutable and :activatable  
   	# :confirmable  
