@@ -20,8 +20,8 @@ slider/bt-prev.png: slider/bt-prev-73e0e6c2f0fe3a1e04d399b7cf479763.png
 slider/mapa.png: slider/mapa-2ed15d2ba84e574efaef760f63eb9d2b.png
 slider/pre.png: slider/pre-dd7d52dcffdf837fd515435f9838a9e5.png
 slider/que.png: slider/que-e6f62b9802c6862c3a254971c6bd5fba.png
-a.primitives.latest.js: a.primitives.latest-571e1019c9fa74c9fd42c4749009a7e7.js
 application.js: application-c013f7e12f4158991b0bda320b8cad09.js
+b.primitives.latest.js: b.primitives.latest-571e1019c9fa74c9fd42c4749009a7e7.js
 custom_application.js: custom_application-434f9a2658b409d37c7a80e67c508a9e.js
 orgcharts.js: orgcharts-29ebc100ff4118d04cc969ba9a737808.js
 slider/jquery.js: slider/jquery-a6c51447424fd3a0e9d47fb9e235efc1.js
