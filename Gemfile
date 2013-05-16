@@ -34,6 +34,8 @@ gem 'paperclip', '3.0.4'
 gem 'devise', '2.2'
 #gem 'yaml_db'
 gem 'seed_dumper'
+gem 'pdfkit'
+gem 'wicked_pdf'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

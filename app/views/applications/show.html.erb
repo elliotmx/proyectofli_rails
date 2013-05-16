@@ -15,6 +15,7 @@
 	<span style="position:relative; top: -30px; font-size:12px;">
 		<h2 id="commentShow">Colaboradores</h2>
 	</span>
+	 <%= render 'layouts/resources' %>
 	<% if @application.users.all.count > 0 %>
 		<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
 		<div id="">

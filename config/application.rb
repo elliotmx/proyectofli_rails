@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'pdfkit'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -60,5 +61,7 @@ module Fli
     config.assets.version = '1.0'
 
     config.autoload_paths << "#{Rails.root}/lib"
+
+    config.middleware.use PDFKit::Middleware
   end
 end

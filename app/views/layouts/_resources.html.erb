@@ -9,29 +9,29 @@
 </tr>
 <tr>
 	<td>
-		<select class="inputs sel" placeholder="Sexo" autofocus="" required="">
-            <option>Tipo Recurso</option>
-  			<option value="m">Material</option>
-  			<option value="h">Humano</option>
+		<select class="inputs sel" placeholder="Sexo" autofocus="" required="" id="sel_tipoMat_agregarRecurso">
+            <option value="0">Tipo Recurso</option>
+  			<option value="material">Material</option>
+  			<option value="humano">Humano</option>
   		</select>
 	</td>
 	<td>
-		<input type="text" class="inputs controlTabla" placeholder="Descripción" autofocus="" required="">
+		<input type="text" class="inputs controlTabla" placeholder="Descripción" autofocus="" required="" id="txt_desc_agregarRecurso">
 	</td>
 	<td>
-		<input type="text" class="inputs controlTabla" placeholder="Cantidad" autofocus="" required="">
+		<input type="text" class="inputs controlTabla" placeholder="Cantidad" autofocus="" required="" id ="txt_cant_agregarRecurso">
 	</td>
 	<td>
-		<input type="text" class="inputs controlTabla" placeholder="Costo Aprox" autofocus="" required="">
+		<input type="text" class="inputs controlTabla" placeholder="Costo Aprox" autofocus="" required="" id="txt_cost_agregarRecurso">
 	</td>
 	<td>
-		<input type="button" class="button loginb" value="Agregar a tabla">
+		<input type="button" class="button loginb" value="Agregar a tabla" id="btn_agregarRecurso">
 	</td>
 </tr>
 </table>
 
 
-<table class="gridtable" style="border-radius:10px;">
+<table class="gridtable" style="border-radius:10px;" id="resourcesTable"> 
 <tr >
 	<th>Tipo Recurso</th>
 	<th>Descripción</th>
@@ -53,5 +53,6 @@
 	<td>Text 1B</td>
 	<td>Text 1C</td>
 </tr>
+
 </table>
 </center>
