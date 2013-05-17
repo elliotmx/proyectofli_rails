@@ -48,6 +48,7 @@
 			<input type="button" value="guardarDiagrama" id="btnGuardar_<%= i.html_for_field %>" />
 				 <%= text_field_tag(i.id ,@respuesta) %>
 				 <%= render :partial =>'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>
+				
 			<% end %>
 		</p>
 		<% end %>

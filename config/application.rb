@@ -62,3 +62,4 @@ module Fli
     config.autoload_paths << "#{Rails.root}/lib"
   end
 end
+

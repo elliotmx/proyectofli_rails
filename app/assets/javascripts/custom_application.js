@@ -57,6 +57,24 @@ $("#btn_agrega_colaborador").on("click",function(){
     $(this).hide();
 });
 
+
+
+$("#btn_agregarRecurso").on("click",function(){
+
+    var objResource = {};
+    objResource.tipoRecurso = $("#sel_tipoMat_agregarRecurso").val();
+    objResource.descripcion =$("#txt_desc_agregarRecurso").val();
+    objResource.cantidad = $("#txt_cant_agregarRecurso").val();
+    objResource.costo = $("#txt_cost_agregarRecurso").val();
+
+    //if(!isInputCorrect()){
+      addElementToResourcesTable(objResource);
+    //}
+    
+    
+    //$().append();
+});
+
 });
 
 
@@ -73,6 +91,33 @@ function hideUserEditForm(){
 }
 
 
+//Funciones para Tabla de Recursos  ------> 
+function isInputCorrect(){
+   var currentSelection = $("#sel_tipoMat_agregarRecurso").val();
+
+    if(currentSelection == "0"){
+        alert("Selecciona el tipo de Recurso (humano, material)");
+        return false;
+    }else{
+      return true;
+    }
+}
+
+function addElementToResourcesTable(objResource){
+    var stringElemento = "<tr>";
+    stringElemento += "<td>" + objResource.tipoRecurso +"</td>";
+    stringElemento += "<td>"+ objResource.descripcion +"</td>";
+    stringElemento += "<td>"+ objResource.cantidad +"</td>";
+    stringElemento += "<td>"+ objResource.costo +"</td>";
+    stringElemento += "</tr>";
+
+    $("#resourcesTable").append(stringElemento);
+
+}
+
+function refreshCuantityResourcesTable(){
+
+}
 // registroInvolcradosBtn
 // conociendoMejorBtn
 // primeroLoPrimeroBtn
