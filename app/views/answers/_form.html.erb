@@ -30,7 +30,7 @@
 		</ul></p>
 	<% elsif i.field_type == "label" %>
 		<p> <%= i.spa_description %></p>
-	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field"%>
+	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" %>
 
 		<p> 
 		 <b><%= i.spa_description %></b>
@@ -41,6 +41,10 @@
 					<%= text_area_tag(i.id ,@respuesta,:class => "inputs",:style => "margin: 0px 0px 10px; width: 80%; min-width: 950px; height: 120px; resize: none") %>
 		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
+		<% elsif i.field_type == "resources_table" %>
+				<%= render 'layouts/resources' %>
+		<% elsif i.field_type == "components_table" %>
+				<%= render 'layouts/components' %>		
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
@@ -50,6 +54,7 @@
 				 <%= render :partial =>'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>
 				
 			<% end %>
+
 		</p>
 		<% end %>
 		<% end %>

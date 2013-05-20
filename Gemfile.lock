@@ -67,7 +67,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.20.1)
     multi_json (1.5.0)
-    mysql2 (0.3.11)
     orm_adapter (0.4.0)
     paperclip (3.0.4)
       activemodel (>= 3.0.0)
@@ -137,7 +136,6 @@ DEPENDENCIES
   devise (= 2.2)
   jquery-rails
   jquery-ui-rails
-  mysql2
   paperclip (= 3.0.4)
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
