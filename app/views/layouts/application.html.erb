@@ -10,10 +10,6 @@
   <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
 
   <%= javascript_include_tag "application", :media => "all" %>
-
-  
-
-
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,8 +19,8 @@
     <!-- <%= render 'layouts/messages' %> -->
 </header>
 
-<!-- <%= render 'layouts/footer' %> -->
-<%= yield %>
 
+<%= yield %>
+<%= render 'layouts/footer' %> 
 </body>
 </html>
