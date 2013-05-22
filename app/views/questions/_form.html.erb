@@ -24,6 +24,10 @@
     <%= f.collection_select(:section_id, Section.all, :id, :description ) %>
   </div>
   <div class="field">
+    <%= f.label :extra_text_desc %><br />
+    <%= f.text_area :extra_text_desc %>
+  </div>
+  <div class="field">
     <%= f.label :html_for_field %><br />
     <%= f.text_area :html_for_field %>
   </div>
