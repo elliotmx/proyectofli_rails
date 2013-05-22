@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505052121) do
+ActiveRecord::Schema.define(:version => 20130522063201) do
 
   create_table "answers", :force => true do |t|
     t.string   "value"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20130505052121) do
     t.integer  "section_id"
     t.string   "html_for_field"
     t.string   "field_type"
+    t.string   "extra_text_desc"
   end
 
   create_table "sections", :force => true do |t|
