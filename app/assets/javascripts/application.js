@@ -16,4 +16,3 @@
 //= require jquery.ui.widget
 //= require jquery.ui.button
 //= require_tree .
-//= require /slider
