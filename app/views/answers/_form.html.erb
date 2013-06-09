@@ -48,7 +48,9 @@
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
-			<input type="button" class="btnDiagramas" class="button loginb" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/>
+			<!-- <input type="button" class="btnDiagramas" class="button loginb" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/> -->
+			<div class="arrow_box"><h1 class="logo">css arrow please!</h1></div>
+			
 			<input type="button" value="guardarDiagrama" id="btnGuardar_<%= i.html_for_field %>" />
 				 <%= text_field_tag(i.id ,@respuesta) %>
 				 <%= render :partial =>'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>

@@ -8,7 +8,7 @@ es:
                           email:
                               taken: 'Ups, alguien te ganó, ya existe ese correo'
                           password:
-                              confirmation: 'No has confirmado tu correo'
+                              confirmation: 'No has confirmado tu password'
   errors:
     messages:
       expired: "ha expirado, por favor pida uno nuevo"
