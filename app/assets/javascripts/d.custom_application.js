@@ -73,6 +73,12 @@ $("#btn_agregarRecurso").on("click",function(){
 
 });
 
+$("#btn_agregarRecurso").on("click",function(){
+
+  $( "#effect" ).effect( selectedEffect, options, 500, callback );
+
+});
+
 });
 
 
