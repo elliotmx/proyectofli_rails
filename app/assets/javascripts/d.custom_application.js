@@ -73,14 +73,27 @@ $("#btn_agregarRecurso").on("click",function(){
 
 });
 
-$("#btn_agregarRecurso").on("click",function(){
+    $("#edit_diagram_diagramaCausas").on("click",function(){
+        //alert("clic a esta madre .arrow_box_diagramaCausas ");
+        //$("#arrow_box_diagramaCausas").addClass("move_in");
+        $("#arrow_box_diagramaCausas").animate({"left": "-=140px"}, "slow");
 
-  $( "#effect" ).effect( selectedEffect, options, 500, callback );
+        setTimeout(moveArrowBow("#arrow_box_diagramaCausas"),3000);
+
+    });
+
+
+
 
 });
 
-});
 
+function moveArrowBow(idArrowBox){
+    //$("#arrow_box_diagramaCausas").fadeOut("slow");
+    $(idArrowBox).animate({"top": "+=180px", "left": "+=115px"}, "slow");
+
+   // $(idArrowBox).fadeOut("slow");
+}
 
 function showUserEditForm(userId){
     $("#btn_agrega_colaborador").hide();
