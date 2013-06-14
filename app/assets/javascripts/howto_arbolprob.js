@@ -10,16 +10,15 @@ $(document).ready(function(){
         $("#arrow_box_diagramaCausas").hide();
 
 
+	 $("#arrow_box_diagramaCausas").on("click",function(){
+	 		nivelArbol++;
+	 		tutorialArbolProblemas(nivelArbol);
+	 });
+
 	 $("#edit_diagram_diagramaCausas").on("click",function(){
 	 		nivelArbol++;
         	tutorialArbolProblemas(nivelArbol);
  	   });
-
-	 $("#btn_nxt_tuto_diagramaCausas").on("click",function(){
-	 		tutorialArbolProblemas(nivelArbol);
-	 });
-
-
 
 
 });
@@ -40,26 +39,40 @@ function tutorialArbolProblemas(nivel){
 
 
 
+			
 	switch(nivel){
 
 		//Visión General del árbol
 		case 1:
 			$("#arrow_box_diagramaCausas").fadeIn();
+			
 			var objDir = new Array();
 			objDir.top = "+=180px";
 			objDir.left = "+=115px";
 
 			moveArrowBox("#arrow_box_diagramaCausas", objDir,"slow");
 		break;
-			
-			alert("nivel 2");
 		//señalar problema
+			
 		case 2:
-
+			var objDir = new Array();
+			objDir.top = "-=140px";
+			objDir.left = "-=115px";
+			$("#arrow_box_diagramaCausas").html("Éste es el problema que quieres resolver");
+			moveArrowBox("#arrow_box_diagramaCausas", objDir,"slow");
 		break;
 		//señalar causas
 		case 3:
-
+			var objDir = new Array();
+			objDir.top = "+=280px";
+			objDir.left = "-=250px";
+			$("#arrow_box_diagramaCausas").removeClass("arrow_box");
+			$("#arrow_box_diagramaCausas").addClass("arrow_box_top");
+			$("#arrow_box_diagramaCausas").html("Indica cuales son las causas de tal problema");
+			moveArrowBox("#arrow_box_diagramaCausas", objDir,"slow");
+			setTimeout(function(){
+				$("#arrow_box_diagramaCausas").hide();
+			 },3000);
 		break;
 
 
