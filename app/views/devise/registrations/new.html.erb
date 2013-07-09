@@ -5,7 +5,7 @@
 </div>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <h5><%= devise_error_messages! %></h5>
+   <p><%= devise_error_messages! %></p>
 
   <%= f.text_field :name, :autofocus => true, :class => 'inputs normal',:placeholder => "Nombre" %>
   	

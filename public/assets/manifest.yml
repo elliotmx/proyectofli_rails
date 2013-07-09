@@ -24,11 +24,9 @@ slider/bt-prev.png: slider/bt-prev-73e0e6c2f0fe3a1e04d399b7cf479763.png
 slider/mapa.png: slider/mapa-2ed15d2ba84e574efaef760f63eb9d2b.png
 slider/pre.png: slider/pre-dd7d52dcffdf837fd515435f9838a9e5.png
 slider/que.png: slider/que-e6f62b9802c6862c3a254971c6bd5fba.png
-a.primitives.latest.js: a.primitives.latest-571e1019c9fa74c9fd42c4749009a7e7.js
-answers.js: answers-3af39f1da6f167c2cbf453ed74daff3d.js
-application.js: application-38143e439df47e0d2f04453ffe335281.js
-applications.js: applications-3af39f1da6f167c2cbf453ed74daff3d.js
+application.js: application-8c6e962cb0bee7469479e88be64830bf.js
 b.primitives.latest.js: b.primitives.latest-571e1019c9fa74c9fd42c4749009a7e7.js
+<<<<<<< HEAD
 colleges.js: colleges-3af39f1da6f167c2cbf453ed74daff3d.js
 comments.js: comments-3af39f1da6f167c2cbf453ed74daff3d.js
 custom_application.js: custom_application-33fd87ff95d4739f21f9bdbc7c959146.js
@@ -50,13 +48,13 @@ comments.css: comments-7270767b2a9e9fff880aa5de378ca791.css
 faculties.css: faculties-7270767b2a9e9fff880aa5de378ca791.css
 home.css: home-7270767b2a9e9fff880aa5de378ca791.css
 markets.css: markets-7270767b2a9e9fff880aa5de378ca791.css
+=======
+c.orgcharts.js: c.orgcharts-b08714f7ee8c0678d33c82d9f89f09e4.js
+d.custom_application.js: d.custom_application-f403728963d5bd9a19907b57485a5b9b.js
+howto_arbolprob.js: howto_arbolprob-ffb745ca11a38cc519c7d28e128b38f5.js
+application.css: application-650fd5f2e49acee2e4c697e43dce7c9a.css
+>>>>>>> c294f52ddf400f51fb7fbbe86fbec7d344773c2e
 primitives.latest.css: primitives.latest-f89d67adc4d45ee0fffdfb93ce7ad7d8.css
-questions.css: questions-7270767b2a9e9fff880aa5de378ca791.css
-scaffolds.css: scaffolds-3c9de844c270a7d8bc32c9e7e7684900.css
-sections.css: sections-7270767b2a9e9fff880aa5de378ca791.css
-service_types.css: service_types-7270767b2a9e9fff880aa5de378ca791.css
-user_profiles.css: user_profiles-7270767b2a9e9fff880aa5de378ca791.css
-users.css: users-7270767b2a9e9fff880aa5de378ca791.css
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
 jquery-ui/ui-bg_flat_75_ffffff_40x100.png: jquery-ui/ui-bg_flat_75_ffffff_40x100-841636c8f8d33987bb8d2f31e8ef92ca.png
 jquery-ui/ui-bg_glass_55_fbf9ee_1x400.png: jquery-ui/ui-bg_glass_55_fbf9ee_1x400-bbb04adbe79f471d8c88a2bc691231b6.png
