@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" style="margin-left: 6%;">
     <%= f.label "Nombre:" %><br />
     <%= f.text_field :name,:class=>'inputs normal', :placeholder=>'Nombre' %>
   </div>
-  <div class="field">
+  <div class="field" style="margin-left: 6%;">
     <%= f.label "Descripción corta:"%><br />
     <%= f.text_area :short_description, :rows => '4',:style => 'resize: none;',:class=>'inputs normal', :placeholder=>'Descripción corta' %>
   </div>
-  <div class="field">
-    <%= f.label "Etiquetas" %><br />
+  <div class="field" style="margin-left: 6%;">
+    <%= f.label "Tags" %><br />
     <%= f.text_field :tags,:class=>'inputs normal', :placeholder=>'Etiquetas'  %>
   </div>
   <br/>
-  <div class="actions">
+  <div class="actions" style="margin-left: 6%;">
     <%= f.submit "Actualizar",:class => 'button loginb' %>
   </div>
 <% end %>

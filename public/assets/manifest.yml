@@ -9,12 +9,15 @@
 8.png: 8-58b0a270d9e48ef997446a027da899b0.png
 9.png: 9-09d8656a8025421bab92ed8da54a71c1.png
 bgshadow.png: bgshadow-8a2717ec825721c4be1f76fa3d508a73.png
-favicon.ico: favicon-565aa3d8c64563c0b3779d230639e165.ico
+favicon.ico: favicon-52f40b0c8621248bf107865d235d4f4c.ico
 icons.png: icons-6cea898a9b995b5f9e28de3cfb7ad6a6.png
-logo.png: logo-34d206a3805647e07afefcd13cce46d7.png
-logo2.png: logo2-98268131a4e4e06c23fd4cebde0eaa7d.png
+logo.png: logo-abca889e41d9ea067638c33e91e70f37.png
+logo2.png: logo2-19bdc0a815992b98aa811ae16b898e8a.png
+logoGrande.png: logoGrande-a64bff63afce039b49b60430c3279b91.png
 missing_original.png: missing_original-bdbf885135fbd21cc7ff3088ca21d0ea.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
+rays-main.png: rays-main-cc0e8e71e5883f348148952e9cbd4738.png
+rays-main2.png: rays-main2-65560166e93945b70526dc497c50ac72.png
 slider/bg-sky.png: slider/bg-sky-6cb14380414e9b1e619fe9426375f232.png
 slider/bt-next.png: slider/bt-next-ac5bf5320462b598f307dcc5490c41a7.png
 slider/bt-prev.png: slider/bt-prev-73e0e6c2f0fe3a1e04d399b7cf479763.png
@@ -40,7 +43,7 @@ service_types.js: service_types-3af39f1da6f167c2cbf453ed74daff3d.js
 user_profiles.js: user_profiles-3af39f1da6f167c2cbf453ed74daff3d.js
 users.js: users-3af39f1da6f167c2cbf453ed74daff3d.js
 answers.css: answers-7270767b2a9e9fff880aa5de378ca791.css
-application.css: application-22aa5c4ad644ccabad9eddb7c3afc3fc.css
+application.css: application-aba848508745bccb02117c8864837a71.css
 applications.css: applications-7270767b2a9e9fff880aa5de378ca791.css
 colleges.css: colleges-7270767b2a9e9fff880aa5de378ca791.css
 comments.css: comments-7270767b2a9e9fff880aa5de378ca791.css
