@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
 	//ACCIONES PARA HOWTO de árbol de problemas
 
 		var nivelArbol = 0;
@@ -37,9 +36,6 @@ function moveArrowBox(idArrowBox, objDireccion, speed){
 
 function tutorialArbolProblemas(nivel){
 
-
-
-			
 	switch(nivel){
 
 		//Visión General del árbol
@@ -77,9 +73,6 @@ function tutorialArbolProblemas(nivel){
 
 
 	}
-
-
-
-
-
 }
+
+
