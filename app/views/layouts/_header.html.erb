@@ -8,12 +8,11 @@
 			<!--
 			class="current_page_item"
 			-->
-			<li><a href="#">Inicio</a></li>
 			<li><a href="#">Somos Fli</a></li>
 			<li><a href="#">Proyectos</a></li>
-			<li><a href="#">Tutorial</a></li>
 			<% if user_signed_in? %>
 				<li> <%= link_to 'Mis Ideas',  applications_path %> </li>
+				<li><a href="#">Tutorial</a></li>
 			<% end %>
 			</ul>
 
