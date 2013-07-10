@@ -65,12 +65,6 @@ ActiveRecord::Schema.define(:version => 20130522063201) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "markets", :force => true do |t|
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "project_scopes", :force => true do |t|
     t.string   "description"
     t.datetime "created_at",  :null => false
