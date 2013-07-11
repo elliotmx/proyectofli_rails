@@ -7,9 +7,7 @@ gem 'rails', '3.2.1'
 
 #
 group :production, :staging do
- #gem "pg"
  gem "pg"
- 
 end
 
 group :development, :test do
@@ -36,7 +34,7 @@ gem 'paperclip', '3.0.4'
 gem 'devise', '2.2'
 #gem 'yaml_db'
 gem 'seed_dumper'
-gem 'cocaine', '0.3.2'
+#gem 'cocaine', '0.3.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
