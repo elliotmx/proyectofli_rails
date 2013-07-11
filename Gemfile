@@ -8,12 +8,13 @@ gem 'rails', '3.2.1'
 #
 group :production, :staging do
  #gem "pg"
- #gem "pg"
+ gem "pg"
+ gem 'cocaine', '0.3.2'
 end
 
 group :development, :test do
   gem "sqlite3-ruby", "~> 1.3.0", :require => "sqlite3"
-  gem 'mysql2'
+  #gem 'mysql2'
 end
 
 
