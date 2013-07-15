@@ -18,6 +18,8 @@ class ApplicationsController < ApplicationController
     #puts " parametros para show application #{params[:id]} "
     @application = Application.find(params[:id])
 
+
+
     #@a = current_user.applications.where(params[:id]).first
 
 
@@ -35,14 +37,16 @@ class ApplicationsController < ApplicationController
     # end
 
     respond_to do |format|
-       format.html # show.html.erb
-       format.json { render json: @application }
+      format.html # show.html.erb
+      format.json { render json: @application }
+      format.pdf {
+        pdf = ApplicationPdf.new(@application, view_context)
+        send_data pdf.render, filename: 
+        "answers.pdf",
+        type: "application/pdf",
+        disposition: "inline"
+      }
     end
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.json { render json: @application }
-    # end
-
   end
 
   # GET /applications/new

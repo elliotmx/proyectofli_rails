@@ -63,5 +63,7 @@
 		<% end %>
 		<% end %>
 
+	<%= link_to "Generar PDF", application_path(@application.id, :format => "pdf"), class: "button loginb"  %>
 	<%= submit_tag('Guardar',:class => "button loginb", :disable_with => "Guardando") %>
+	
 <% end %>
