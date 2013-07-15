@@ -48,12 +48,14 @@
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
-			<!-- <input type="button" class="btnDiagramas" class="button loginb" rel="<%= i.html_for_field %>"  value="Cargar Diagramita"/> -->
+			
+			<input type="button" class="btnDiagramas" class="button loginb" id="btnGuardar_<%= i.html_for_field %>"  value="Guardar Diagramita"/>
+
 			<div class="cont_gral_arrow_box">
 				<div class="arrow_box" id="arrow_box_<%= i.html_for_field %>"><h4 class="logo">Éste es tú árbol de problemas</h4> <div width="50px" height="30px" id="btn_nxt_tuto_<%= i.html_for_field %>">next</div></div>
 			</div>
 			
-			<label id="edit_diagram_<%= i.html_for_field %>">¿Como lo uso :/ ?</label>
+			<label id="edit_diagram_<%= i.html_for_field %>">¿Como lo uso?</label>
 				 <%= text_field_tag(i.id ,@respuesta, :style => "display:none") %>
 				 <%= render :partial =>'layouts/diagram', :locals => {:diagram_id => i.html_for_field} %>
 				

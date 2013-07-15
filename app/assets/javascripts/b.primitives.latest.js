@@ -9,7 +9,7 @@
 
 
 (function () {
-
+	 
 	var namespace = function (name) {
 		var namespaces = name.split('.'),
 			namespace = window,

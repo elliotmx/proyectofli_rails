@@ -1,1 +1,0 @@
-$(document).ready(function(){var e={nextButton:!0,prevButton:!0,preloader:!0,navigationSkipThreshold:1e3,fadeFrameWhenSkipped:!1},t=$("#sequence").sequence(e).data("sequence")});

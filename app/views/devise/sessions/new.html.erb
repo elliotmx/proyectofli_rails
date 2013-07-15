@@ -12,7 +12,10 @@
 
   <% if devise_mapping.rememberable? -%>
   <%= f.check_box :remember_me %> <%= f.label 'Recordar'%>
-  <% end -%>
+  <% end %>
+
+ 
+  <!-- <%= link_to "¿Has olvidado tu contraseña?", new_password_path(resource_name) %><br/> -->
 
 <fieldset id="actions">
 	<%= f.submit "Entrar",:class => 'button loginb' %>
