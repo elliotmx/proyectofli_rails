@@ -127,7 +127,7 @@ function cargarDiagrama(_idElemento){
                 $("#"+idElemento).orgDiagram("update", primitives.orgdiagram.UpdateMode.Refresh); 
 
             } 
-            break; 
+            break;
             
             case "add": 
                 var itemZ = new primitives.orgdiagram.ItemConfig(); 
@@ -141,7 +141,7 @@ function cargarDiagrama(_idElemento){
                 }
 
                 
-            break; 
+            break;
 
             case "properties": 
                     var input=prompt("Modifica el Texto");
