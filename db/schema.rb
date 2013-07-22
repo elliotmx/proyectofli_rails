@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711174914) do
+ActiveRecord::Schema.define(:version => 20130522063202) do
 
   create_table "answers", :force => true do |t|
     t.string   "value"
@@ -81,12 +81,13 @@ ActiveRecord::Schema.define(:version => 20130711174914) do
     t.string   "spa_description"
     t.string   "eng_description"
     t.boolean  "active"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "section_id"
     t.string   "html_for_field"
     t.string   "field_type"
     t.string   "extra_text_desc"
+    t.string   "position_question"
   end
 
   create_table "sections", :force => true do |t|
@@ -120,9 +121,9 @@ ActiveRecord::Schema.define(:version => 20130711174914) do
     t.string   "photo"
     t.integer  "motivation"
     t.integer  "faculty_id"
-    t.integer  "user_profile_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "user_profile_id"
     t.string   "photo_file_name"
     t.integer  "photo_content_type"
     t.integer  "photo_file_size"

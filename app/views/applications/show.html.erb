@@ -7,14 +7,14 @@
 			
 
 
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>-->
+
 
 
 <div style="width:100%; display:none" id="section_1" class="questions_section">
-
-	<span style="position:relative; top: -30px; font-size:12px;">
-		<h2 id="commentShow">Colaboradores</h2>
-	</span>
+	<h2 id="commentShow">Colaboradores</h2>
+	<span style="position:relative; top: -30px; font-size:14px;">
+		<p>En este apartado encontrarás una serie de preguntas que te permitirán hacer el registro de participantes en tu proyecto; en caso de que lo desarrolles tú solo, no es necesario</p></span>
 	<% if @application.users.all.count > 0 %>
 		<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
 		<div id="">
@@ -36,9 +36,7 @@
 <!-- iterar secciones para DIV -->
 <% Section.all.each do |section| %>
 	<div style="margin-top: 10px; display:none" id="section_<%= section.id %>" class="questions_section">
-		<span style="position:relative; top: -30px; font-size:12px;">
-			<h2 id="commentShow"><%= section.description %></h2>
-		</span>
+	<h2 id="commentShow"><%= section.description %></h2>
 	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.where(:section_id => section.id).order(:id).all} %>
 	</div>
 <% end %>
