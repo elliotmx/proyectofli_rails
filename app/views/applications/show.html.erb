@@ -19,6 +19,7 @@
 		<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
 		<div id="">
 			<%= render :partial => 'users/editappmembers', :locals => {:users => @application.users.all} %>
+			
 		 </div>
 	<% else %>
 		<p> no tienes Colaboradores aun </p>
