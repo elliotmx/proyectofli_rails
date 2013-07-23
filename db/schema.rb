@@ -121,9 +121,9 @@ ActiveRecord::Schema.define(:version => 20130522063202) do
     t.string   "photo"
     t.integer  "motivation"
     t.integer  "faculty_id"
+    t.integer  "user_profile_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.integer  "user_profile_id"
     t.string   "photo_file_name"
     t.integer  "photo_content_type"
     t.integer  "photo_file_size"

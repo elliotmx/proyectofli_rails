@@ -1,8 +1,9 @@
 <h1>Listing questions</h1>
 
-<table>
+<table style="background:white">
   <tr>
     <th>ID</th>
+    <th>Position Question </th>
     <th>Spa description</th>
     <th>Eng description</th>
     <th>Active</th>
@@ -14,10 +15,10 @@
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.id %></td>
+    <td><%= question.position_question %></td>
     <td><%= question.spa_description %></td>
     <td><%= question.field_type %></td>
     <td><%= question.section.description %></td>
-    <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>
   </tr>

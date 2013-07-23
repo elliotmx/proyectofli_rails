@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.order(:id).all
+    @questions = Question.order(:position_question).all
 
     respond_to do |format|
       format.html # index.html.erb
