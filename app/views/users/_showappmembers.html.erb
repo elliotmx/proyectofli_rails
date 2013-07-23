@@ -1,5 +1,3 @@
-
-
 <% users.each do |user| %>
 
 <!--Start vcard wrapper-->
@@ -31,8 +29,9 @@
                <span style="float:right;">
                 <!--<%= link_to 'Show', user %>-->
 
-                <a href="#" onclick="showUserEditForm(<%= user.id %>);">Editar</a>
-                <% if (user.user_profile.id != 2) %>
+                <a href="#" onclick="showUserEditForm(<%= user.id %>);$('#formNewUser').hide();">Editar</a>
+                <!-- condicion para no permitir eliminar lideres de proyecto -->
+                <% if (user.user_profile.id != 2) %> 
                     <%= link_to 'Eliminar', user, confirm: '¿Estas seguro de Eliminar a este colaborador?', method: :delete %>
                 <% end %>
 

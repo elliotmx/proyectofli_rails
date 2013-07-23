@@ -2,11 +2,18 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.order(:id).all
+    @questions = Question.order(:position_question).all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questions }
+      format.pdf{
+        pdf = QuestionsPdf.new(@questions, view_context)
+        send_data pdf.render, filename: 
+        "questions",
+        type: "application/pdf",
+        disposition: "inline"
+      }
     end
   end
 
@@ -18,6 +25,15 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @question }
+
+      format.pdf {
+        pdf = QuestionPdf.new(@question, view_context)
+        send_data pdf.render, filename: 
+        "invoice_#{@question.created_at.strftime("%d/%m/%Y")}.pdf",
+        type: "application/pdf",
+        disposition: "inline"
+}
+
     end
   end
   

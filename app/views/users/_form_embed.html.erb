@@ -47,10 +47,10 @@
     <%= f.label :Linkedin %><br />
     <%= f.text_field :linkedin,:class => "inputs formNormal" %>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :Foto %><br />
     <%= f.file_field :photo,:class => "formNormal" %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :Motivación %><br />
     <%= f.number_field :motivation , :value => 8, :min =>0,:class => "inputs formNormal"  %>
@@ -67,7 +67,7 @@
 <div id="botonCentral" style="margin-bottom:20px;">
   <div class="actions">
 
-    <%= f.submit :Guardar,:class => "button loginb" %>
+    <%= f.submit :Guardar,:class => "button loginb" , :disable_with => "Guardando"%>
     <input type="button" onclick="hideUserEditForm();" class="button loginb" value="Cancelar">
 
   </div>

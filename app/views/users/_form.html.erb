@@ -48,10 +48,10 @@
     <%= f.label :linkedin %><br />
     <%= f.text_field :linkedin %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :photo %><br />
     <%= f.file_field :photo %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :motivation %><br />
     <%= f.number_field :motivation , :value => 8, :min =>0  %>
@@ -66,7 +66,7 @@
   </div>
   <%= f.hidden_field :create_from , :value => 'user_form'  %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit , :disable_with => "Guardando"%>
   </div>
 <% end %>
   

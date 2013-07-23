@@ -19,10 +19,12 @@
 	</nav>		
 
 			<% if user_signed_in? %>
-					<div id="btn_salir">
-						<span style="float: left; position: relative; top: -7px;">
-							<h4 style="color: #fff !important; background:#11343d; border-radius: 6px 0 0 6px; padding: 0 10px;"><%= current_user.name %></h4>
-						</span>
+				<div id="btn_salir">
+				<span style="float: left; position: relative; top: -7px;">
+					<h4 style="color: #fff !important; background:#11343d; border-radius: 6px 0 0 6px; padding: 0 10px;">
+						<%= current_user.name.to_s.split(' ')[0] %>
+					</h4>
+					</span>
 	    			
 	    			 <%= link_to 'Salir', destroy_user_session_path, :method=>:get , :class =>'button' %>
 	    			</div>

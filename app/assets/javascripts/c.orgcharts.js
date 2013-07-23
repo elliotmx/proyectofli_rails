@@ -1,31 +1,38 @@
+var selectedItemsArray = [];
 $(document).ready(function(){
-
-
 $("#btnGuardar_diagramaCausas").on("click",function(){ 
 
-    alert("hola, entra a este");
-    
 
-    var selectedItems = $("#diagramaCausas").orgDiagram("option", "rootItem");
-    var childrens = selectedItems.orgDiagram("option", "items");
-    //var selectedItems = data.context.items;
-    var message;
-    alert(selectedItems);
-    console.log("root  " + selectedItems);
-    console.log("items" + childrens);
-    
-    for(var index = 0; index< selectedItems.length; index++)
-    {
-      var itemConfig = selectedItems[index];
-      
-      if( message != "" )
-        {
-           message += ", ";
-        }
-        message += "<b>'" + itemConfig.title + "'</b>";
+    console.log(selectedItemsArray);
+
+
+    for(var index=0;index <selectedItemsArray.length;index++){
+        console.log("pos "+index+": " + selectedItemsArray[index].description);
     }
 
-    $("#8").empty().append("User selected next items: " + message);
+    //for()
+    //var selectedItem = $("#diagramaCausas").orgDiagram("option", "selectedItems");
+    //console.log("root  " + selectedItem.title);
+    // var childrens = $("#diagramaCausas").orgDiagram("option", "selectedItems");
+    // //var selectedItems = data.context.items;
+    // var message;
+    // //alert(selectedItems);
+    
+    // console.log("items" + childrens.length);
+    
+    // for(var index = 0; index< childrens.length; index++)
+    // {
+    //   var itemConfig = childrens[index];
+      
+    //   if( message != "" )
+    //     {
+    //        message += ", ";
+    //     }
+    //     message += "<b>'" + itemConfig.title + "'</b>";
+    //     console.log(itemConfig.title);
+    // }
+
+    //$("#8").empty().append("User selected next items: " + message);
 });
 
 });
@@ -62,24 +69,29 @@ function cargarDiagrama(_idElemento){
     rootItem.title = "Problema"; 
     rootItem.description = $("#7").val(); 
     rootItem.image = null;
+    rootItem.isSelected = true;
+    //selectedItemsArray.push(rootItem);
     //rootItem.itemTitleColor = colorItem;
 
     var itemB = new primitives.orgdiagram.ItemConfig(); 
     itemB.title = titleItem;
     itemB.description = "Da clic para modificarme"; 
     //itemB.itemTitleColor = colorItem;
+    //selectedItemsArray.push(itemB);
     rootItem.items.push(itemB); 
 
     var itemC = new primitives.orgdiagram.ItemConfig(); 
     itemC.title = titleItem; 
     itemC.description = "Da clic para modificarme"; 
     //itemC.itemTitleColor = colorItem;
+    //selectedItemsArray.push(itemC);
     rootItem.items.push(itemC); 
 
     var itemD = new primitives.orgdiagram.ItemConfig(); 
     itemD.title = titleItem;
-    itemD.description = "Da clic para modificarme"; 
+    itemD.description = "Da clic para modificarme";
     //itemD.itemTitleColor = colorItem;
+    //selectedItemsArray.push(itemD);
     rootItem.items.push(itemD);   
   
     var buttons = []; 
@@ -88,7 +100,8 @@ function cargarDiagrama(_idElemento){
     buttons.push(new primitives.orgdiagram.ButtonConfig("delete", "ui-icon-close", "Delete"));
     buttons.push(new primitives.orgdiagram.ButtonConfig("properties", "ui-icon-gear", "Info"))
 
-    options.rootItem = rootItem; 
+    options.rootItem = rootItem;
+    options.isSelected = true; 
     options.cursorItem = rootItem; 
     options.buttons = buttons; 
     options.itemTitleColor = colorItem;
@@ -99,6 +112,7 @@ function cargarDiagrama(_idElemento){
 
     options.onButtonClick = function(e, data) 
     { 
+
         switch(data.name) 
     { 
         case "delete": 
@@ -113,20 +127,21 @@ function cargarDiagrama(_idElemento){
                 $("#"+idElemento).orgDiagram("update", primitives.orgdiagram.UpdateMode.Refresh); 
 
             } 
-            break; 
+            break;
             
             case "add": 
                 var itemZ = new primitives.orgdiagram.ItemConfig(); 
-                itemZ .title = titleItem;
+                itemZ.title = titleItem;
                 var newInput = prompt("¿Qué crees que es la causa de :?");
                 if(newInput!= null && newInput!=""){
                     itemZ .description = newInput;
+                    //selectedItemsArray.push(itemZ);
                     data.context.items.push(itemZ);
                     $("#"+idElemento).orgDiagram("update", primitives.orgdiagram.UpdateMode.Refresh);      
                 }
 
                 
-            break; 
+            break;
 
             case "properties": 
                     var input=prompt("Modifica el Texto");
@@ -135,9 +150,15 @@ function cargarDiagrama(_idElemento){
                     $("#"+idElemento).orgDiagram("update", primitives.orgdiagram.UpdateMode.Refresh); 
             break; 
     }
+
+
+        console.log("data 2" + data.context);
 }; 
 
+//$("#"+idElemento).orgDiagram({selectedItems:selectedItemsArray});
+//options.selectedItems = selectedItemsArray;
 jQuery("#"+idElemento).orgDiagram(options);
 
 
 } 
+

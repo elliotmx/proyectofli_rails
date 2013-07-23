@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+   
 	$("#section_1").show();
 
   $(".btnHowTo").hover(function(){
@@ -21,8 +21,9 @@ $(document).ready(function(){
   				case 'conociendoMejorBtn':
   					$(".questions_section").hide();
   					$("#section_2").show();
+            cargarDiagrama("diagramaCausas");
             cargarDiagrama("diagramaConsecuencias");
-            cargarDiagrama("diagramaCausas"); // mostrar los arboles de problema
+             // mostrar los arboles de problema
   					break;
   				case 'primeroLoPrimeroBtn':
   					$(".questions_section").hide();
