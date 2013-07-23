@@ -38,7 +38,7 @@
 <% Section.all.each do |section| %>
 	<div style="margin-top: 10px; display:none" id="section_<%= section.id %>" class="questions_section">
 	<h2 id="commentShow"><%= section.description %></h2>
-	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.where(:section_id => section.id).order(:id).all} %>
+	<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.where(:section_id => section.id).order(:position_question).all} %>
 	</div>
 <% end %>
 

@@ -56,7 +56,7 @@
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
-
+				<%= render 'layouts/arbol' %>	
 		<% end %>
 
 		</p>
