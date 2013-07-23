@@ -1,13 +1,16 @@
 source 'http://rubygems.org'
 
+#gem  ruby '1.9.2'
 gem 'rails', '3.2.1'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #
-group :production, :staging do
-gem "pg"
+#, :staging do
+group :production do 
+ gem "pg"
 end
 
 group :development, :test do
@@ -28,12 +31,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'prawn'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'paperclip', '3.0.4'
 gem 'devise', '2.2'
 #gem 'yaml_db'
 gem 'seed_dumper'
+#gem 'cocaine', '0.3.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
