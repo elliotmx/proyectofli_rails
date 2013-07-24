@@ -21,9 +21,7 @@ $(document).ready(function(){
   				case 'conociendoMejorBtn':
   					$(".questions_section").hide();
   					$("#section_2").show();
-            cargarDiagrama("diagramaCausas");
-            cargarDiagrama("diagramaConsecuencias");
-             // mostrar los arboles de problema
+            cargarDiagrama();
   					break;
   				case 'primeroLoPrimeroBtn':
   					$(".questions_section").hide();
@@ -73,6 +71,40 @@ $("#btn_agregarRecurso").on("click",function(){
     addElementToResourcesTable(objResource);
 
 });
+
+
+// Funcion que guardará el estado del arbol problemas
+$("#arbolProblemas").on("change",function(){
+
+
+    var arbolProblemas = $("#arbolProblemas");
+
+    var objMapa = {};
+
+    //guardar problema
+    objMapa.problema = arbolProblemas.find("#p1").val();
+
+    // guardar causas
+    objMapa.causas      = {};
+    objMapa.causas.uno  = arbolProblemas.find("#c1").val();
+    objMapa.causas.dos  = arbolProblemas.find("#c2").val();
+    objMapa.causas.tres = arbolProblemas.find("#c3").val();
+
+    //guardar efectos
+    objMapa.efectos      = {};
+    objMapa.efectos.uno  = arbolProblemas.find("#e1").val();
+    objMapa.efectos.dos  = arbolProblemas.find("#e2").val();
+    objMapa.efectos.tres = arbolProblemas.find("#e3").val();
+
+    //guardar en campo de texto oculto
+    $(".jsonArbolProblemas").val(JSON.stringify(objMapa));
+
+
+});
+
+
+
+
 
 });
 
