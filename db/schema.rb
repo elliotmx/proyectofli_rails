@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130522063201) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20130712063520) do
+=======
+ActiveRecord::Schema.define(:version => 20130522063202) do
+>>>>>>> 8b824d00e55742039fb071eee13522bb462437f8
+>>>>>>> 6e2a3d32490e08b2e9ffaf213be20b7b5b840f58
 
   create_table "answers", :force => true do |t|
     t.string   "value"
@@ -81,12 +89,13 @@ ActiveRecord::Schema.define(:version => 20130522063201) do
     t.string   "spa_description"
     t.string   "eng_description"
     t.boolean  "active"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "section_id"
     t.string   "html_for_field"
     t.string   "field_type"
     t.string   "extra_text_desc"
+    t.string   "position_question"
   end
 
   create_table "sections", :force => true do |t|

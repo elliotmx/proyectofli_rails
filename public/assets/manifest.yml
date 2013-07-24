@@ -17,7 +17,6 @@ logoGrande.png: logoGrande-56194f9e120c2cf04e42f04810c1533a.png
 missing_original.png: missing_original-bdbf885135fbd21cc7ff3088ca21d0ea.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 rays-main.png: rays-main-cc0e8e71e5883f348148952e9cbd4738.png
-rays-main2.png: rays-main2-65560166e93945b70526dc497c50ac72.png
 slider/bg-sky.png: slider/bg-sky-6cb14380414e9b1e619fe9426375f232.png
 slider/bt-next.png: slider/bt-next-ac5bf5320462b598f307dcc5490c41a7.png
 slider/bt-prev.png: slider/bt-prev-73e0e6c2f0fe3a1e04d399b7cf479763.png
@@ -29,7 +28,7 @@ b.primitives.latest.js: b.primitives.latest-571e1019c9fa74c9fd42c4749009a7e7.js
 c.orgcharts.js: c.orgcharts-8a871153ad5f783decf2f83d5da1f63e.js
 d.custom_application.js: d.custom_application-16238f4c98d6dd15ace632a12084e19c.js
 howto_arbolprob.js: howto_arbolprob-ffb745ca11a38cc519c7d28e128b38f5.js
-application.css: application-97049c9213ec0322f86c845757ec3afb.css
+application.css: application-6b37f2d68eb79551f449ec9e04e7af58.css
 primitives.latest.css: primitives.latest-f89d67adc4d45ee0fffdfb93ce7ad7d8.css
 jquery-ui/ui-bg_flat_0_aaaaaa_40x100.png: jquery-ui/ui-bg_flat_0_aaaaaa_40x100-a1eb3e0764573ed4b261ca742ed96ac3.png
 jquery-ui/ui-bg_flat_75_ffffff_40x100.png: jquery-ui/ui-bg_flat_75_ffffff_40x100-841636c8f8d33987bb8d2f31e8ef92ca.png
