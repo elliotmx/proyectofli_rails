@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
   #before_filter :authenticate_user!, :except => [:show, :user]
-  before_filter :authenticate_user!, :except => [:user]
+  #before_filter :authenticate_user!, :except => [:user]
   # GET /applications
   # GET /applications.json
   def index
@@ -10,6 +10,11 @@ class ApplicationsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @applications }
     end
+  end
+
+  def list
+    @applications = Application.all
+
   end
 
   # GET /applications/1

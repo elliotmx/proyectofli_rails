@@ -16,7 +16,11 @@ Fli::Application.routes.draw do
 
   resources :user_profiles
 
-  resources :applications
+resources :applications do 
+  collection do 
+    get :list
+  end
+end
 
   resources :faculties
 
