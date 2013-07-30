@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.order(:position_question).all
+    @questions = Question.order(:position_question, :id).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -91,6 +91,8 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
+
+    @answer = Answer.where("question_id = ?", params[:id])
 
     respond_to do |format|
       format.html { redirect_to questions_url }
