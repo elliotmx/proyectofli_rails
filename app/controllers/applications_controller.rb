@@ -12,6 +12,11 @@ class ApplicationsController < ApplicationController
     end
   end
 
+  def list
+    @applications = Application.all
+
+  end
+
   # GET /applications/1
   # GET /applications/1.json
   def show
