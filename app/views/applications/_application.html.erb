@@ -1,0 +1,9 @@
+<div id="application">
+  <p><%= application.name %></p>
+  <p><%= application.short_description %></p>
+  <p><%= application.video_url %></p>
+  <p><%= application.tags %></p>
+
+
+  <%= link_to "Generar PDF", application_path(application, :format => :pdf),:class => "btn btn-info" %>
+</div>
