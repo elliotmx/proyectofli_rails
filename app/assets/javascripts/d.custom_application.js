@@ -21,7 +21,7 @@ $(document).ready(function(){
   				case 'conociendoMejorBtn':
   					$(".questions_section").hide();
   					$("#section_2").show();
-            cargarDiagrama();
+            cargarArbolProblemas();
   					break;
   				case 'primeroLoPrimeroBtn':
   					$(".questions_section").hide();

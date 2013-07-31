@@ -1,5 +1,5 @@
 
-function cargarDiagrama(){
+function cargarArbolProblemas(){
 
 
     var jsonArbol = JSON.parse( $(".jsonArbolProblemas").val());
@@ -20,5 +20,4 @@ function cargarDiagrama(){
     arbolProblemas.find("#e2").val(jsonArbol.efectos.dos.toString());
     arbolProblemas.find("#e3").val(jsonArbol.efectos.tres.toString());
 
-} 
-
+}

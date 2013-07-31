@@ -38,10 +38,6 @@ Market.create(:id => 28, :description => "Viajes, Turismo, Hotelería")
 Market.create(:id => 29, :description => "Alimentos")
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b824d00e55742039fb071eee13522bb462437f8
 Question.create(:id => 1, :spa_description => "¿De qué se trata tu idea de proyecto? (Como si se lo estuvieras contando a un amigo tuyo: claro y conciso)", :active => true, :section_id => 2, :field_type => "text_field")
 Question.create(:id => 2, :spa_description => "¿De donde surgió tu idea? ", :active => true, :section_id => 2, :field_type => "text_field")
 Question.create(:id => 3, :spa_description => "¿Sabias que un alto porcentaje de los proyectos que se realizan fracasan solo por no identificar correctamente el problema o necesidad? (Muchas veces buscamos soluciones sin identificar primero el problema o necesidad real)", :active => true, :section_id => 2, :field_type => "label")
@@ -95,7 +91,4 @@ UserProfile.create(:id => 3, :description => "Tutor")
 College.create(:name=>"Colegio New")
 Faculty.create(:name => "Facultad Ciencias",:idcollege => 1)
 
-<<<<<<< HEAD
-=======
 UserProfile.create(:id => 3, :description => "Tutor")
->>>>>>> 8b824d00e55742039fb071eee13522bb462437f8
