@@ -21,3 +21,15 @@ function cargarArbolProblemas(){
     arbolProblemas.find("#e3").val(jsonArbol.efectos.tres.toString());
 
 }
+
+
+function cargarDiagramaActividades(){
+
+    var diagramaActividades = $("#diagramaActividades");
+    var arbolProblemas = $("#arbolProblemas");
+
+    diagramaActividades.find("#cAct1").val(arbolProblemas.find("#c1").val());
+    diagramaActividades.find("#cAct2").val(arbolProblemas.find("#c2").val());
+    diagramaActividades.find("#cAct3").val(arbolProblemas.find("#c3").val());
+
+}

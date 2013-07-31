@@ -30,6 +30,7 @@ $(document).ready(function(){
   				case 'areaImpactoBtn':
   					$(".questions_section").hide();
   					$("#section_4").show();
+            cargarDiagramaActividades();
   					break;
   				case 'manosObraBtn':
   					$(".questions_section").hide();
