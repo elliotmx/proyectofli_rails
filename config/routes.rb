@@ -8,7 +8,7 @@ Fli::Application.routes.draw do
 
   resources :sections
 
-  devise_for :users ,:path_prefix => 'auth'#, :skip =>[:sessions]
+  devise_for :users ,:path_prefix => 'auth', :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }#, :skip =>[:sessions]
 
   resources :users
 

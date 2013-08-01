@@ -101,6 +101,10 @@ Devise.setup do |config|
   # role declared in your routes.
   # config.default_scope = :user
 
+  #config for facebook login
+  require "omniauth-facebook"
+  config.omniauth :facebook, "1397230277160554", "bd1430bd9fbe7622c56f02dcec592d4f",
+   {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
   # If you want to use other strategies, that are not (yet) supported by Devise,
   # you can configure them inside the config.warden block. The example below
   # allows you to setup OAuth, using http://github.com/roman/warden_oauth
