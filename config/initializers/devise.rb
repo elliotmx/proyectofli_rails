@@ -100,13 +100,12 @@ Devise.setup do |config|
   # Configure the default scope used by Devise. By default it's the first devise
   # role declared in your routes.
   # config.default_scope = :user
-
+  FB_ID     = "1397230277160554"
+  FB_SECRET = "bd1430bd9fbe7622c56f02dcec592d4f"
   #config for facebook login
   require 'omniauth-facebook'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
-    config.omniauth :facebook, "1397230277160554", "bd1430bd9fbe7622c56f02dcec592d4f"
-  
-
+    config.omniauth :facebook, FB_ID, FB_SECRET,{:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
     #config.omniauth :facebook, '1397230277160554', 'bd1430bd9fbe7622c56f02dcec592d4f',
     #{ variablevariablevariable :scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
   # If you want to use other strategies, that are not (yet) supported by Devise,

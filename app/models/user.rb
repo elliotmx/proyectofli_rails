@@ -36,14 +36,14 @@ class User < ActiveRecord::Base
     unless user
       logger.info "entra en metodo find_for_facebook_oauth unless user"
 
-      user = User.create(name:auth.extra.raw_info.name,
+      user = User.new(name:auth.extra.raw_info.name,
                          provider:auth.provider,
                          uid:auth.uid,
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]
                          )
 
-      logger.info "Hola User" + user.inspect
+      #logger.info "Hola User" + user.inspect
     end
     user
   end
@@ -54,9 +54,10 @@ class User < ActiveRecord::Base
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
         user.name  = data["name"] if user.name.blank?
+        user.uid   = data["id"]  if user.uid.blank?
 
         #logger.info user.inspect
-        logger.info data
+        logger.info "data inspect " + data.inspect
       end
     end
   end
