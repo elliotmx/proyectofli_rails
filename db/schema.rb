@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730201200) do
+ActiveRecord::Schema.define(:version => 20130801090213) do
 
   create_table "answers", :force => true do |t|
     t.string   "value"
@@ -81,13 +81,13 @@ ActiveRecord::Schema.define(:version => 20130730201200) do
     t.string   "spa_description"
     t.string   "eng_description"
     t.boolean  "active"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "section_id"
     t.string   "html_for_field"
     t.string   "field_type"
     t.string   "extra_text_desc"
-    t.integer  "position_question"
+    t.integer  "position_question", :limit => 255
   end
 
   create_table "sections", :force => true do |t|
@@ -140,6 +140,8 @@ ActiveRecord::Schema.define(:version => 20130730201200) do
     t.string   "invitation_token"
     t.string   "password"
     t.datetime "remember_created_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

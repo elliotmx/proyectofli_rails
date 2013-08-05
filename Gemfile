@@ -39,6 +39,9 @@ gem 'devise', '2.2'
 #gem 'yaml_db'
 gem 'seed_dumper'
 #gem 'cocaine', '0.3.2'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

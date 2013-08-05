@@ -12,14 +12,15 @@ class User < ActiveRecord::Base
   	# :token_authenticatable, :lockable, :timeoutable and :activatable  
   	# :confirmable  
   devise :database_authenticatable, :registerable,   
-         :recoverable, :rememberable, :trackable, :validatable  
+         :recoverable, :rememberable, :trackable, :validatable ,
+          :omniauthable, :omniauth_providers => [:facebook] 
   
   	# Setup accessible (or protected) attributes for your model  
     # :password_confirmation
   	attr_accessible :email, :password, :name, :application_id, 
     :age, :address, :semester, :phone, :extra_phone, :photo,
     :twitter, :linkedin, :faculty_id,:user_profile_id, :password_confirmation,
-    :motivation, :create_from
+    :motivation, :create_from, :provider, :uid
 
     validates_uniqueness_of :email, :case_sensitive => false
     #validates_uniqueness_of    :email,     :case_sensitive => false, :allow_blank => true, :if => :email_changed?
@@ -27,4 +28,37 @@ class User < ActiveRecord::Base
     validates_presence_of   :password, :on=>:create
     validates_confirmation_of  :password, :on=>:create
     validates_length_of :password, :within => Devise.password_length, :allow_blank => true
+
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    logger.info "entra en metodo find_for_facebook_oauth"
+    unless user
+      logger.info "entra en metodo find_for_facebook_oauth unless user"
+
+      user = User.create(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         email:auth.info.email,
+                         password:Devise.friendly_token[0,20]
+                         )
+
+      logger.info "Hola User" + user.inspect
+    end
+    user
+  end
+
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+        user.name  = data["name"] if user.name.blank?
+
+        #logger.info user.inspect
+        logger.info data
+      end
+    end
+  end
+
 end
