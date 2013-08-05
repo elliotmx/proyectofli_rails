@@ -63,7 +63,7 @@
 				<%= text_area_tag(i.id ,@respuesta,:class => "jsonDiagramaActividades",:style => "display:none") %>
 				<%= render 'layouts/diagrama_actividades' %>
 		<% elsif i.field_type == "pop_field" %>
-				<%= render 'layouts/htmlForRender/pop' %>	
+				<%= render 'layouts/htmlForRender/pop_' + i.html_for_field  %>
 		<% end %>
 
 		</p>
