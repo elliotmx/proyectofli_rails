@@ -99,4 +99,22 @@ class QuestionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #cargar el modelo de preguntas con json de production
+  def cargarPreguntas
+
+      #destroy previous content
+      Question.destroy_all
+
+      #get all questions from the json
+      File.open('questions.json', 'r') do |file|
+        file.each do |line|
+         user_attrs = JSON.parse line
+        puts "show :" + user_attrs.inspect
+        Question.create! user_attrs
+      end
+    end
+  end
+
+
 end

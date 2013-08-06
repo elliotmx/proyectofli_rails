@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+  $('input.tags').tags();
    
 	$("#section_1").show();
 

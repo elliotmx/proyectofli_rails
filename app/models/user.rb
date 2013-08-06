@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    logger.info "provider : " + auth.provider + " " + " uid:" + auth.uid 
     logger.info "entra en metodo find_for_facebook_oauth"
     unless user
       logger.info "entra en metodo find_for_facebook_oauth unless user"
@@ -52,10 +53,11 @@ class User < ActiveRecord::Base
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-        user.name  = data["name"] if user.name.blank?
-        user.uid   = data["id"]  if user.uid.blank?
-
+        user.email    = data["email"]    if user.email.blank?
+        user.name     = data["name"]     if user.name.blank?
+        user.uid      = data["id"]       if user.uid.blank?
+        user.provider = "facebook"
+        
         #logger.info user.inspect
         logger.info "data inspect " + data.inspect
       end
