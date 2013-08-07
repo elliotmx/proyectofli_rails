@@ -55,10 +55,10 @@
     <%= f.label :Motivación %><br />
     <%= f.number_field :motivation , :value => 8, :min =>0,:class => "inputs formNormal"  %>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :Facultad %><br />
     <%= f.collection_select(:faculty_id, Faculty.all, :id, :name) %>
-  </div>  
+  </div> --> 
   <div class="field">
     <%= f.label :Perfil %><br />
     <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description) %>

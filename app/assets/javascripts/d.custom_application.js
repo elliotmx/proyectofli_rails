@@ -14,6 +14,7 @@ $(document).ready(function(){
   			//console.log(e);
   			$(".btnHowTo").removeClass("active");
   			$(this).addClass("active");
+        $(".btnguardar").show();
 
   			switch (e.currentTarget.id){
   				case 'registroInvolcradosBtn':
@@ -48,6 +49,7 @@ $(document).ready(function(){
   					break;
   				case 'redactarProyectoBtn':
   					$(".questions_section").hide();
+            cargarPdfPreview();
   					$("#section_8").show();
   					break;
   				case 'conexionConvocatoriasBtn':

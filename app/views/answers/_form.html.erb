@@ -32,7 +32,7 @@
 		
 		<!-- PARA PREGUNTAS QUE NECESITAN MOSTRAR UN HTML MAS COMPLEJO -->
 	<% elsif i.field_type == "html_render" %>
-		<%= render "layouts/htmlForRender/conociendo_mejor_1" %>
+		<%= render "layouts/htmlForRender/"+ i.html_for_field %>
 		
 		<!-- PARA PREGUNTAS QUE SOLO NECESITAN MOSTRAR UN LABEL SENCILLO -->
 	<% elsif i.field_type == "label" %>
@@ -60,17 +60,15 @@
 				<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas",:style => "display:none") %>
 				<%= render 'layouts/arbol' %>	
 		<% elsif i.field_type == "diagram_field_actividades" %>
-				<%= text_area_tag(i.id ,@respuesta,:class => "jsonDiagramaActividades",:style => "display:none") %>
-				<%= render 'layouts/diagrama_actividades' %>
+			<%= text_area_tag(i.id ,@respuesta,:class => "jsonDiagramaActividades",:style => "display:none") %>
+			<%= render 'layouts/diagrama_actividades' %>
 		<% elsif i.field_type == "pop_field" %>
-				<%= render 'layouts/htmlForRender/pop_' + i.html_for_field  %>
+			<%= render 'layouts/htmlForRender/pop_' + i.html_for_field  %>
 		<% end %>
-
 		</p>
 		<% end %>
 		<% end %>
 
-	<%= link_to "Generar PDF", application_path(@application.id, :format => "pdf"), class: "button loginb"  %>
-	<%= submit_tag('Guardar',:class => "button loginb", :disable_with => "Guardando") %>
-	
+	<%= submit_tag('Guardar',:class => "button loginb btnguardar", :disable_with => "Guardando") %>
+
 <% end %>
