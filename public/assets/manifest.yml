@@ -24,11 +24,13 @@ slider/bt-prev.png: slider/bt-prev-73e0e6c2f0fe3a1e04d399b7cf479763.png
 slider/mapa.png: slider/mapa-2ed15d2ba84e574efaef760f63eb9d2b.png
 slider/pre.png: slider/pre-dd7d52dcffdf837fd515435f9838a9e5.png
 slider/que.png: slider/que-e6f62b9802c6862c3a254971c6bd5fba.png
+acciones_arbolactividades.js: acciones_arbolactividades-a53e33e45032b61860715a273c6daf3e.js
+acciones_arbolproblemas.js: acciones_arbolproblemas-c5db96698b756713c796c04b7993e677.js
+acciones_inicio.js: acciones_inicio-ef9bfd0238c4551864c7434eb8c336cd.js
+acciones_pdf.js: acciones_pdf-89e1ad196148918725742b0230cebffa.js
+acciones_tablarecursos.js: acciones_tablarecursos-e8cceafb375c99fcb2cca5bd04dc4d0c.js
 application.js: application-b71f0da9acb9243fe675d032048c68d5.js
-b.primitives.latest.js: b.primitives.latest-571e1019c9fa74c9fd42c4749009a7e7.js
-c.orgcharts.js: c.orgcharts-2fad24eae2ce42cca8b92f5e6430f8ef.js
-d.custom_application.js: d.custom_application-ac4643bf836de45ed659885e420cf505.js
-howto_arbolprob.js: howto_arbolprob-89e1ad196148918725742b0230cebffa.js
+d.custom_application.js: d.custom_application-f3671744d629a120bacd5b82394a8c5b.js
 jquery.tags.min.js: jquery.tags.min-fd7a98b888a75ecf55ed036c95ed7487.js
 application.css: application-027705862f29c886f80011625e82c6ae.css
 jquery.tags.css: jquery.tags-7b82a71e8dd741f0e015acd29e256a68.css
