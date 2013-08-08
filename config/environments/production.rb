@@ -7,7 +7,7 @@ Fli::Application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   #defined for devise
-  config.action_mailer.default_url_options = {:host => 'http://www.fli.mx'}
+  config.action_mailer.default_url_options = {:host => 'www.fli.mx'}
 
   config.action_mailer.smtp_settings = {
     enable_starttls_auto: true,
