@@ -12,6 +12,7 @@ Fli::Application.configure do
   config.action_mailer.smtp_settings = {
     enable_starttls_auto: true,
     address: 'smtpout.secureserver.net',
+    domain: 'www.fli.mx',
     port: 80,
     authentication: 'plain',
     user_name: 'noreply@fli.mx',
