@@ -11,11 +11,11 @@ Fli::Application.configure do
 
   config.action_mailer.smtp_settings = {
     enable_starttls_auto: true,
-    address: 'smtp.gmail.com',
+    address: 'smtpout.secureserver.net',
     port: 587,
     authentication: 'plain',
-    user_name: 'christian.consuelo2@gmail.com',
-    password: 'Shippuuden22'
+    user_name: 'noreply@fli.mx',
+    password: 'fli23412'
   }
 
   # Full error reports are disabled and caching is turned on
