@@ -9,14 +9,14 @@ Fli::Application.configure do
   #defined for devise
   config.action_mailer.default_url_options = {:host => 'www.fli.mx'}
 
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    enable_starttls_auto: true,
-    address: 'smtpout.secureserver.net',
-    domain: 'www.fli.mx',
-    port: 80,
-    authentication: 'plain',
-    user_name: 'noreply@fli.mx',
-    password: 'fli23412'
+    :address => 'smtpout.secureserver.net',
+    :domain  => 'www.fli.mx',
+    :port      => 80,
+    :user_name => 'noreply@fli.mx',
+    :password => 'fli23412',
+    :authentication => :plain
   }
 
   # Full error reports are disabled and caching is turned on
