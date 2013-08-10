@@ -4,7 +4,7 @@ Fli::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   #defined for devise
   config.action_mailer.default_url_options = {:host => 'www.fli.mx'}
