@@ -12,7 +12,7 @@ Fli::Application.configure do
   config.action_mailer.smtp_settings = {
     enable_starttls_auto: true,
     address: 'smtpout.secureserver.net',
-    port: 587,
+    port: 80,
     authentication: 'plain',
     user_name: 'noreply@fli.mx',
     password: 'fli23412'
