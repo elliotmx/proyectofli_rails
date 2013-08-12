@@ -36,18 +36,19 @@
 		
 		<!-- PARA PREGUNTAS QUE SOLO NECESITAN MOSTRAR UN LABEL SENCILLO -->
 	<% elsif i.field_type == "label" %>
-		<p> <%= i.spa_description %><%= i.extra_text_desc %></p>
+		 <%= i.spa_description %><%= i.extra_text_desc %></br>
 
 		<!-- PARA PREGUNTAS QUE NECESITAN UN CAMPO DE TEXTO DONDE GUARDAR EL JSON -->
 	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  %>
 
-		<p> 
+		<!-- <p> --> 
 		 <b><%= i.spa_description %></b><%= i.extra_text_desc %>
-		 <br/>
+		 
+		 <% unless i.pop_name.nil? or i.pop_name == "" %> <%= render 'layouts/htmlForRender/pop_' + i.pop_name %> <% end %>
 		 <% if i.field_type == "text_field" %>
-					<%= text_field_tag(i.id ,@respuesta,:class => "inputs ochenta") %>
+					<%= text_field_tag(i.id ,@respuesta,:class => "inputs cien") %>
 		<% elsif i.field_type == "text_area" %>
-					<%= text_area_tag(i.id ,@respuesta,:class => "inputs",:style => "margin: 0px 0px 10px; width: 80%; min-width: 950px; height: 120px; resize: none") %>
+					<%= text_area_tag(i.id ,@respuesta,:class => "inputs",:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
 		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
 		<% elsif i.field_type == "resources_table" %>
@@ -65,7 +66,7 @@
 		<% elsif i.field_type == "pop_field" %>
 			<%= render 'layouts/htmlForRender/pop_' + i.html_for_field  %>
 		<% end %>
-		</p>
+		<!-- </p> -->
 		<% end %>
 		<% end %>
 
