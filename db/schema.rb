@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20130808185246) do
     t.string   "extra_text_desc"
     t.integer  "position_question"
     t.string   "pop_name"
+
   end
 
   create_table "sections", :force => true do |t|
