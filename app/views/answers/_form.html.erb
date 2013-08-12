@@ -39,7 +39,7 @@
 		 <%= i.spa_description %><%= i.extra_text_desc %></br>
 
 		<!-- PARA PREGUNTAS QUE NECESITAN UN CAMPO DE TEXTO DONDE GUARDAR EL JSON -->
-	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  %>
+	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  %>
 
 		<!-- <p> --> 
 		 <b><%= i.spa_description %></b><%= i.extra_text_desc %>
@@ -59,7 +59,10 @@
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
 				<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas",:style => "display:none") %>
-				<%= render 'layouts/arbol' %>	
+				<%= render 'layouts/arbol' %>
+		<% elsif i.field_type == "diagram_field2" %>
+				<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas2",:style => "display:none") %>
+				<%= render 'layouts/arbol2' %>	
 		<% elsif i.field_type == "diagram_field_actividades" %>
 			<%= text_area_tag(i.id ,@respuesta,:class => "jsonDiagramaActividades",:style => "display:none") %>
 			<%= render 'layouts/diagrama_actividades' %>
