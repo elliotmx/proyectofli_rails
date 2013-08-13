@@ -59,19 +59,10 @@ function guardarJsonTablaRecursos(){
     renglones_tabla.find(".tipoRecurso");
 
     var jsonTabla = new Array();
-    var jsonElementosTabla = {};
-
 
     $(renglones_tabla).each(function(index,item){
 
-            console.log( $(item).find(".tipoRecurso").html()) ;
-            console.log( $(item).find(".descripcion").html() );
-            console.log( $(item).find(".cantidad").html() );
-            console.log( $(item).find(".costo").html() );
-            console.log( $(item).find(".txtResourcesSubTotal").html() );
-            console.log("-----------"); 
-
-
+            var jsonElementosTabla               = {};
             jsonElementosTabla.tipoRecurso       = $(item).find(".tipoRecurso").html();
             jsonElementosTabla.descripcion       = $(item).find(".descripcion").html();
             jsonElementosTabla.cantidad          = $(item).find(".cantidad").html();
@@ -81,7 +72,6 @@ function guardarJsonTablaRecursos(){
 
             $(".jsonTablaRecursos").val(JSON.stringify(jsonTabla));
             //console.log(JSON.stringify(jsonTabla));
-
     });
 
     
