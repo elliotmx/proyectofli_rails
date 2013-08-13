@@ -72,5 +72,4 @@ function cargarDiagramaActividades(){
         arbolProblemas.find("#e2").val(jsonDiagramaActividades.tiempos.dos.toString());
         arbolProblemas.find("#e3").val(jsonDiagramaActividades.tiempos.tres.toString());
 
-
 }
