@@ -8,7 +8,7 @@ function cargarAccionesArbolProblemas(){
         var objMapa = {};
 
         //guardar problema
-        objMapa.problema = arbolProblemas.find("#p1").val();
+        objMapa.problema    = arbolProblemas.find("#p1").val();
 
         // guardar causas
         objMapa.causas      = {};
