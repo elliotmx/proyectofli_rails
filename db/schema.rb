@@ -81,15 +81,14 @@ ActiveRecord::Schema.define(:version => 20130808185246) do
     t.string   "spa_description"
     t.string   "eng_description"
     t.boolean  "active"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.integer  "section_id"
     t.string   "html_for_field"
     t.string   "field_type"
     t.string   "extra_text_desc"
-    t.integer  "position_question"
+    t.integer  "position_question", :limit => 255
     t.string   "pop_name"
-
   end
 
   create_table "sections", :force => true do |t|

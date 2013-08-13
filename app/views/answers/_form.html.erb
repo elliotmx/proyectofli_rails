@@ -43,7 +43,6 @@
 
 		<!-- <p> --> 
 		 <b><%= i.spa_description %></b><%= i.extra_text_desc %>
-		 
 		 <% unless i.pop_name.nil? or i.pop_name == "" %> <%= render 'layouts/htmlForRender/pop_' + i.pop_name %> <% end %>
 		 <% if i.field_type == "text_field" %>
 					<%= text_field_tag(i.id ,@respuesta,:class => "inputs cien") %>
@@ -52,12 +51,16 @@
 		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
 		<% elsif i.field_type == "resources_table" %>
+				<%= text_area_tag(i.id ,@respuesta,:style => "display:block", :class => "jsonTablaRecursos") %>
 				<%= render 'layouts/resources' %>
 		<% elsif i.field_type == "components_table" %>
+				<%= text_area_tag(i.id ,@respuesta,:style => "display:block") %>
 				<%= render 'layouts/components' %>		
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
+			<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas",:style => "display:none") %>
+			<%= render 'layouts/arbol' %>	
 				<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas",:style => "display:none") %>
 				<%= render 'layouts/arbol' %>
 		<% elsif i.field_type == "diagram_field2" %>
