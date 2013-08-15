@@ -4,19 +4,18 @@ Fli::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   #defined for devise
   config.action_mailer.default_url_options = {:host => 'www.fli.mx'}
 
-  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => 'smtpout.secureserver.net',
-    :domain  => 'www.fli.mx',
-    :port      => 80,
-    :user_name => 'noreply@fli.mx',
-    :password => 'fli23412',
-    :authentication => :plain
+    enable_starttls_auto: true,
+    address: 'smtp.gmail.com',
+    port: 587,
+    authentication: 'plain',
+    user_name: 'christian.consuelo2@gmail.com',
+    password: 'Shippuuden22'
   }
 
   # Full error reports are disabled and caching is turned on
