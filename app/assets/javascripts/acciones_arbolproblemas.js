@@ -8,7 +8,7 @@ function cargarAccionesArbolProblemas(){
         var objMapa = {};
 
         //guardar problema
-        objMapa.problema = arbolProblemas.find("#p1").val();
+        objMapa.problema    = arbolProblemas.find("#p1").val();
 
         // guardar causas
         objMapa.causas      = {};
@@ -71,6 +71,5 @@ function cargarDiagramaActividades(){
         arbolProblemas.find("#e1").val(jsonDiagramaActividades.tiempos.uno.toString());
         arbolProblemas.find("#e2").val(jsonDiagramaActividades.tiempos.dos.toString());
         arbolProblemas.find("#e3").val(jsonDiagramaActividades.tiempos.tres.toString());
-
 
 }
