@@ -12,7 +12,7 @@ Fli::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => 'smtpout.secureserver.net',
     :domain  => 'www.fli.mx',
-    :port      => 3535,
+    :port      => 25,
     :user_name => 'noreply@fli.mx',
     :password => 'fli23412',
     :authentication => :plain
