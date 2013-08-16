@@ -9,9 +9,8 @@ Fli::Application.configure do
   #defined for devise
   config.action_mailer.default_url_options = {:host => 'www.fli.mx'}
   ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :address => 'mail.fli.mx',
-    :domain  => 'www.fli.mx',
+  config.action_mailer.smtp_settings = {
+    :address => 'smtpout.secureserver.net',
     :port      => 80,
     :user_name => 'noreply@fli.mx',
     :password => 'fli23412',
