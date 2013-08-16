@@ -10,7 +10,7 @@ Fli::Application.configure do
   config.action_mailer.default_url_options = {:host => 'www.fli.mx'}
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :address => 'smtpout.secureserver.net',
+    :address => 'relay-hosting.secureserver.net',
     :domain  => 'www.fli.mx',
     :port      => 80,
     :user_name => 'noreply@fli.mx',
