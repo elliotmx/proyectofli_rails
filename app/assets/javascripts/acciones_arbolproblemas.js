@@ -56,20 +56,20 @@ function cargarDiagramaActividades(){
 
         var diagramaActividades     = $("#diagramaActividades");
         var arbolProblemas          = $("#arbolProblemas");
-        var jsonDiagramaActividades = JSON.parse( $(".jsonDiagramaActividades").val());
+        // var jsonDiagramaActividades = JSON.parse( $(".jsonDiagramaActividades").val());
 
-        diagramaActividades.find("#cAct1").val(arbolProblemas.find("#c1").val());
-        diagramaActividades.find("#cAct2").val(arbolProblemas.find("#c2").val());
-        diagramaActividades.find("#cAct3").val(arbolProblemas.find("#c3").val());
+        // diagramaActividades.find("#cAct1").val(arbolProblemas.find("#c1").val());
+        // diagramaActividades.find("#cAct2").val(arbolProblemas.find("#c2").val());
+        // diagramaActividades.find("#cAct3").val(arbolProblemas.find("#c3").val());
 
-        // setear actividades
-        arbolProblemas.find("#a1").val(jsonDiagramaActividades.actividades.uno.toString());
-        arbolProblemas.find("#a1").val(jsonDiagramaActividades.actividades.dos.toString());
-        arbolProblemas.find("#a1").val(jsonDiagramaActividades.actividades.tres.toString());
+        // // setear actividades
+        // arbolProblemas.find("#a1").val(jsonDiagramaActividades.actividades.uno.toString());
+        // arbolProblemas.find("#a1").val(jsonDiagramaActividades.actividades.dos.toString());
+        // arbolProblemas.find("#a1").val(jsonDiagramaActividades.actividades.tres.toString());
 
-        //setear tiempos
-        arbolProblemas.find("#e1").val(jsonDiagramaActividades.tiempos.uno.toString());
-        arbolProblemas.find("#e2").val(jsonDiagramaActividades.tiempos.dos.toString());
-        arbolProblemas.find("#e3").val(jsonDiagramaActividades.tiempos.tres.toString());
+        // //setear tiempos
+        // arbolProblemas.find("#e1").val(jsonDiagramaActividades.tiempos.uno.toString());
+        // arbolProblemas.find("#e2").val(jsonDiagramaActividades.tiempos.dos.toString());
+        // arbolProblemas.find("#e3").val(jsonDiagramaActividades.tiempos.tres.toString());
 
 }

@@ -51,10 +51,10 @@
 		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
 		<% elsif i.field_type == "resources_table" %>
-				<%= text_area_tag(i.id ,@respuesta,:style => "display:block", :class => "jsonTablaRecursos") %>
+				<%= text_area_tag(i.id ,@respuesta,:style => "display:none", :class => "jsonTablaRecursos") %>
 				<%= render 'layouts/resources' %>
 		<% elsif i.field_type == "components_table" %>
-				<%= text_area_tag(i.id ,@respuesta,:style => "display:block") %>
+				<%= text_area_tag(i.id ,@respuesta,:style => "display:none", :class => "jsonTablaComponentes") %>
 				<%= render 'layouts/components' %>		
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
