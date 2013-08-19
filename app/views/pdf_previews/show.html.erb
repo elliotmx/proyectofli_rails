@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @pdf_preview.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @pdf_preview.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_pdf_preview_path(@pdf_preview) %> |
+<%= link_to 'Back', pdf_previews_path %>

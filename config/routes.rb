@@ -1,5 +1,7 @@
 Fli::Application.routes.draw do
 
+  resources :pdf_previews
+
   resources :service_types
 
   resources :markets
