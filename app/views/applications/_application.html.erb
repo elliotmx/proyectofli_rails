@@ -1,11 +1,9 @@
-<div id="proyect">
-<div class="img"><%= image_tag("proyect.png", :alt => "imgn") %></div>
-<div class="name"><%= application.name %></div>
-<div class="description"><%= application.short_description %></div>
+<tr>
+<td><%= image_tag("proyect.png", :alt => "imgn") %></td>
+<td><%= application.name %></td>
+<td><%= application.short_description %></td>
 <!--<div class="urlvideo"><%= application.video_url %></div>
 <div class="tags"><%= application.tags %></div>-->
-<div class="footer">
-	<div class="pdf"><%= link_to "Generar PDF", application_path(application, :format => :pdf),:class => "btn btn-info" %></div>
-  	<div class="socialNetwork"><%= image_tag("face.png", :alt => "face") %><%= image_tag("twit.png", :alt => "twit") %></div> 
-</div>
-</div>
+<td><%= link_to "Generar PDF", application_path(application, :format => :pdf),:class => "btn btn-info" %></td>
+<td><%= image_tag("face.png", :alt => "face") %><%= image_tag("twit.png", :alt => "twit") %></td>
+</tr>

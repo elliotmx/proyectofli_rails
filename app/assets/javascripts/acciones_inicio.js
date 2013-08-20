@@ -1,6 +1,10 @@
 function cargarAccionesInicio(){
 
+  //establecer campos para tags
 	$('input.tags').tags();
+
+  //establecer tabla que será cargada con datatable
+  $("#tabApplicationsList").dataTable();
    
 	$("#section_1").show();
 

@@ -1,5 +1,9 @@
-<div id="banner-wrapper" style="margin-top:-40px;">
-	
-	  	<%= render @applications %> 
-	
-</div>
+
+		<table id="tabApplicationsList" style="background:white">
+			<thead>
+				<th>imagen proyecto</th><th>nombre</th><th>descripcion</th><th>PDF's</th><th>redes sociales</th>
+			</thead>
+			<tbody>
+	  			<%= render @applications %>
+	  		</tbody>
+		</table>
