@@ -129,7 +129,9 @@ function validarCamposTablaRecursos(){
 
 
 function parsearJsonTablaRecursos(){
-    var valorTabla = $(".jsonTablaRecursos").val();
+
+    if($(".jsonTablaRecursos").val() != ""){
+        var valorTabla = $(".jsonTablaRecursos").val();
 
            var jsonTabla = JSON.parse(valorTabla);
            //console.log(jsonTabla); 
@@ -139,4 +141,6 @@ function parsearJsonTablaRecursos(){
                 addElementToResourcesTable(item);
 
            });
+    }
+    
 }

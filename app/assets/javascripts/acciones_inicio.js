@@ -9,8 +9,8 @@ function cargarAccionesInicio(){
 	$("#section_1").show();
 
   	$(".btnHowTo").hover(function(){
-  		$(this).children('.unoI').toggle('slow');
-  		$(this).children('.uno').toggle('slow');
+  		  $(this).children('.unoI').toggle('slow');
+  		  $(this).children('.uno').toggle('slow');
   	});
 
 
@@ -29,6 +29,8 @@ function cargarAccionesInicio(){
   					$(".questions_section").hide();
   					$("#section_2").show();
             		cargarArbolProblemas();
+                cargarArbolAcciones();
+                copiarValoresTxtProblema();
   					break;
   				case 'primeroLoPrimeroBtn':
   					$(".questions_section").hide();
@@ -68,9 +70,20 @@ function cargarAccionesInicio(){
 	$("#btn_agrega_colaborador").on("click",function(){
     	$(this).hide();
 	});
+
+  $(".inputs.txtProblema").on('keyup',function(){
+        copiarValoresTxtProblema();
+  });
 	
 }
 
+
+function copiarValoresTxtProblema(){
+      var txtProblemaVal  =  $(".inputs.txtProblema").val();
+
+      $("#p1").val(txtProblemaVal);
+      $("#op1").val(txtProblemaVal);
+}
 
 
 function showUserEditForm(userId){

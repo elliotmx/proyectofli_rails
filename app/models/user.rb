@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 	belongs_to :user_profile
 	belongs_to :faculty
   has_and_belongs_to_many :applications
+  has_and_belongs_to_many :roles
 	accepts_nested_attributes_for :user_profile
 
 	has_attached_file :photo, 
@@ -20,7 +21,7 @@ class User < ActiveRecord::Base
   	attr_accessible :email, :password, :name, :application_id, 
     :age, :address, :semester, :phone, :extra_phone, :photo,
     :twitter, :linkedin, :faculty_id,:user_profile_id, :password_confirmation,
-    :motivation, :create_from, :provider, :uid
+    :motivation, :create_from, :provider, :uid, :role_ids
 
     validates_uniqueness_of :email, :case_sensitive => false
     #validates_uniqueness_of    :email,     :case_sensitive => false, :allow_blank => true, :if => :email_changed?
@@ -30,6 +31,7 @@ class User < ActiveRecord::Base
     validates_length_of :password, :within => Devise.password_length, :allow_blank => true
 
 
+     #LOGIN CON FACEBOOK
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     logger.info "provider : " + auth.provider + " " + " uid:" + auth.uid 
@@ -49,7 +51,7 @@ class User < ActiveRecord::Base
     user
   end
 
-
+  #LOGIN CON FACEBOOK
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -61,6 +63,21 @@ class User < ActiveRecord::Base
         #logger.info user.inspect
         logger.info "data inspect " + data.inspect
       end
+    end
+  end
+
+
+  #admin roles
+  before_save :setup_role
+
+  def role?(role)
+      return !!self.roles.find_by_name(role.to_s.camelize)
+  end
+
+  # Default role is "Registered"
+  def setup_role 
+    if self.role_ids.empty?     
+      self.role_ids = [2] 
     end
   end
 

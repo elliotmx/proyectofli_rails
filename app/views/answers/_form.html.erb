@@ -39,7 +39,7 @@
 		 <%= i.spa_description %><%= i.extra_text_desc %></br>
 
 		<!-- PARA PREGUNTAS QUE NECESITAN UN CAMPO DE TEXTO DONDE GUARDAR EL JSON -->
-	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  %>
+	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  or i.field_type =="text_area_problema"%>
 
 		<!-- <p> --> 
 		 <b><%= i.spa_description %></b><%= i.extra_text_desc %>
@@ -47,7 +47,9 @@
 		 <% if i.field_type == "text_field" %>
 					<%= text_field_tag(i.id ,@respuesta,:class => "inputs cien") %>
 		<% elsif i.field_type == "text_area" %>
-					<%= text_area_tag(i.id ,@respuesta,:class => "inputs",:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
+					<%= text_area_tag(i.id ,@respuesta,:class => "inputs" ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
+		<% elsif i.field_type == "text_area_problema" %>
+					<%= text_area_tag(i.id ,@respuesta,:class => "inputs txtProblema" ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
 		<% elsif i.field_type == "hidden_field" %>
 					<%= text_field_tag(i.id ,@respuesta) %>	
 		<% elsif i.field_type == "resources_table" %>
@@ -60,11 +62,9 @@
 					<%= number_field_tag(i.id ,@respuesta) %>
 		<% elsif i.field_type == "diagram_field" %>
 			<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas",:style => "display:none") %>
-			<%= render 'layouts/arbol' %>	
-				<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas",:style => "display:none") %>
-				<%= render 'layouts/arbol' %>
+				<%= render 'layouts/arbol' %>	
 		<% elsif i.field_type == "diagram_field2" %>
-				<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolProblemas2",:style => "display:none") %>
+			<%= text_area_tag(i.id ,@respuesta,:class => "jsonArbolAcciones",:style => "display:none") %>
 				<%= render 'layouts/arbol2' %>	
 		<% elsif i.field_type == "diagram_field_actividades" %>
 			<%= text_area_tag(i.id ,@respuesta,:class => "jsonDiagramaActividades",:style => "display:none") %>

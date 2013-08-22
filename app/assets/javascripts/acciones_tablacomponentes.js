@@ -107,7 +107,9 @@ function validarCamposTablaComponentes(){
 
 
 function parsearJsonTablaComponetes(){
-            var valorTabla = $(".jsonTablaComponentes").val();
+
+        if($(".jsonTablaComponentes").val() != ""){
+             var valorTabla = $(".jsonTablaComponentes").val();
 
            var jsonTabla = JSON.parse(valorTabla);
            //console.log(jsonTabla); 
@@ -117,4 +119,6 @@ function parsearJsonTablaComponetes(){
                 addElementToComponentsTable(item);
 
            });
+        }
+           
 }

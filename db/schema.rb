@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808185246) do
+ActiveRecord::Schema.define(:version => 20130821061324) do
 
   create_table "answers", :force => true do |t|
     t.string   "value"
@@ -71,6 +71,13 @@ ActiveRecord::Schema.define(:version => 20130808185246) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "pdf_previews", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "project_scopes", :force => true do |t|
     t.string   "description"
     t.datetime "created_at",  :null => false
@@ -89,6 +96,17 @@ ActiveRecord::Schema.define(:version => 20130808185246) do
     t.string   "extra_text_desc"
     t.integer  "position_question", :limit => 255
     t.string   "pop_name"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
   end
 
   create_table "sections", :force => true do |t|
