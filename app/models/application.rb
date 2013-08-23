@@ -1,4 +1,4 @@
 class Application < ActiveRecord::Base
 	has_and_belongs_to_many :users
-	has_many :answers
+	has_many :answers,:pdfpreviews
 end

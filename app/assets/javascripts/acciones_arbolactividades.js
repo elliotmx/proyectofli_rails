@@ -73,8 +73,12 @@ function cargarArbolAcciones(){
 
 }
 
+<text_area sytle="display:none" id="txtActividades1"></text_area>
 
-
+if( $("#la1").hasClass("lineaAccionSelect")){
+    $("#txtActividades1").show();
+    $("#txtActividades1Desc").val($(this).val());
+}
 
 
 function cargarAccionesParaSeleccionLineasAccion(){

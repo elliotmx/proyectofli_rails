@@ -32,8 +32,15 @@
 		
 		<!-- PARA PREGUNTAS QUE NECESITAN MOSTRAR UN HTML MAS COMPLEJO -->
 	<% elsif i.field_type == "html_render" %>
-		<%= render "layouts/htmlForRender/"+ i.html_for_field %>
-		
+			<%= render "layouts/htmlForRender/"+ i.html_for_field %>
+			<% if i.html_for_field == "pdf_preview" %>
+			<p>Hola</p>
+			<%= form_tag('pdf_previews/', :remote => true) do %>
+			<% PdfPreview.all.each do |p| %>
+			<%= text_field_tag(p.name ,p.description,:class => "inputs") %>
+			<% end %>
+			<%= submit_tag('PDF',:class => "button",:style =>"display:block", :disable_with => "Guardando") %>
+			<% end %><% end %>
 		<!-- PARA PREGUNTAS QUE SOLO NECESITAN MOSTRAR UN LABEL SENCILLO -->
 	<% elsif i.field_type == "label" %>
 		 <%= i.spa_description %><%= i.extra_text_desc %></br>
@@ -56,7 +63,7 @@
 				<%= text_area_tag(i.id ,@respuesta,:style => "display:none", :class => "jsonTablaRecursos") %>
 				<%= render 'layouts/resources' %>
 		<% elsif i.field_type == "components_table" %>
-				<%= text_area_tag(i.id ,@respuesta,:style => "display:none", :class => "jsonTablaComponentes") %>
+			<%= text_area_tag(i.id ,@respuesta,:style => "display:none", :class => "jsonTablaComponentes") %>
 				<%= render 'layouts/components' %>		
 		<% elsif i.field_type == "number_field" %>
 					<%= number_field_tag(i.id ,@respuesta) %>
