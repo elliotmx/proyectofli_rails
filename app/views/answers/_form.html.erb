@@ -33,14 +33,6 @@
 		<!-- PARA PREGUNTAS QUE NECESITAN MOSTRAR UN HTML MAS COMPLEJO -->
 	<% elsif i.field_type == "html_render" %>
 			<%= render "layouts/htmlForRender/"+ i.html_for_field %>
-			<% if i.html_for_field == "pdf_preview" %>
-			<p>Hola</p>
-			<%= form_tag('pdf_previews/', :remote => true) do %>
-			<% PdfPreview.all.each do |p| %>
-			<%= text_field_tag(p.name ,p.description,:class => "inputs") %>
-			<% end %>
-			<%= submit_tag('PDF',:class => "button",:style =>"display:block", :disable_with => "Guardando") %>
-			<% end %><% end %>
 		<!-- PARA PREGUNTAS QUE SOLO NECESITAN MOSTRAR UN LABEL SENCILLO -->
 	<% elsif i.field_type == "label" %>
 		 <%= i.spa_description %><%= i.extra_text_desc %></br>
@@ -54,7 +46,7 @@
 		 <% if i.field_type == "text_field" %>
 					<%= text_field_tag(i.id ,@respuesta,:class => "inputs cien") %>
 		<% elsif i.field_type == "text_area" %>
-					<%= text_area_tag(i.id ,@respuesta,:class => "inputs" ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
+					<%= text_area_tag(i.id ,@respuesta,:class => "inputs "+ i.html_for_field ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
 		<% elsif i.field_type == "text_area_problema" %>
 					<%= text_area_tag(i.id ,@respuesta,:class => "inputs txtProblema" ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
 		<% elsif i.field_type == "hidden_field" %>

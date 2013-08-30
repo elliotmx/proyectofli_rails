@@ -1,0 +1,52 @@
+<div style="display:none">
+<%= form_for(pdf_preview_obj, :remote => true) do |f| %>
+
+  <div class="field">
+    <%= f.label :project_title %><br />
+    <%= f.text_field :project_title %>
+  </div>
+  <div class="field">
+    <%= f.label :problem %><br />
+    <%= f.text_area :problem %>
+  </div>
+  <div class="field">
+    <%= f.label :justification %><br />
+    <%= f.text_area :justification %>
+  </div>
+  <div class="field">
+    <%= f.label :objective %><br />
+    <%= f.text_area :objective %>
+  </div>
+  <div class="field">
+    <%= f.label :objective_population %><br />
+    <%= f.text_area :objective_population %>
+  </div>
+  <div class="field">
+    <%= f.label :components %><br />
+    <%= f.text_area :components %>
+  </div>
+  <div class="field">
+    <%= f.label :activities %><br />
+    <%= f.text_area :activities %>
+  </div>
+  <div class="field">
+    <%= f.label :implementation %><br />
+    <%= f.text_area :implementation %>
+  </div>
+  <div class="field">
+    <%= f.label :cronogram %><br />
+    <%= f.text_area :cronogram %>
+  </div>
+  <div class="field">
+    <%= f.label :budget %><br />
+    <%= f.text_area :budget %>
+  </div>
+  <div class="field">
+    <%= f.label :risks %><br />
+    <%= f.text_area :risks %>
+  </div>
+</div>
+  <div class="actions" style="display:block">
+    <%= f.submit "Guardar Vista Previa" ,:class => "button"  %>
+  </div>
+<% end %>

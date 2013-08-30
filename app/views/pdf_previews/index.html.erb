@@ -11,8 +11,8 @@
 
 <% @pdf_previews.each do |pdf_preview| %>
   <tr>
-    <td><%= pdf_preview.name %></td>
-    <td><%= pdf_preview.description %></td>
+    <td><%= pdf_preview.project_title %></td>
+    <td><%= pdf_preview.problem %></td>
     <td><%= link_to 'Show', pdf_preview %></td>
     <td><%= link_to 'Edit', edit_pdf_preview_path(pdf_preview) %></td>
     <td><%= link_to 'Destroy', pdf_preview, confirm: 'Are you sure?', method: :delete %></td>

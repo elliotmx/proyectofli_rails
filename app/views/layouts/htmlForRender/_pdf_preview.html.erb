@@ -11,7 +11,7 @@
 	</p>
 </div>	
 <h4>Justificación</h4>
-<div id="pdf_justificación" >
+<div id="pdf_justificacion" >
 	<p contenteditable="true">
 			En el caso de la justificación, tienes que explicar por qué es importante resolver el
 problema que planteas. No deberá exceder de media cuartilla.
@@ -24,8 +24,8 @@ problema que planteas. No deberá exceder de media cuartilla.
 </div>
 
 <h4>Población Objetivo</h4>
-<div id="pdf_pob_objetivo" contenteditable="true">
-	<p>
+<div id="pdf_pob_objetivo" >
+	<p contenteditable="true">
 		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
 	</p>
 </div>
@@ -33,19 +33,12 @@ problema que planteas. No deberá exceder de media cuartilla.
 <h4>Componentes/Estrategia</h4>
 <div id="pdf_comp_estrategia" contenteditable="true">
 	<p>
-		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
+		Estos los puedes encontrar en la Descripción de actividades, sección 5 Manos a la Obra,donde aparecen los componentes que definen tu estrategia.
 	</p>
 </div>
 
 <h4>Actividades</h4>
 <div id="pdf_actividades" contenteditable="true">
-	<p>
-		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
-	</p>
-</div>
-
-<h4>Implementación</h4>
-<div id="pdf_implementacion" contenteditable="true">
 	<p>
 		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
 	</p>
@@ -59,19 +52,36 @@ problema que planteas. No deberá exceder de media cuartilla.
 </div>
 
 <h4>Presupuesto</h4>
-<div id="pdf_presupuesto" contenteditable="true">
-	<p>
-		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
-	</p>
+<div >
+	<table class="gridtable" style="border-radius:10px;" id="pdf_presupuesto">
+		<tr>
+			<th>Tipo Recurso</th>
+			<th>Descripción</th>
+			<th>Cantidad</th>
+			<th>Costo Aprox.</th>
+			<th>Sub Total</th>
+		</tr>
+	</table>
 </div>
 
 
 <h4>Riesgos y Plan de Contingencia</h4>
-<div id="pdf_riesgos_contingencia" contenteditable="true">
-	<p>
-		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
-	</p>
+<div>
+	<table class="gridtable" style="border-radius:10px;" id="pdf_riesgos_contingencia">
+		<tr >
+			<th style="min-width: 235px; width: 98%;">Componente</th>
+			<th style="min-width: 245px; width: 98%;">Actividades</th>
+			<th style="min-width: 245px; width: 98%;">Riesgos</th>
+			<th style="min-width: 250px; width: 98%;">Plan de Contigencia</th>
+		</tr>
+	</table>
 </div>
 
-<%= link_to "Generar PDF", application_path(@application.id, :format => "pdf"), class: "button"  %>
+<!-- <%= link_to "Generar PDF", application_path(@application.id, :format => "pdf"), class: "button"  %> -->
 </div>
+<% if current_user.applications.first.pdf_previews.blank? %>
+	<%= render :partial => 'pdf_previews/form_embed', :locals => {:pdf_preview_obj => PdfPreview.new} %>	
+<% else %>
+	<% @pdfobj = current_user.applications.first.pdf_previews.last %>
+	<%= render :partial => 'pdf_previews/form_embed', :locals => {:pdf_preview_obj  => 	@pdfobj} %>
+<% end %>

@@ -1,0 +1,23 @@
+var el = $('#respond_application_form');
+
+<% if @pdf_preview.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @pdf_preview.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript( error ) %></li>');
+  <% end %>
+
+  // Display errors on form
+  el.find('.errors').html(errors);
+
+<% else %>
+
+  
+  alert("Guardado Correctamente");
+
+  // Clear form
+  el.find('input:text,textarea').val('');
+  el.find('.errors').empty();
+  <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821061324) do
+ActiveRecord::Schema.define(:version => 20130826205148) do
 
   create_table "answers", :force => true do |t|
     t.string   "value"
@@ -72,11 +72,23 @@ ActiveRecord::Schema.define(:version => 20130821061324) do
   end
 
   create_table "pdf_previews", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "project_title"
+    t.text     "problem"
+    t.text     "justification"
+    t.text     "objective"
+    t.string   "objective_population"
+    t.text     "components"
+    t.text     "activities"
+    t.text     "implementation"
+    t.text     "cronogram"
+    t.string   "budget"
+    t.text     "risks"
+    t.integer  "application_id"
   end
+
+  add_index "pdf_previews", ["application_id"], :name => "index_pdf_previews_on_application_id"
 
   create_table "project_scopes", :force => true do |t|
     t.string   "description"

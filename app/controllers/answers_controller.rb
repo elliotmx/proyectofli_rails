@@ -26,7 +26,6 @@ def create
       #if i!="utf8" || i!="authencity_token"
 
       if (i != "utf8") && (i != "authenticity_token") &&  (i != "commit") && (i != "action") && (i != "controller")
-        puts "parametro #{i} texto: #{v}"
 
         @answer = Answer.where(:application_id =>current_user.applications.first.id, :question_id => i.to_i ).first
 
@@ -41,7 +40,6 @@ def create
         #    ans.value = v.to_s
         #    puts " dentro de update answe #{ans.inspect}"
         #end      
-        puts "la variable #{@answer.inspect}"
       end
     	
     end

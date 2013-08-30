@@ -58,7 +58,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(params[:question])
-    @questions = Question.all
+    #@questions = Question.all
     respond_to do |format|
       if @question.save
         format.html { redirect_to action: "index", notice: 'Question was successfully created.' }
