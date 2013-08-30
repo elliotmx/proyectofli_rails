@@ -76,6 +76,21 @@ function cargarAccionesInicio(){
 	
 }
 
+function generateNoty(layout, txt) {
+
+        
+      n = noty({
+      text: txt,
+      type: 'alert',
+      dismissQueue: true,
+      layout: layout,
+      modal:true,
+      timeout:200,
+      template: '<div class="noty_message"><img src="../assets/okicon2.png" alt="logo">&nbsp;<span class="noty_text"></span><div class="noty_close"></div></div>',
+      theme: 'defaultTheme'
+      });
+
+    }
 
 function copiarValoresTxtProblema(){
       var txtProblemaVal  =  $(".inputs.txtProblema").val();

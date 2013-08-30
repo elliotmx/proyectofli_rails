@@ -1,0 +1,23 @@
+var el = $('#respond_application_form');
+
+<% if @answer.errors.any? %>
+
+  // Create a list of errors
+  var errors = $('<ul />');
+
+  <% @answer.errors.full_messages.each do |error| %>
+    errors.append('<li><%= escape_javascript( error ) %></li>');
+  <% end %>
+
+  // Display errors on form
+  el.find('.errors').html(errors);
+
+<% else %>
+
+  generateNoty('top', 'Actualizado Correctamente');
+  //alert("Guardado Correctamente");
+
+  // Clear form
+  el.find('input:text,textarea').val('');
+  el.find('.errors').empty();
+  <% end %>

@@ -14,8 +14,8 @@ var el = $('#respond_application_form');
 
 <% else %>
 
-  
-  alert("PDF Actualizado Correctamente");
+  generateNoty('top', 'PDF Actualizado Correctamente');
+  //alert("PDF Actualizado Correctamente");
 
   // Clear form
   el.find('input:text,textarea').val('');

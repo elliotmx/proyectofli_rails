@@ -1,7 +1,0 @@
-function cargarPdfPreview(){
-
-	$(".btnguardar").hide();
-	
-}
-
-

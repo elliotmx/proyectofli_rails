@@ -1,3 +1,0 @@
-class PdfpreviewController < ApplicationController
-	
-end
