@@ -15,11 +15,18 @@ class PdfPreviewsController < ApplicationController
   # GET /pdf_previews/1
   # GET /pdf_previews/1.json
   def show
-    @pdf_preview = PdfPreview.find(params[:id])
+    @pdf_preview = PdfPreview.find_by_application_id(params[:id])
 
-    respond_to do |format|
+   respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @pdf_preview }
+      format.pdf {
+        pdf = ApplicationPdf.new(@pdf_preview, view_context)
+        send_data pdf.render, filename: 
+        "answers.pdf",
+        type: "application/pdf",
+        disposition: "inline"
+      }
     end
   end
 

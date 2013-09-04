@@ -1,28 +1,76 @@
 class ApplicationPdf < Prawn::Document
 
- def initialize(application, view)
-   super()
-   p = ""
-   r = ""
-   t = ""
+ require 'json'
+
+ def initialize(_pdfpreview_in, view)
+   super(top_margin: 70)
    @view = view
-   @application = application
-   @answers = Answer.where("application_id = ?", @application.id)
+   @pdfpreview = _pdfpreview_in
 
-@answers.each do |answer|
-     #question = Question.find(answer.question_id)
-     question = Question.where("id = ?", answer.question_id).first
-     p = p+"\n\n #{question.spa_description}"
-     r = r+"\n\n #{answer.value}"
-     if question.id == 17
-      m = Market.find(Integer(answer.value))
-      r = r +".- "+ m.description
-     end
-     t = t + p + r
+   print_header #1
 
-     p = ""
-     r = ""
-end
-   text t
+   print_body #2
  end
+
+
+ def print_header
+  move_down 1
+  image "#{Rails.root}/app/assets/images/logo_fli_pdf.png"
+  move_down 20
+  text "Resumen de Proyecto: #{@pdfpreview.project_title} ", size: 15, style: :bold 
+ end
+
+ def print_coworkers(application_id)
+    
+ end
+
+
+ def print_body
+  move_down 15
+  
+  bold_text("Problematica que resuelve el proyecto")
+  text @pdfpreview.problem + "\n\n"
+  
+  bold_text("Justificacion")
+  text @pdfpreview.justification + "\n\n"
+
+  bold_text("Objetivo")
+  text @pdfpreview.objective + "\n\n"
+
+  bold_text("Poblacion Objetivo")
+  text @pdfpreview.objective_population + "\n\n"
+
+  bold_text("Componentes/Estrategia")
+  text @pdfpreview.components + "\n\n"
+
+  bold_text("Actividades")
+  text @pdfpreview.activities + "\n\n"
+
+  bold_text("Presupuesto")
+  print_table(@pdfpreview.budget)
+
+  bold_text("Componentes/Estrategia")
+  text @pdfpreview.components + "\n\n"
+
+ end
+
+
+ def bold_text(_text)
+    text _text, style: :bold
+ end
+
+ def print_table(json_string)
+    text "entra a creacion de tabla"+ "\n\n"
+    hash = JSON.parse json_string
+
+
+    hash.each do |object|
+        # puts "budget " + object.to_json.inspect
+        # text "budget " + object.to_json.inspect
+        text object.tipoRecurso
+    end
+
+
+ end
+
 end

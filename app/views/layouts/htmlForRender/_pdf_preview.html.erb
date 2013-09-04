@@ -85,3 +85,4 @@ problema que planteas. No deberá exceder de media cuartilla.
 	<% @pdfobj = current_user.applications.first.pdf_previews.last %>
 	<%= render :partial => 'pdf_previews/form_embed', :locals => {:pdf_preview_obj  => 	@pdfobj} %>
 <% end %>
+<%= link_to "Generar PDF", pdf_preview_path(@application.id, :format => :pdf),:class => "btn btn-info", :target =>"_blank" %>

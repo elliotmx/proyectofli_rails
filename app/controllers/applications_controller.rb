@@ -24,23 +24,6 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
 
 
-
-    #@a = current_user.applications.where(params[:id]).first
-
-
-    #if @a.nil?
-     #   puts "Si es NIL #{@a} ja"
-    #else
-      #  puts "No es Nil #{@a} jaja"
-    #end
-    #@application = current_user.applications.find(params[:id])
-
-    # if current_user.applications.find(params[:id]).nil?
-    #   @application = current_user.applications.all
-    # else
-    #   @application = current.user.applications.find(params[:id])
-    # end
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @application }
