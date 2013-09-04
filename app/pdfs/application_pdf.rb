@@ -67,7 +67,6 @@ class ApplicationPdf < Prawn::Document
     hash.each do |object|
         # puts "budget " + object.to_json.inspect
         # text "budget " + object.to_json.inspect
-        text object.tipoRecurso
     end
 
 
