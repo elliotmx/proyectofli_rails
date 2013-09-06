@@ -10,6 +10,8 @@ class ApplicationPdf < Prawn::Document
    print_header #1
 
    print_body #2
+
+   print_founders
  end
 
 
@@ -20,8 +22,17 @@ class ApplicationPdf < Prawn::Document
   text "Resumen de Proyecto: #{@pdfpreview.project_title} ", size: 15, style: :bold 
  end
 
- def print_coworkers(application_id)
-    
+ def print_founders()
+    move_down 10
+    text "Colaboradores", size: 15, style: :bold
+
+    table tbl_colaboradores do
+        row(0).font_style = :bold
+        columns(1..4).align = :right
+        self.row_colors = ["#DDDDDD", "#FFFFFF"]
+        self.header = true
+    end
+
  end
 
 
@@ -40,17 +51,14 @@ class ApplicationPdf < Prawn::Document
   bold_text("Poblacion Objetivo")
   text @pdfpreview.objective_population + "\n\n"
 
-  bold_text("Componentes/Estrategia")
-  text @pdfpreview.components + "\n\n"
-
   bold_text("Actividades")
   text @pdfpreview.activities + "\n\n"
 
-  bold_text("Presupuesto")
-  print_table(@pdfpreview.budget)
+  bold_text("Riesgos/Plan de Contingencia")
+  print_table(@pdfpreview.risks,"riesgos")
 
-  bold_text("Componentes/Estrategia")
-  text @pdfpreview.components + "\n\n"
+  bold_text("Presupuesto")
+  print_table(@pdfpreview.budget,"presupuesto")
 
  end
 
@@ -59,17 +67,53 @@ class ApplicationPdf < Prawn::Document
     text _text, style: :bold
  end
 
- def print_table(json_string)
-    text "entra a creacion de tabla"+ "\n\n"
-    hash = JSON.parse json_string
 
+ def print_table(json_string,origenData)
 
-    hash.each do |object|
-        # puts "budget " + object.to_json.inspect
-        # text "budget " + object.to_json.inspect
+    if json_string != "" 
+      hash = JSON.parse json_string
+    
+      if origenData == "presupuesto"
+        table tbl_presupuesto(hash) do
+        row(0).font_style = :bold
+        columns(1..4).align = :right
+        self.row_colors = ["#DDDDDD", "#FFFFFF"]
+        self.header = true
+        end
+      elsif origenData == "riesgos"
+        table tbl_riesgos(hash) do
+          row(0).font_style = :bold
+        end
+      end
+
     end
+    text "\n\n"
+  end
 
 
- end
+  def tbl_presupuesto(hash)
+        [["Tipo Recurso", "Descripcion","Cantidad","Costo Aprox.", "Sub Total"]] +
+        hash.map do |object|
+          [ object['tipoRecurso'].to_s ,object['descripcion'].to_s , object['cantidad'].to_s, object['descripcion'].to_s, object['cantidad'].to_s ]
+        end
+  end
+
+
+  def tbl_riesgos(hash)
+          [["Componentes", "Actividades","Riesgos","Plan de Contingencia"]] +
+        hash.map do |object|
+          [ object['componentes'].to_s ,object['actividades'].to_s , object['riesgos'].to_s, object['plncontingencia'].to_s ]
+      end
+  end
+
+  def tbl_colaboradores
+    @a = Application.find(@pdfpreview.application_id)
+    [["Nombre", "Edad", "Email", "Rol"]]+
+    @a.users.map do |object|
+        [ object.name, object.age, object.email, object.user_profile.description]
+    end
+  end
+
+
 
 end

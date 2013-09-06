@@ -22,10 +22,6 @@ function cargarAccionesArbolAcciones(){
         objMapa.lineaAccion.dos  = arbolAcciones.find("#la2").val();
         objMapa.lineaAccion.tres = arbolAcciones.find("#la3").val();
 
-        console.log($("#la1").hasClass("lineaAccionSelect"));
-        console.log($("#la2").hasClass("lineaAccionSelect"));
-        console.log($("#la3").hasClass("lineaAccionSelect"));
-
         objMapa.lineaAccion.uno_select  = $("#la1").hasClass("lineaAccionSelect");
         objMapa.lineaAccion.dos_select  = $("#la2").hasClass("lineaAccionSelect");
         objMapa.lineaAccion.tres_select = $("#la3").hasClass("lineaAccionSelect");
