@@ -38,7 +38,7 @@
 		 <%= i.spa_description %><%= i.extra_text_desc %></br>
 
 		<!-- PARA PREGUNTAS QUE NECESITAN UN CAMPO DE TEXTO DONDE GUARDAR EL JSON -->
-	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  or i.field_type =="text_area_problema"%>
+	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  or i.field_type =="text_area_problema" or i.field_type == "lineaAccion"%>
 
 		<!-- <p> --> 
 		 <b><%= i.spa_description %></b><%= i.extra_text_desc %>
@@ -68,8 +68,8 @@
 		<% elsif i.field_type == "diagram_field_actividades" %>
 			<%= text_area_tag(i.id ,@respuesta,:class => "jsonDiagramaActividades",:style => "display:none") %>
 			<%= render 'layouts/diagrama_actividades' %>
-		<% elsif i.field_type == "pop_field" %>
-			<%= render 'layouts/htmlForRender/pop_' + i.html_for_field  %>
+		<% elsif i.field_type == "lineaAccion" %>
+			<%= render 'layouts/htmlForRender/lineaAccion' + i.html_for_field %>
 		<% end %>
 		<!-- </p> -->
 		<% end %>

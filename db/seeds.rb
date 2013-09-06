@@ -84,12 +84,9 @@ ServiceType.create(:id => 13, :description => "Consultoría")
 ServiceType.create(:id => 14, :description => "Consultoría Digital")
 
 
-UserProfile.create(:id => 1, :description => "Co-worker")
-UserProfile.create(:id => 2, :description => "Lider")
-UserProfile.create(:id => 3, :description => "Tutor")
+#UserProfile.create(:id => 1, :description => "Co-worker")
+#UserProfile.create(:id => 2, :description => "Lider")
+#UserProfile.create(:id => 3, :description => "Tutor")
 
 College.create(:name=>"Colegio New")
 Faculty.create(:name => "Facultad Ciencias",:idcollege => 1)
-
-
-UserProfile.create(:id => 3, :description => "Tutor")
