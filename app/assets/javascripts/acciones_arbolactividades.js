@@ -29,10 +29,6 @@ function cargarAccionesArbolAcciones(){
         $(".jsonArbolAcciones").val( JSON.stringify(objMapa) );
     });
 
-
-
-
-
 }
 
 function cargarArbolAcciones(){
@@ -65,8 +61,6 @@ function cargarArbolAcciones(){
             }
         
         }
-      
-
 }
 
 
