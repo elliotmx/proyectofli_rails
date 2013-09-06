@@ -31,23 +31,15 @@ def create
         @answer = Answer.where(:application_id =>current_user.applications.first.id, :question_id => i.to_i ).first
 
         if(@answer == nil)
-            Answer.create(:application_id =>current_user.applications.first.id, :question_id => i.to_i, :value => v)
+            @answer = Answer.create(:application_id =>current_user.applications.first.id, :question_id => i.to_i, :value => v)
         else
             @answer.update_attributes(:value => v)
         end
-
-        #==begin
-        #@answer = Answer.where(:application_id =>current_user.applications.first.id, :question_id => i.to_i ).first_or_create! do |ans|
-        #    ans.value = v.to_s
-        #    puts " dentro de update answe #{ans.inspect}"
-        #end      
+  
       end
     	
     end
     
-    #flash[:notice] = "Comment successfully created" #if @comment
-    #puts "request #{request.xhr?}  => 5"
-    #respond_with( current_user.applications.first)
     respond_with( current_user.applications.first , :layout => !request.xhr?)
   end #end of create method
 
