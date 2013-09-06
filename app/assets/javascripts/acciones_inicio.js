@@ -44,8 +44,6 @@ function cargarAccionesInicio(){
   					$(".questions_section").hide();
   					$("#section_5").show();
               cargarArbolProblemas();
-              cargarArbolAcciones();
-              copiarValoresTxtProblema();
               mostrarLineaAccion();
   					break;
   				case 'riesgosBtn':
