@@ -75,6 +75,7 @@
 		<% end %>
 		<% end %>
 
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 	<%= submit_tag('Guardar',:class => "button loginb btnguardar", :disable_with => "Guardando") %>
 
 <% end %>
