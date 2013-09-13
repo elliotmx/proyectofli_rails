@@ -89,7 +89,10 @@ class ApplicationsController < ApplicationController
   # DELETE /applications/1.json
   def destroy
     @application = Application.find(params[:id])
+    
     @application.destroy
+    @application.answers.destroy_all
+
 
     respond_to do |format|
       format.html { redirect_to applications_url }
