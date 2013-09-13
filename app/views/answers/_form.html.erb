@@ -39,10 +39,9 @@
 
 		<!-- PARA PREGUNTAS QUE NECESITAN UN CAMPO DE TEXTO DONDE GUARDAR EL JSON -->
 	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  or i.field_type =="text_area_problema" or i.field_type == "lineaAccion"%>
-
-		<!-- <p> --> 
-		 <b><%= i.spa_description %></b><%= i.extra_text_desc %>
-		 <% unless i.pop_name.nil? or i.pop_name == "" %> <%= render 'layouts/htmlForRender/pop_' + i.pop_name %> <% end %>
+		<b><%= i.spa_description %></b><%= i.extra_text_desc %>
+		 <% unless i.pop_name.nil? or i.pop_name == "" %> 
+		 <%= render 'layouts/htmlForRender/pop_' + i.pop_name %> <% end %>
 		 <% if i.field_type == "text_field" %>
 					<%= text_field_tag(i.id ,@respuesta,:class => "inputs cien") %>
 		<% elsif i.field_type == "text_area" %>

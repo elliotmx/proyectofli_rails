@@ -4,7 +4,17 @@ function cargarAccionesInicio(){
 	$('input.tags').tags();
 
   //establecer tabla que será cargada con datatable
-  $("#tabApplicationsList").dataTable();
+  $("#tabApplicationsList").dataTable({
+    "oLanguaje":{
+      "oLanguage": {
+            "sLengthMenu": "Mostrando _MENU_ registros por página",
+            "sZeroRecords": "No encontramos - , lo sentimos",
+            "sInfo": "Mostrando _START_ de _END_ a _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando 0 de 0 a 0 registros",
+            "sInfoFiltered": "(filtrar de _MAX_ registros totales)"
+        }
+    }
+  });
    
 	$("#section_1").show();
 
@@ -64,6 +74,8 @@ function cargarAccionesInicio(){
   					$("#section_9").show();
   					break;
   					}
+
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
   	});
 
 
