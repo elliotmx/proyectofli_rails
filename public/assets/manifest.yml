@@ -8,10 +8,12 @@
 7.png: 7-b7af82dc4d9eaedd22bf81c68aacb23d.png
 8.png: 8-58b0a270d9e48ef997446a027da899b0.png
 9.png: 9-09d8656a8025421bab92ed8da54a71c1.png
+back_disabled.png: back_disabled-51eff52258ace90b89d642709684a77b.png
 bgshadow.png: bgshadow-8a2717ec825721c4be1f76fa3d508a73.png
 entraFace.png: entraFace-803fe24b5488b2868b670c3a76288e0e.png
 face.png: face-39f99b0b0bd4f3fc3e817cc7c4decf0c.png
 favicon.ico: favicon-f7f0422568b8c3133f322ca02ff2e17c.ico
+forward_disabled.png: forward_disabled-26544d2b15122e5bfa9c05f24eb3313d.png
 icons.png: icons-6cea898a9b995b5f9e28de3cfb7ad6a6.png
 logo.png: logo-abca889e41d9ea067638c33e91e70f37.png
 logo2.png: logo2-19bdc0a815992b98aa811ae16b898e8a.png
@@ -20,6 +22,7 @@ logo_fli_pdf.png: logo_fli_pdf-12db0cc1b401185f1f1eefb48f708437.png
 missing_original.png: missing_original-bdbf885135fbd21cc7ff3088ca21d0ea.png
 okicon.png: okicon-3593c9e28f11685ad176c1264c3c45f5.png
 okicon2.png: okicon2-bb8bda4b6f3676b1d386089fc98cc26b.png
+partetela.png: partetela-ffe25ee0148e728d742b2ce42238049a.png
 proyect.png: proyect-d82d8887c752b78da774ee9cdae6caca.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 rays-main.png: rays-main-cc0e8e71e5883f348148952e9cbd4738.png
@@ -33,7 +36,7 @@ tip4.png: tip4-0c284c43b5150db786148acf40690f3a.png
 twit.png: twit-abd1c0f84bcabd188b7f222000391837.png
 acciones_arbolactividades.js: acciones_arbolactividades-8f5b7c64c284667eea98903831632ae5.js
 acciones_arbolproblemas.js: acciones_arbolproblemas-f509f3be40a5924452a782dc02bce9e9.js
-acciones_inicio.js: acciones_inicio-8c4fbe7601f3e75daac3d47a332cd20b.js
+acciones_inicio.js: acciones_inicio-ddbd29fd2876dfb590cd816ca71456bc.js
 acciones_lineaAccion.js: acciones_lineaAccion-2884db921c2a2e10c1dd90ef8afad1bc.js
 acciones_pdf.js: acciones_pdf-3e923d616e63a2014acbac77ce8684a5.js
 acciones_tablacomponentes.js: acciones_tablacomponentes-b522293684d7433b696accf450acea54.js
@@ -47,7 +50,7 @@ jquery.noty.theme.default.js: jquery.noty.theme.default-38ff0050b05aba05d87a3db1
 jquery.tags.min.js: jquery.tags.min-fd7a98b888a75ecf55ed036c95ed7487.js
 layouts/top.js: layouts/top-579a89a720f49475a7554af68944d02c.js
 pdf_previews.js: pdf_previews-3af39f1da6f167c2cbf453ed74daff3d.js
-application.css: application-a0a7c6db06dd9af98c9b9c53616c4f1a.css
+application.css: application-6ef35be3286dafca5a2510b11e47ba66.css
 jquery.datatables.css: jquery.datatables-bf1c7fa10166b6c010a228457d75a1d0.css
 jquery.tags.css: jquery.tags-7b82a71e8dd741f0e015acd29e256a68.css
 pdf_previews.css: pdf_previews-7270767b2a9e9fff880aa5de378ca791.css

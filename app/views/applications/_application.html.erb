@@ -1,9 +1,9 @@
 <tr>
-<td><%= image_tag("proyect.png", :alt => "imgn") %></td>
-<td><%= application.name %></td>
-<td><%= application.short_description %></td>
-<!--<div class="urlvideo"><%= application.video_url %></div>
-<div class="tags"><%= application.tags %></div>-->
-<td><%= link_to "Generar PDF", pdf_preview_path(application.id, :format => :pdf),:class => "btn btn-info", :target =>"_blank" %></td>
-<td><%= image_tag("face.png", :alt => "face") %><%= image_tag("twit.png", :alt => "twit") %></td>
+	<td><%= image_tag("proyect.png", :alt => "imgn") %></td>
+	<td><%= application.name %></td>
+	<td><%= application.short_description %></td>
+	<!--<div class="urlvideo"><%= application.video_url %></div>
+	<div class="tags"><%= application.tags %></div>-->
+	<td><%= link_to "Generar PDF", pdf_preview_path(application.id, :format => :pdf),:class => "btn btn-info", :target =>"_blank" %></td>
+	<td><%= image_tag("face.png", :alt => "face") %><%= image_tag("twit.png", :alt => "twit") %></td>
 </tr>

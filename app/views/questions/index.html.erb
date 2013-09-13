@@ -1,13 +1,12 @@
-<h1>Listing questions</h1>
-
-<table style="background:white">
+<h1>Lista de Preguntas</h1>
+<div class="box">
+<table>
   <tr>
     <th>ID</th>
-    <th>Position Question </th>
+    <th>Orden</th>
     <th>Spa description</th>
     <th>Eng description</th>
     <th>Active</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -15,16 +14,16 @@
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.id %></td>
-    <td><%= question.position_question %></td>
+    <td style = "text-align: center;"><%= question.position_question %></td>
     <td><%= question.spa_description %></td>
     <td><%= question.field_type %></td>
     <td><%= question.section.description %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Editar', edit_question_path(question) %></td>
+    <td><%= link_to 'Eliminar', question, confirm: 'Estas seguro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'Agregar pregunta', new_question_path, :class => 'button' %>
+</div>

@@ -43,7 +43,7 @@ function cargarAccionesInicio(){
   				case 'manosObraBtn':
   					$(".questions_section").hide();
   					$("#section_5").show();
-              cargarArbolProblemas();
+              cargarArbolAcciones();
               mostrarLineaAccion();
   					break;
   				case 'riesgosBtn':
