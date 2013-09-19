@@ -52,16 +52,15 @@
     <%= f.file_field :photo,:class => "formNormal" %>
   </div> -->
   <div class="field">
-    <%= f.label :Motivación %><br />
-    <%= f.number_field :motivation , :value => 8, :min =>0,:class => "inputs formNormal"  %>
-  </div>
-  <!--<div class="field">
-    <%= f.label :Facultad %><br />
-    <%= f.collection_select(:faculty_id, Faculty.all, :id, :name) %>
-  </div> --> 
+    <%= f.label :Compromiso_con_el_proyecto %><br />
+    <%= f.select(:motivation, ['Tiempo Completo', 'Medio Tiempo','En mi tiempo libre'], {}, { :class => 'chosen' }) %>
+
+
+
+  </div> 
   <div class="field">
     <%= f.label :Perfil %><br />
-    <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description) %>
+    <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description, {},{:class=>'chosen'}) %>
   </div>
   <%= f.hidden_field :create_from , :value => 'user_form'  %>
 <div id="botonCentral" style="margin-bottom:20px;">

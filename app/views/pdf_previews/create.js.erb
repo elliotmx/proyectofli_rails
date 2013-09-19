@@ -11,10 +11,12 @@ var el = $('#respond_application_form');
 
   // Display errors on form
   el.find('.errors').html(errors);
+  alert("Errores " + errors);
 
 <% else %>
-
-  generateNoty('top', 'PDF Guardado Correctamente');
+  alert("<%= http://#{request.host}:#{request.port+request.fullpath} %>");
+  generateNotyConfirm('centerRight', 'PDF Actualizado Correctamente',);
+  //generateNoty('top', 'PDF Guardado Correctamente');
   //alert("Guardado Correctamente");
 
   // Clear form

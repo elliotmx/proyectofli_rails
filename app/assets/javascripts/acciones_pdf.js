@@ -1,23 +1,13 @@
 function cargarAccionesInicioPdfPreview(){
 
-
 }
 
 function cargarPdfPreview(){
 	$(".btnguardar").hide();
 	var txtInput;
-	//setear valores a form y a DIVS EDITABLES
-
-	pdf_preview_project_title
-
 
 	txtInput = $("#pdf_titulo").html();
 	$("#pdf_preview_project_title").val(txtInput);
-
-
-	txtInput = $(".txtProblema").val();
-	$("#pdf_problematica").html(txtInput);
-	$("#pdf_preview_problem").val(txtInput);
 
 	txtInput = $(".txtProblema").val();
 	$("#pdf_problematica").html(txtInput);
