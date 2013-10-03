@@ -38,7 +38,7 @@
 		 <%= i.spa_description %><%= i.extra_text_desc %></br>
 
 		<!-- PARA PREGUNTAS QUE NECESITAN UN CAMPO DE TEXTO DONDE GUARDAR EL JSON -->
-	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  or i.field_type =="text_area_problema" or i.field_type == "lineaAccion"%>
+	<% elsif i.field_type == "text_field" or i.field_type == "text_area" or i.field_type =="hidden_field" or i.field_type == "number_field" or i.field_type == "diagram_field" or i.field_type == "diagram_field2" or i.field_type =="resources_table" or i.field_type == "components_table" or i.field_type == "diagram_field_actividades" or i.field_type == "pop_field"  or i.field_type =="text_area_problema" or i.field_type == "lineaAccion" or i.field_type =="select_html"%>
 		<b><%= i.spa_description %></b><%= i.extra_text_desc %>
 		 <% unless i.pop_name.nil? or i.pop_name == "" %> 
 		 <%= render 'layouts/htmlForRender/pop_' + i.pop_name %> <% end %>
@@ -69,7 +69,17 @@
 			<%= render 'layouts/diagrama_actividades' %>
 		<% elsif i.field_type == "lineaAccion" %>
 			<%= render 'layouts/htmlForRender/lineaAccion' + i.html_for_field %>
+		<% elsif i.field_type == "select_html" %>
+			<%=
+			grouped_options = {
+ 				'Inglés' => [['Inglés Básico','1'],['Inglés Medio','2'],['Inglés Avanzado','3']],
+ 				'Francés' => [['Francés Básico','4'],['Francés Medio','5'],['Francés Avanzado','6']]
+			}
+			 select_tag i.id, 
+				grouped_options_for_select(grouped_options), :class => "chosen-select chosen", :multiple =>"",:data_placeholder =>"Click para seleccionar" ,:tabindex => "-1"%>
 		<% end %>
+
+					
 		<!-- </p> -->
 		<% end %>
 		<% end %>
