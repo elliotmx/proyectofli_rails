@@ -8,7 +8,7 @@
 			<!--
 			class="current_page_item"
 			-->
-			<li><a href="#">Somos Fli</a></li>
+			<li> <%= link_to 'Somos Fli',  qsomos_path %></li>
 			<li> <%= link_to 'Proyectos',  list_applications_path %></li>
 			<% if user_signed_in? %>
 				<li> <%= link_to 'Mis Ideas',  applications_path %> </li>
