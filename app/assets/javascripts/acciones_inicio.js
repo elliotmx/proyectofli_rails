@@ -4,17 +4,7 @@ function cargarAccionesInicio(){
 	$('input.tags').tags();
 
   //establecer tabla que será cargada con datatable
-  $("#tabApplicationsList").dataTable({
-    "oLanguaje":{
-      "oLanguage": {
-            "sLengthMenu": "Mostrando _MENU_ registros por página",
-            "sZeroRecords": "No encontramos - , lo sentimos",
-            "sInfo": "Mostrando _START_ de _END_ a _TOTAL_ registros",
-            "sInfoEmpty": "Mostrando 0 de 0 a 0 registros",
-            "sInfoFiltered": "(filtrar de _MAX_ registros totales)"
-        }
-    }
-  });
+  $("#tabApplicationsList").dataTable();
    
 	$("#section_1").show();
 
@@ -87,6 +77,8 @@ function cargarAccionesInicio(){
   $(".inputs.txtProblema").on('keyup',function(){
         copiarValoresTxtProblema();
   });
+
+  $('.chosen').chosen({width: "400px",disable_search_threshold: 10}); 
 	
 }
 
@@ -102,6 +94,28 @@ function generateNoty(layout, txt) {
       timeout:200,
       template: '<div class="noty_message"><img src="../assets/okicon2.png" alt="logo">&nbsp;<span class="noty_text"></span><div class="noty_close"></div></div>',
       theme: 'defaultTheme'
+      });
+
+    }
+
+
+function generateNotyConfirm(layout, txt, url) {
+      n = noty({
+      text:'¿Quieres ver como quedó tu PDF?',
+      modal:true,
+      layout:layout,
+      buttons: [
+        {addClass: 'btn btn-primary', text: 'Ok', onClick: function($noty) {
+        $noty.close();
+        window.open( url ,'mywindow','width=800,height=400');
+        }
+      },
+    {addClass: 'btn btn-danger', text: 'Cancel', onClick: function($noty) {
+        $noty.close();
+        noty({text: 'You clicked "Cancel" button', type: 'error'});
+      }
+    }
+  ]
       });
 
     }

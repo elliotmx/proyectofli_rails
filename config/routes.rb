@@ -38,6 +38,8 @@ as :user do
     get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
 end  
   
+  get 'qsomos', to: 'home#qsomos'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

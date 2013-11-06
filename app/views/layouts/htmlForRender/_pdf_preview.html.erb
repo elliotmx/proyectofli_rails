@@ -4,49 +4,22 @@
 	<%= current_user.applications.first.name %>
 </div>
 
-<h4>Problemática</h4>
+<h4>Problema</h4>
 <div id="pdf_problematica">
 	<p contenteditable="true" >
 	Debes saber que para hablar de tu problema en un contexto general tienes que identificar la problemática. Ésta se refiere a la descripción total de tu árbol, es decir, explicar tanto el problema principal como cada causa y efecto. Deberás sustentar con datos basados en información real y mostrar porque son un problema. Todo se redacta en tercera persona.
 	</p>
-</div>	
-<h4>Justificación</h4>
-<div id="pdf_justificacion" >
-	<p contenteditable="true">
-			En el caso de la justificación, tienes que explicar por qué es importante resolver el
-problema que planteas. No deberá exceder de media cuartilla.
-	</p>
 </div>
-<h4>Objetivo</h4>
+
+<h4>Publico Objetivo</h4>
 <div id="pdf_objetivo">
 	<p contenteditable="true">
 	Tu objetivo general es el enunciado central de tu árbol de objetivos.</p>
 </div>
 
-<h4>Población Objetivo</h4>
+<h4>Propuesta</h4>
 <div id="pdf_pob_objetivo" >
 	<p contenteditable="true">
-		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
-	</p>
-</div>
-
-<h4>Componentes/Estrategia</h4>
-<div id="pdf_comp_estrategia" contenteditable="true">
-	<p>
-		Estos los puedes encontrar en la Descripción de actividades, sección 5 Manos a la Obra,donde aparecen los componentes que definen tu estrategia.
-	</p>
-</div>
-
-<h4>Actividades</h4>
-<div id="pdf_actividades" contenteditable="true">
-	<p>
-		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
-	</p>
-</div>
-
-<h4>Cronograma</h4>
-<div id="pdf_cronograma" contenteditable="true">
-	<p>
 		Tu población objetivo surge de responder la pregunta Define tu objetivo o mercado meta de la Sección 4 área de Impacto.
 	</p>
 </div>
@@ -65,7 +38,7 @@ problema que planteas. No deberá exceder de media cuartilla.
 </div>
 
 
-<h4>Riesgos y Plan de Contingencia</h4>
+<h4>Actividades</h4>
 <div>
 	<table class="gridtable" style="border-radius:10px;" id="pdf_riesgos_contingencia">
 		<tr >
@@ -76,8 +49,6 @@ problema que planteas. No deberá exceder de media cuartilla.
 		</tr>
 	</table>
 </div>
-
-<!-- <%= link_to "Generar PDF", application_path(@application.id, :format => "pdf"), class: "button"  %> -->
 </div>
 <% if current_user.applications.first.pdf_previews.blank? %>
 	<%= render :partial => 'pdf_previews/form_embed', :locals => {:pdf_preview_obj => PdfPreview.new} %>	
@@ -85,4 +56,3 @@ problema que planteas. No deberá exceder de media cuartilla.
 	<% @pdfobj = current_user.applications.first.pdf_previews.last %>
 	<%= render :partial => 'pdf_previews/form_embed', :locals => {:pdf_preview_obj  => 	@pdfobj} %>
 <% end %>
-<%= link_to "Generar PDF", pdf_preview_path(@application.id, :format => :pdf),:class => "btn btn-info", :target =>"_blank" %>
