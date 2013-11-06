@@ -4,8 +4,40 @@
 		var imagePos = $(this).offset().top;
 
 		var topOfWindow = $(window).scrollTop();
-			if (imagePos < topOfWindow+400) {
+			if (imagePos < topOfWindow+200) {
 				$(this).addClass("slideLeft");
+			}
+		});
+		$('.animatedElement2').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+200) {
+				$(this).addClass("slideRight");
+			}
+		});
+		$('.animatedElement3').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+200) {
+				$(this).addClass("slideDown");
+			}
+		});
+		$('.animatedElement4').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+200) {
+				$(this).addClass("slideUp");
+			}
+		});
+		$('.animatedElement5').each(function(){
+		var imagePos = $(this).offset().top;
+
+		var topOfWindow = $(window).scrollTop();
+			if (imagePos < topOfWindow+200) {
+				$(this).addClass("expandUp");
 			}
 		});
 	});
@@ -14,28 +46,28 @@
 <!-- Banner Wrapper -->
 <div id="banner-wrapper " style="margin-top:-30px;">									
 	<div class="qsomos">
-		<center><h1 class="tossing">FLI GLOCAL GROUP</h1></center>
+		<center><%= image_tag("fliglocal.png", :class => "tossing") %></center>
 
 	<div class="animatedElement  box">
-		<h2 class="floating">MISIÓN:</h2>
+		<h2 class="floating" style="color:#1d4885;">MISIÓN:</h2>
 		<p class="slideRight">Somos una plataforma de análisis estratégico de ideas con perspectiva global y propuesta local que a través de la vinculación socio-tecnológica busca proponer e impulsar proyectos para dar respuesta a las problemáticas o necesidades de la sociedad.</p>
 	</div>
 
-	<div class="animatedElement box">
-		<h2 class="floating">VISIÓN:</h2>
+	<div class="animatedElement2 box">
+		<h2 class="floating" style="color:#1d4885;">VISIÓN:</h2>
 		<p class="slideDown">Ser reconocidos como la plataforma de análisis estratégico pionera en el estado, por la característica innovadora e impacto positivo de los proyectos tanto propuestos como impulsados, así como de los alcances y replicabilidad de los mismos.</p>
 	</div>
-	<div class="animatedElement box">
-		<h2 class="floating">OBJETIVO FLI:</h2>
+	<div class="animatedElement3 box">
+		<h2 class="floating" style="color:#1d4885;">OBJETIVO <span style="color:#e46b0e;">FLI:</span></h2>
 		<p class="slideExpandUp">Pensar global y actuar local para generar propuestas creativas a necesidades y problemáticas sociales.</p>
 	</div>
-	<div class="animatedElement box">
-		<h2 class="floating">SOMOS FLI:</h2>
+	<div class="animatedElement4 box">
+		<h2 class="floating" style="color:#1d4885;">SOMOS <span style="color:#e46b0e;">FLI:</span></h2>
 		<p class="slideUp">Nuestro equipo está conformado por perfiles de distintas áreas que de manera interdisciplinaria trabajan para analizar de manera estratégica e integral las ideas de estudiantes y/o emprendedores sociales, además de detectar áreas de oportunidad para desarrollar proyectos. Somos criminólogos, psicólogos educativos, sociales, clínicos, mercadólogos y desarrolladores de software que buscamos crear e impulsar propuestas de valor social.</p>
 	</div>
-	<div class="animatedElement box">
-		<h2 class="floating">ACERCA DE FLI GLOCAL:</h2>
-		<p class="slideRight">Nuestro campo de acción es desde la concepción de la idea hasta el momento en donde se define un proyecto específico. Nos gusta apoyar a los estudiantes y utilizamos nuestro propio modelo y metodología para lograr encaminar las ideas a propuestas que solucionen problemas reales, siempre buscando impulsar la vinculación socio-tecnológica de las mismas.
+	<div class="animatedElement5 box">
+		<h2 class="floating" style="color:#1d4885;">ACERCA DE FLI GLO<span style="color:#e46b0e;">C</span>AL:</h2>
+		<p class="expandUp">Nuestro campo de acción es desde la concepción de la idea hasta el momento en donde se define un proyecto específico. Nos gusta apoyar a los estudiantes y utilizamos nuestro propio modelo y metodología para lograr encaminar las ideas a propuestas que solucionen problemas reales, siempre buscando impulsar la vinculación socio-tecnológica de las mismas.
 		</br>
 		Nos interesa la interdisciplina por eso buscamos ideas y estudiantes y/o emprendedores de perfiles diversos que requieran ayuda para desarrollar su proyecto. No importa si no sabes sobre todas las áreas con las que se vincula tu idea propuesta, para eso estamos nosotros, para ayudarte a enriquecer tu perspectiva.</p>
 	</div>
