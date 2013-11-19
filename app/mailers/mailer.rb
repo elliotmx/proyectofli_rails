@@ -3,7 +3,7 @@ class Mailer < ActionMailer::Base
 
   def send_email(message)
     @msg = message
-    mail( :to => @msg.mail,
+    mail( :to => @msg.email,
     :subject => 'Thanks for signing up for our amazing fli website' )
   end
 
