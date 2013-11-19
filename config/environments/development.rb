@@ -19,14 +19,15 @@ Fli::Application.configure do
   #defined for devise
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 
-  config.action_mailer.smtp_settings = {
-    enable_starttls_auto: true,
-    address: 'smtp.gmail.com',
-    port: 587,
-    authentication: 'plain',
-    user_name: 'christian.consuelo2@gmail.com',
-    password: 'Shippuuden22'
-  }
+  ActionMailer::Base.smtp_settings = {
+  :user_name => 'app12292569@heroku.com',
+  :password => 'aanpjs9z',
+  :domain => 'www.fli.mx',
+  :address => 'smtp.sendgrid.net',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
