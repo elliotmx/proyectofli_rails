@@ -45,6 +45,7 @@ acciones_tablarecursos.js: acciones_tablarecursos-e1a70660176e3f392009903e1b9c29
 application.js: application-b71f0da9acb9243fe675d032048c68d5.js
 chosen-sprite.png: chosen-sprite-20bb3e0621bd6c6d593ecd0d954d8690.png
 chosen-sprite@2x.png: chosen-sprite@2x-9de9d31f94d6ab0bc3495516d2fcc845.png
+contact.js: contact-3af39f1da6f167c2cbf453ed74daff3d.js
 d.custom_application.js: d.custom_application-2f5c93e8e8824cf74dce7b19d3a7847b.js
 jquery.chosen.js: jquery.chosen-4d6ff51e94435bbe5f8f42cf3ae498aa.js
 jquery.datatables.min.js: jquery.datatables.min-ae70d9973a8901ebe98ad4706c825fec.js
@@ -54,7 +55,8 @@ jquery.noty.layout.top.js: jquery.noty.layout.top-579a89a720f49475a7554af68944d0
 jquery.noty.theme.default.js: jquery.noty.theme.default-38ff0050b05aba05d87a3db114ae93b4.js
 jquery.tags.min.js: jquery.tags.min-fd7a98b888a75ecf55ed036c95ed7487.js
 pdf_previews.js: pdf_previews-3af39f1da6f167c2cbf453ed74daff3d.js
-application.css: application-e7ba4d41eb264684ff4a5bd07faf20f5.css
+application.css: application-eed3b5d7c7743ec541ad056bf3b68948.css
+contact.css: contact-7270767b2a9e9fff880aa5de378ca791.css
 jquery.chosen.css: jquery.chosen-b6ba48c8f51a1953279357b4c0f9c92a.css
 jquery.datatables.css: jquery.datatables-bf1c7fa10166b6c010a228457d75a1d0.css
 jquery.tags.css: jquery.tags-7b82a71e8dd741f0e015acd29e256a68.css

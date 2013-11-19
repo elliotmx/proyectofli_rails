@@ -1,0 +1,30 @@
+<%= form_for(msgobject ,:url => contact_path) do |form| %>
+<center><h2 class="floating" style="color:#1d4885;">Contacto FLI GLO<span style="color:#e46b0e;">C</span>AL:</h2></center>
+  <fieldset class="fields">
+    <div class="field">
+      <%= form.label 'Nombre: ' %><br>
+      <%= form.text_field :name, :class => 'inputs inputContacto', :placeholder => 'Nombre' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label 'Email: ' %><br>
+      <%= form.text_field :email, :class => 'inputs', :placeholder => 'Email' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label 'Asunto: ' %><br>
+      <%= form.text_field :subject, :class => 'inputs', :placeholder => 'Asunto' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label 'Contenido: ' %><br>
+      <%= form.text_area :body, :rows => 10, :class => 'inputs inputContacto', :style => 'resize: none;', :placeholder => 'Contenido' %>
+    </div>
+  </fieldset>
+  
+  <fieldset class="actions">
+    <div style="margin:0 0 10px 30px;">
+      <%= form.submit "Enviar", :class => 'button loginb', :style => 'padding:0 215px 0 215px;'%>
+    </div>
+  </fieldset>
+<% end %>
