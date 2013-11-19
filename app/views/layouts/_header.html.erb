@@ -9,18 +9,8 @@
 			class="current_page_item"
 			-->
 			<li> <%= link_to 'Somos Fli',  qsomos_path %></li>
-			
-
 
 			<li><a href="#openPopContacto">Contacto</a></li>
-			<div id="openPopContacto" class="pop">
-			<div>
-			<a href="#close" title="Close" class="close">X</a>
-			<p style="margin-top: -10px; font-size:14px; font-style:italic;"> 
-			<%= render :partial =>'mailer/send_form', :locals  => {:msgobject => Message.new} %> 
-			</div>
-			</div>
-
 
 			<% if user_signed_in? %>
 				<li> <%= link_to 'Mis Ideas',  applications_path %> </li>
@@ -29,6 +19,14 @@
 			</ul>
 
 	</nav>		
+
+	<div id="openPopContacto" class="pop">
+		<div>
+			<a href="#close" title="Close" class="close">X</a>
+			<p style="margin-top: -10px; font-size:14px; font-style:italic;"> 
+			<%= render :partial =>'mailer/send_form', :locals  => {:msgobject => Message.new} %> 
+		</div>
+	</div>
 
 			<% if user_signed_in? %>
 				<div id="btn_salir">
@@ -48,3 +46,4 @@
 	  		<% end %>
 	  		
 </div>
+
