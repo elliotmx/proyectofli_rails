@@ -18,13 +18,11 @@
 		<% i.html_for_field.constantize.all.each do |radioOption| %>
 			<li>
 				<% @id = radioOption.id %>
-				
 				<% if @id == @respuesta.to_i %>
 					<%= radio_button_tag( i.id , @id, :checked ) %>
 				<% else %>
 					<%= radio_button_tag(i.id, @id) %>
 				<% end %>
-
 				<%= label_tag(@id, radioOption.description) %>
 			</li>
 			<% end %>
@@ -76,7 +74,7 @@
  				'Francés' => [['Francés Básico','4'],['Francés Medio','5'],['Francés Avanzado','6']]
 			}
 			 select_tag i.id, 
-				grouped_options_for_select(grouped_options), :class => "chosen-select chosen", :multiple =>"",:data_placeholder =>"Click para seleccionar" ,:tabindex => "-1"%>
+				grouped_options_for_select(grouped_options,[@respuesta]), :class => "chosen-select chosen", :multiple =>"",:data_placeholder =>"Click para seleccionar" ,:tabindex => "-1", :selected => "1" %>
 		<% end %>
 
 					
