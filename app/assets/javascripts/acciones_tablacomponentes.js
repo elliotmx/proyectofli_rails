@@ -82,22 +82,22 @@ function validarCamposTablaComponentes(){
     var isInputCorrecto = true; 
 
     if($("#txt_desc_componentes").val() == ""){
-        alert("Ups, Componentes está vacio");
+        alert("Ups, el campo de Fortalezas está vacio");
         $("#txt_desc_componentes").focus();
         isInputCorrecto = false;
     }
     else if($("#txt_actividades_componentes").val() == ""){
-        alert("Olvidaste llenar las actividades");
+        alert("Olvidaste llenar las Oportunidades");
         $("#txt_actividades_componentes").focus();
         isInputCorrecto = false;
     }
     else if($("#txt_riesgos_componentes").val() == ""){
-        alert("Indica los riesgos");
+        alert("Indica las Debilidades");
         $("#txt_riesgos_componentes").focus();
         isInputCorrecto = false;
     }
     else if($("#txt_contingencia_componentes").val() == ""){
-        alert("Contingencia está vacio");
+        alert("Amenazas está vacio");
         $("#txt_contingencia_componentes").focus();
         isInputCorrecto = false;
     }
