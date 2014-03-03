@@ -101,6 +101,12 @@ class QuestionsController < ApplicationController
   end
 
   #cargar el modelo de preguntas con json de production
+ # If you need to test from the console (tested on Rails 3.1):
+
+#ApplicationController methods:
+
+#foo = ActionController::Base::ApplicationController.new
+#foo.some_method 
   def cargarPreguntas
 
       #destroy previous content
