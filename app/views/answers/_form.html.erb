@@ -12,7 +12,6 @@
 	%>
 	<!-- PARA PREGUNTAS QUE NECESITAN MOSTRAR UNA SERIE DE OPCIONES -->
 		<% if i.field_type == "radio" %> 
-		<p>
 		<b> <%= i.spa_description %></b>
 		<ul>
 		<% i.html_for_field.constantize.all.each do |radioOption| %>
@@ -26,7 +25,7 @@
 				<%= label_tag(@id, radioOption.description) %>
 			</li>
 			<% end %>
-		</ul></p>
+		</ul>
 		
 		<!-- PARA PREGUNTAS QUE NECESITAN MOSTRAR UN HTML MAS COMPLEJO -->
 	<% elsif i.field_type == "html_render" %>
@@ -68,13 +67,16 @@
 		<% elsif i.field_type == "lineaAccion" %>
 			<%= render 'layouts/htmlForRender/lineaAccion' + i.html_for_field %>
 		<% elsif i.field_type == "select_html" %>
-			<%=
-			grouped_options = {
- 				'Inglés' => [['Inglés Básico','1'],['Inglés Medio','2'],['Inglés Avanzado','3']],
- 				'Francés' => [['Francés Básico','4'],['Francés Medio','5'],['Francés Avanzado','6']]
-			}
-			 select_tag i.id, 
-				grouped_options_for_select(grouped_options,[@respuesta]), :class => "chosen-select chosen", :multiple =>"",:data_placeholder =>"Click para seleccionar" ,:tabindex => "-1", :selected => "1" %>
+			<% if i.html_for_field == "numero_meses_trabajo" %>
+				<% grouped_options = [['1 mes',1],['3 meses',2],['6 meses',3],['1 año o más',4]] %>
+			<% elsif i.html_for_field == "motivado_proyecto" %>
+				<% grouped_options = [['Poco Motivado',1],['Normal',2],['Muy motivado',3]] %>
+			<% end %>
+
+			<br>
+			 <%= select_tag i.id, 
+				options_for_select(grouped_options,selected=@respuesta ), :class => "chosen",:data_placeholder =>"Click para seleccionar" %>
+			<br>
 		<% end %>
 
 					
