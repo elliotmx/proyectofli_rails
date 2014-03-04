@@ -41,9 +41,9 @@
 		 <% unless i.pop_name.nil? or i.pop_name == "" %> 
 		 <%= render 'layouts/htmlForRender/pop_' + i.pop_name %> <% end %>
 		 <% if i.field_type == "text_field" %>
-					<%= text_field_tag(i.id ,@respuesta,:class => "inputs cien") %>
+					<%= text_field_tag(i.id ,@respuesta,:class => "inputs cien", :maxlength =>"250") %>
 		<% elsif i.field_type == "text_area" %>
-					<%= text_area_tag(i.id ,@respuesta,:class => "inputs "+ i.html_for_field ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
+					<%= text_area_tag(i.id ,@respuesta,:class => "inputs "+ i.html_for_field ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none", :maxlength =>"1000") %> 
 		<% elsif i.field_type == "text_area_problema" %>
 					<%= text_area_tag(i.id ,@respuesta,:class => "inputs txtProblema" ,:style => "margin: 0px 0px 10px; width: 100%; min-width: 950px; height: 120px; resize: none") %> 
 		<% elsif i.field_type == "hidden_field" %>
