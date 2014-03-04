@@ -10,7 +10,7 @@ gem 'rails', '3.2.1'
 #
 #, :staging do
 group :production do 
- gem "pg"
+ #gem "pg"
 end
 
 group :development, :test do
@@ -36,6 +36,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'paperclip', '3.0.4'
 gem 'devise', '2.2'
+
+gem 's3_direct_upload'
 #gem 'yaml_db'
 gem 'seed_dumper'
 #gem 'cocaine', '0.3.2'

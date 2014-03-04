@@ -1,0 +1,5 @@
+<% if @file_uploader.new_record? %>
+	alert("Error al subir el archivo");
+<% else %>
+	$("#paintings").append("<%= j render(@file_uploader) %>");
+<% end %>

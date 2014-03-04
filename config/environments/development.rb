@@ -29,6 +29,13 @@ Fli::Application.configure do
   :enable_starttls_auto => true
 }
 
+
+#config heroku for S3
+#heroku config:set S3_BUCKET_NAME=flimx
+#heroku config:set AWS_ACCESS_KEY_ID=AKIAJ6CJWVDDUOA4K23Q
+#heroku config:set AWS_SECRET_ACCESS_KEY=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
+
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
