@@ -1,6 +1,7 @@
 class InvitedUsersController < ApplicationController
   # GET /invited_users
   # GET /invited_users.json
+   before_filter :authenticate_user!
   def index
     @invited_users = InvitedUser.all
 
