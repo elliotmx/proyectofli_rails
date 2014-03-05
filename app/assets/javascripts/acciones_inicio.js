@@ -13,6 +13,9 @@ function cargarAccionesInicio(){
   		  $(this).children('.uno').toggle('slow');
   	});
 
+    //uploader
+  $("#s3-uploader").S3Uploader();
+
 
 	$(".btnHowTo").on("click", function(e){
   			//console.log(e);

@@ -105,8 +105,9 @@ class QuestionsController < ApplicationController
 
 #ApplicationController methods:
 
-#foo = ActionController::Base::ApplicationController.new
-#foo.some_method 
+#foo = ActionController::Base::QuestionsController.new
+#foo.cargarPreguntas
+
   def cargarPreguntas
 
       #destroy previous content
