@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @invited_user.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @invited_user.name %>
+</p>
+
+<p>
+  <b>Id college:</b>
+  <%= @invited_user.id_college %>
+</p>
+
+
+<%= link_to 'Edit', edit_invited_user_path(@invited_user) %> |
+<%= link_to 'Back', invited_users_path %>

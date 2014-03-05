@@ -1,5 +1,9 @@
 Fli::Application.routes.draw do
 
+  resources :invited_users
+
+  resources :file_uploaders
+
   resources :pdf_previews
 
   resources :service_types
@@ -39,6 +43,8 @@ as :user do
 end  
   
   get 'qsomos', to: 'home#qsomos'
+
+  get 'upload', to:  'file_uploader#index'
 
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post

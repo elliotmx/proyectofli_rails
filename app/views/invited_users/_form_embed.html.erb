@@ -1,0 +1,27 @@
+<%= form_for(u) do |f| %>
+  <% if u.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(u.errors.count, "error") %> Error al modificar</h2>
+
+      <ul>
+      <% u.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Guardar',:disable_with => "Guardando" %>
+  </div>
+<% end %>

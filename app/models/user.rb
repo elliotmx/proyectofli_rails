@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	belongs_to :user_profile
-	belongs_to :faculty
+	belongs_to :college
   has_and_belongs_to_many :applications
   has_and_belongs_to_many :roles
 	accepts_nested_attributes_for :user_profile
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   	attr_accessible :email, :password, :name, :application_id, 
     :age, :address, :semester, :phone, :extra_phone, :photo,
     :twitter, :linkedin, :faculty_id,:user_profile_id, :password_confirmation,
-    :motivation, :create_from, :provider, :uid, :role_ids
+    :motivation, :create_from, :provider, :uid, :role_ids,:college_id
 
     validates_uniqueness_of :email, :case_sensitive => false
     #validates_uniqueness_of    :email,     :case_sensitive => false, :allow_blank => true, :if => :email_changed?

@@ -13,6 +13,9 @@ function cargarAccionesInicio(){
   		  $(this).children('.uno').toggle('slow');
   	});
 
+    //uploader
+  //$("#s3-uploader").S3Uploader();
+
 
 	$(".btnHowTo").on("click", function(e){
   			//console.log(e);
@@ -78,7 +81,7 @@ function cargarAccionesInicio(){
         copiarValoresTxtProblema();
   });
 
-  $('.chosen').chosen({width: "400px",disable_search_threshold: 10}); 
+  $('.chosen').chosen({width: "400px",disable_search_threshold: 10});
 	
 }
 
