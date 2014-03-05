@@ -10,6 +10,7 @@
 9.png: 9-09d8656a8025421bab92ed8da54a71c1.png
 back_disabled.png: back_disabled-51eff52258ace90b89d642709684a77b.png
 bgshadow.png: bgshadow-8a2717ec825721c4be1f76fa3d508a73.png
+contacto.png: contacto-4f862160daa14a8b6356615c7c89a5fc.png
 entraFace.png: entraFace-803fe24b5488b2868b670c3a76288e0e.png
 face.png: face-39f99b0b0bd4f3fc3e817cc7c4decf0c.png
 favicon.ico: favicon-f7f0422568b8c3133f322ca02ff2e17c.ico
@@ -29,6 +30,7 @@ proyect.png: proyect-d82d8887c752b78da774ee9cdae6caca.png
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 rays-main.png: rays-main-cc0e8e71e5883f348148952e9cbd4738.png
 rays-main2.png: rays-main2-65560166e93945b70526dc497c50ac72.png
+section2.png: section2-7d52e5bc37059453c433a5f5db4987ae.png
 tablecom.png: tablecom-fc416a1d5b9d2c665e3e6d1ed6a64715.png
 tip.png: tip-7d281b695633d698dda2b6cb78415e14.png
 tip1.png: tip1-91cc2649913734a59a09bb40536bef63.png
@@ -56,7 +58,7 @@ jquery.noty.layout.top.js: jquery.noty.layout.top-579a89a720f49475a7554af68944d0
 jquery.noty.theme.default.js: jquery.noty.theme.default-38ff0050b05aba05d87a3db114ae93b4.js
 jquery.tags.min.js: jquery.tags.min-fd7a98b888a75ecf55ed036c95ed7487.js
 pdf_previews.js: pdf_previews-3af39f1da6f167c2cbf453ed74daff3d.js
-application.css: application-09525df5efca4feeca629e1045e88953.css
+application.css: application-ef2ad62e60bff68e3df19e185aa7b10b.css
 contact.css: contact-7270767b2a9e9fff880aa5de378ca791.css
 jquery.chosen.css: jquery.chosen-b6ba48c8f51a1953279357b4c0f9c92a.css
 jquery.datatables.css: jquery.datatables-bf1c7fa10166b6c010a228457d75a1d0.css
