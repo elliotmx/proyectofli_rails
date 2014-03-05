@@ -22,7 +22,8 @@
 			<li><a href="#openPopContacto">Contacto</a></li>
 
 			<% if user_signed_in? %>
-				<li> <%= link_to 'Mis Ideas',  applications_path %> </li>
+				<!--<li> <%= link_to 'Mis Ideas',  applications_path %> </li>-->
+				<li> <%= link_to 'Alta Seleccionados',  invited_users_path %> </li>
 				<!--<li><a href="#">Tutorial</a></li>-->
 			<% end %>
 			</ul>
