@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140304160759) do
+ActiveRecord::Schema.define(:version => 20140305090059) do
 
   create_table "answers", :force => true do |t|
     t.text     "value",          :limit => 255
@@ -71,6 +71,14 @@ ActiveRecord::Schema.define(:version => 20140304160759) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "invited_users", :force => true do |t|
+    t.string   "name"
+    t.string   "id_college"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "email"
   end
 
   create_table "markets", :force => true do |t|
@@ -168,7 +176,6 @@ ActiveRecord::Schema.define(:version => 20140304160759) do
     t.string   "linkedin"
     t.string   "photo"
     t.integer  "motivation"
-    t.integer  "faculty_id"
     t.integer  "user_profile_id"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
@@ -190,6 +197,7 @@ ActiveRecord::Schema.define(:version => 20140304160759) do
     t.datetime "remember_created_at"
     t.string   "provider"
     t.string   "uid"
+    t.integer  "college_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

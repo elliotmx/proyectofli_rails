@@ -14,7 +14,7 @@ function cargarAccionesInicio(){
   	});
 
     //uploader
-  $("#s3-uploader").S3Uploader();
+  //$("#s3-uploader").S3Uploader();
 
 
 	$(".btnHowTo").on("click", function(e){

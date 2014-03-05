@@ -1,5 +1,7 @@
 Fli::Application.routes.draw do
 
+  resources :invited_users
+
   resources :file_uploaders
 
   resources :pdf_previews
