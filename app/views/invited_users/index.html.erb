@@ -1,28 +1,37 @@
-<h1>Bienvenido <%= current_user.name %>, coordinador <%= current_user.college.name %></h1>
-<%= render partial: 'form_embed',locals:{ u: InvitedUser.new} %>
+<div id="banner-wrapper " style="margin-top:-30px;" >
+<div class="box">
+  <center>
+    <h1>Bienvenido <%= current_user.name %>, coordinador <%= current_user.college.name %></h1>
+    <h4>Aquí puedes dar de alta a los alumnos seleccionados</h4>
+      <%= render partial: 'form_embed',locals:{ u: InvitedUser.new} %>
+  </center>
+</div>
 
 <br>
-<br>
-<h2>Registrados Actualmente</h2>
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @invited_users.each do |invited_user| %>
-  <tr>
-    <td><%= invited_user.id %></td>
-    <td><%= invited_user.name %></td>
-    <td><%= invited_user.email %></td>
-    <td><%= link_to 'Editar', edit_invited_user_path(invited_user) %></td>
-    <td><%= link_to 'Eliminar', invited_user, confirm: '¿Estás seguro?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="box">
+  <center>
+    
+    <h3>Alumnos registrados actualmente</h3>
 
-<br />
+      <table class="gridtable">
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th style="width: 100px;"></th>
+        </tr>
+
+      <% @invited_users.each do |invited_user| %>
+        <tr>
+          <td><%= invited_user.id %></td>
+          <td><%= invited_user.name %></td>
+          <td><%= invited_user.email %></td>
+          <td><%= link_to 'Editar', edit_invited_user_path(invited_user) %> |
+              <%= link_to 'Eliminar', invited_user, confirm: '¿Estás seguro?', method: :delete %></td>
+        </tr>
+      <% end %>
+      </table>
+  </center>
+</div>
+</div>

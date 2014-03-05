@@ -1,5 +1,5 @@
 <%= form_for(u) do |f| %>
-  <% if u.errors.any? %>
+  <!--<% if u.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(u.errors.count, "error") %> Error al modificar</h2>
 
@@ -9,19 +9,14 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %>-->
 
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-
+    <!--<%= f.label :name %><br />-->
+    <%= f.text_field :name, :class=>'inputs normal', :placeholder=>'Nombre', :required=>"required" %>
+    <!--<%= f.label :email %><br />-->
+    <%= f.text_field :email, :class=>'inputs normal', :placeholder=>'Email', :required=>"required" %>
+  <br>
   <div class="actions">
-    <%= f.submit 'Guardar',:disable_with => "Guardando" %>
+    <%= f.submit 'Guardar',:class => 'button loginb' ,:disable_with => "Guardando", :style=>"width:400px;" %>
   </div>
 <% end %>
