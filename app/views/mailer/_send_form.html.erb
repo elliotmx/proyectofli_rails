@@ -3,22 +3,22 @@
   <fieldset class="fields">
     <div class="field">
       <%= form.label 'Nombre: ' %><br>
-      <%= form.text_field :name, :class => 'inputs inputContacto', :placeholder => 'Nombre' %>
+      <%= form.text_field :name, :class => 'inputs inputContacto', :placeholder => 'Nombre', :required => "required" %>
     </div>
     <br>
     <div class="field">
       <%= form.label 'Email: ' %><br>
-      <%= form.text_field :email, :class => 'inputs', :placeholder => 'Email' %>
+      <%= form.email_field :email, :class => 'inputs', :placeholder => 'Email', :required => "required" %>
     </div>
     <br>
     <div class="field">
       <%= form.label 'Asunto: ' %><br>
-      <%= form.text_field :subject, :class => 'inputs', :placeholder => 'Asunto' %>
+      <%= form.text_field :subject, :class => 'inputs', :placeholder => 'Asunto', :required => "required" %>
     </div>
     <br>
     <div class="field">
       <%= form.label 'Contenido: ' %><br>
-      <%= form.text_area :body, :rows => 10, :class => 'inputs inputContacto', :style => 'resize: none;', :placeholder => 'Contenido' %>
+      <%= form.text_area :body, :rows => 10, :class => 'inputs inputContacto', :style => 'resize: none;', :placeholder => 'Contenido', :required => "required" %>
     </div>
   </fieldset>
   
