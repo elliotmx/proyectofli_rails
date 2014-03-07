@@ -45,10 +45,10 @@ class InvitedUsersController < ApplicationController
 
     respond_to do |format|
       if @invited_user.save
-        format.html { redirect_to action: "index", notice: 'Invited user was successfully created.' }
+        format.html { redirect_to action: "index", notice: 'Usuario creado correctamente' }
         format.json { render json: @invited_user, status: :created, location: @invited_user }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to action: "index",notice: 'El usuario ya fue registrado' }
         format.json { render json: @invited_user.errors, status: :unprocessable_entity }
       end
     end
@@ -61,7 +61,7 @@ class InvitedUsersController < ApplicationController
 
     respond_to do |format|
       if @invited_user.update_attributes(params[:invited_user])
-        format.html { redirect_to @invited_user, notice: 'Invited user was successfully updated.' }
+        format.html {  redirect_to action: "index", notice: 'Invited user was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
