@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140305225453) do
+ActiveRecord::Schema.define(:version => 20140307051521) do
 
   create_table "answers", :force => true do |t|
     t.text     "value",          :limit => 255
@@ -75,11 +75,11 @@ ActiveRecord::Schema.define(:version => 20140305225453) do
 
   create_table "invited_users", :force => true do |t|
     t.string   "name"
-    t.string   "id_college"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "email"
     t.integer  "college_id"
+    t.integer  "user_id"
   end
 
   create_table "markets", :force => true do |t|
