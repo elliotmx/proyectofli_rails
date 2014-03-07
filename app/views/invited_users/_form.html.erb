@@ -15,7 +15,7 @@
     <%= f.text_field :name,:class=>'inputs normal', :placeholder=>'Nombre', :required=>"required" %>
   </div>
   <div class="field">
-    <%= f.text_field :email,:class=>'inputs normal', :placeholder=>'Email', :required=>"required" %>
+    <%= f.email_field :email,:class=>'inputs normal', :placeholder=>'Email', :required=>"required" %>
   </div>
   <div class="actions">
     <%= f.submit 'Actualizar', :action => "index", :class => 'button loginb' ,:disable_with => "Actualizando",:style=>"margin-left: 23px;float: left;width: 220px;" %>
