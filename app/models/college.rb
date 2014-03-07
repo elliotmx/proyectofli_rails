@@ -1,3 +1,3 @@
 class College < ActiveRecord::Base
-	has_many :faculties
+	has_many :invited_users
 end
