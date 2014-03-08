@@ -1,11 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery
 
-
-  
-def after_sign_up_path_for(resource)
-  root_path
-end
   #overrided method for redirect user after sign in
   def after_sign_in_path_for(user)
       

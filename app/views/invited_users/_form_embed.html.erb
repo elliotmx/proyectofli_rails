@@ -15,6 +15,7 @@
     <%= f.text_field :name, :class=>'inputs normal', :placeholder=>'Nombre', :required=>"required" %>
     <!--<%= f.label :email %><br />-->
     <%= f.email_field :email, :class=>'inputs normal', :placeholder=>'Email', :required=>"required" %>
+    <%= f.hidden_field :user_id , :value=>current_user.id%>
     <%= f.hidden_field :college_id , :value=>current_user.college.id%>
 
   <br>
