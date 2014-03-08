@@ -56,6 +56,7 @@ class UsersController < ApplicationController
     #@user = User.new(params[:user])
     respond_to do |format|
       if @user.save
+        Mailer.send_mail("hola coordinador").deliver
         format.html { redirect_to @app, notice: 'User was successfully created.'  }
         format.json { render json: @user, status: :created, location: @user }
       else
