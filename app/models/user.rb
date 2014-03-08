@@ -31,11 +31,11 @@ class User < ActiveRecord::Base
     validates_length_of :password, :within => Devise.password_length, :allow_blank => true
 
 
-  after_create :send_admin_mail
+ # => after_create :send_admin_mail
   
-  def send_admin_mail
-    MailerCoordinator.send_mail("hola coordinador").deliver
-  end
+  #def send_admin_mail
+    
+  #end
 
      #LOGIN CON FACEBOOK
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
