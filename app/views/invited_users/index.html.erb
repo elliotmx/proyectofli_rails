@@ -11,8 +11,10 @@
 
 <div class="box">
   <center>
-    
-    <h3>Alumnos registrados actualmente</h3>
+    <% if InvitedUser.find_by_user_id(current_user.id).nil? %>
+          <p>No has agregado a nadie aún </p>        
+    <% else %>
+          <h3>Alumnos registrados actualmente</h3>
 
       <table class="gridtable">
         <tr>
@@ -21,8 +23,8 @@
           <th>Email</th>
           <th style="width: 100px;"></th>
         </tr>
-
-      <% @invited_users.each do |invited_user| %>
+       <% @i = InvitedUser.find_all_by_user_id(current_user.id) %> 
+      <% @i.each do |invited_user| %>
         <tr>
           <td><%= invited_user.id %></td>
           <td><%= invited_user.name %></td>
@@ -32,6 +34,9 @@
         </tr>
       <% end %>
       </table>
+
+      <% end %>
+
   </center>
 </div>
 </div>

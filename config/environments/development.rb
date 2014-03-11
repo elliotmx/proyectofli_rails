@@ -29,6 +29,7 @@ Fli::Application.configure do
   :enable_starttls_auto => true
 }
 
+config.action_mailer.perform_deliveries = true
 
 #config heroku for S3
 #heroku config:set S3_BUCKET_NAME=flimx
