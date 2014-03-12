@@ -49,6 +49,7 @@ end
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
+  get 'admin', to: 'dashboard#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
