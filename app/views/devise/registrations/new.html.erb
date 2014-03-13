@@ -11,6 +11,8 @@
   	
   <%= f.email_field :email, :class => 'inputs normal',:placeholder => "Correo Electrónico"  %>
 
+  <%= f.collection_select(:college_id, College.all, :id, :name ) %>
+
   <%= f.password_field :password, :class => 'inputs normal',:placeholder => "Contraseña" %>
 
   <%= f.password_field :password_confirmation, :class => 'inputs normal',:placeholder => "Confirmar Contraseña" %>

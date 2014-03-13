@@ -49,6 +49,7 @@ end
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
+  get 'admin', to: 'dashboard#index'
 
   get 'charts', to:'home#charts'
   get 'alumnosr', to:'home#alumnos'

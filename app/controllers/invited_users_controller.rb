@@ -1,8 +1,17 @@
 class InvitedUsersController < ApplicationController
+ #load_and_authorize_resource
   # GET /invited_users
   # GET /invited_users.json
-   before_filter :authenticate_user!
   def index
+    @invited_users = InvitedUser.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @invited_users }
+    end
+  end
+
+   def list
     @invited_users = InvitedUser.all
 
     respond_to do |format|
@@ -32,6 +41,7 @@ class InvitedUsersController < ApplicationController
       format.json { render json: @invited_user }
     end
   end
+
 
   # GET /invited_users/1/edit
   def edit

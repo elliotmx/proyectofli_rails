@@ -71,7 +71,31 @@ function cargarAccionesInicio(){
             $('html, body').animate({ scrollTop: 0 }, 'slow');
   	});
 
+// INICIO: Funcion Menu Admin DashBoard
+  $("#section_1").show();
+    
+    $(".btnPanel").on("click", function(e){
+        //console.log(e);
+        $(".btnPanel").removeClass("active");
+        $(this).addClass("active");
 
+        $(".img").removeClass("active");
+        $(this).find(".img").addClass("active");
+
+        switch (e.currentTarget.id){
+          case 'registroInvolcradosBtn':
+          $(".questions_section").hide();
+            $("#section_1").show();
+            break;
+          case 'conociendoMejorBtn':
+            $(".questions_section").hide();
+            $("#section_2").show();
+            break;
+            }
+
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+    });
+// FIN
 	
 	$("#btn_agrega_colaborador").on("click",function(){
     	$(this).hide();

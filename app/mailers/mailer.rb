@@ -4,7 +4,7 @@ class Mailer < ActionMailer::Base
   def send_email(message)
     @msg = message
     #@mail = 'delarosa.bdevelop@gmail.com'
-    @mail = 'rxco.ar@gmail.com'
+    @mail = 'hola@fli.mx'
 
     mail( :to => @mail,
     :subject => 'nuevo correo desde fli.mx',
