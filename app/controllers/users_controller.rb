@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html ,:js
+  before_filter :authenticate_user!
   # GET /users
   # GET /users.json
   def index
