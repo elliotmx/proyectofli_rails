@@ -9,8 +9,8 @@ gem 'rails', '3.2.1'
 
 #
 #, :staging do
-group :production do 
- gem "pg"
+group :production do
+ #gem "pg"
 end
 
 group :development, :test do
@@ -45,6 +45,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'cancan'
 gem 'newrelic_rpm'
+gem "chartkick"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

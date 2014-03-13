@@ -16,7 +16,7 @@
     <!--<%= f.label :email %><br />-->
     <%= f.email_field :email, :class=>'inputs normal', :placeholder=>'Email', :required=>"required" %>
     <%= f.hidden_field :college_id , :value=>current_user.college.id%>
-
+    <%= f.hidden_field :user_id , :value=>current_user.id%>
   <br>
   <div class="actions">
     <%= f.submit 'Guardar',:class => 'button loginb' ,:disable_with => "Guardando", :style=>"width:400px;" %>
