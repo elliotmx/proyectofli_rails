@@ -45,6 +45,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'cancan'
 gem 'newrelic_rpm'
+gem 'chartkick'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,3 +1,9 @@
+<script>
+  var Chartkick = {"language": "es"};
+</script>
+<%= javascript_include_tag "highcharts", "chartkick" %>
+
+
 <div id="banner-wrapper" style="margin-top:-62px;">		
 	<div id="faqBodyPanel">
 
@@ -11,9 +17,14 @@
 					<p>Concentrado de información de proyectos ingresados a la plataforma.</p>
 				</span>
 				<h3>Proyectos</h3>
+					<%= column_chart User.group("college_id").count, :height => "200px" %>
 				<h3>Escuelas</h3>
+					<%= column_chart User.group("college_id").count, :height => "200px" %>
 				<h3>Categorias</h3>
+					<%= column_chart User.group("college_id").count, :height => "200px" %>
 				<h3>Alumnos</h3>
+				<%= column_chart User.group("college_id").count, :height => "200px" %>
+
 			</div>
 			<!-- section_2 -->
 			<div style="display:none" id="section_2" class="questions_section">
@@ -84,7 +95,7 @@
 						</tr>
 					</table>
 				</div>
-				
+
 			</div>
 
 		</div>

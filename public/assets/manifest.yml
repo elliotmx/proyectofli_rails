@@ -61,6 +61,7 @@ chosen-sprite@2x.png: chosen-sprite@2x-9de9d31f94d6ab0bc3495516d2fcc845.png
 contact.js: contact-3af39f1da6f167c2cbf453ed74daff3d.js
 d.custom_application.js: d.custom_application-2f5c93e8e8824cf74dce7b19d3a7847b.js
 file_uploaders.js: file_uploaders-dc3b351ca5b0f4b26e0251650672c06c.js
+highcharts.js: highcharts-214e7769777dd72b6faa23fcd59b939d.js
 invited_users.js: invited_users-3af39f1da6f167c2cbf453ed74daff3d.js
 jquery.chosen.js: jquery.chosen-4d6ff51e94435bbe5f8f42cf3ae498aa.js
 jquery.datatables.min.js: jquery.datatables.min-ae70d9973a8901ebe98ad4706c825fec.js
@@ -80,6 +81,7 @@ jquery.tags.css: jquery.tags-7b82a71e8dd741f0e015acd29e256a68.css
 pdf_previews.css: pdf_previews-7270767b2a9e9fff880aa5de378ca791.css
 primitives.latest.css: primitives.latest-f89d67adc4d45ee0fffdfb93ce7ad7d8.css
 scaffolds.css: scaffolds-3c9de844c270a7d8bc32c9e7e7684900.css
+chartkick.js: chartkick-8f0751c7e1c4b7bf175b67b1703ff655.js
 s3_direct_upload.js: s3_direct_upload-330c2b6d77b89f2a2da98163c51f9fa8.js
 s3_direct_upload_progress_bars.css: s3_direct_upload_progress_bars-d5f6eec0976b4140a94d77dedbf8c3ab.css
 jquery-fileupload/basic.js: jquery-fileupload/basic-177c56296b9e5c8eb03913a9b450ddc7.js
