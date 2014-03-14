@@ -19,16 +19,16 @@
     <%= f.number_field :age , :min => "15",:class => "inputs formNormal" %>
   </div>
   <div class="field">
-    <%= f.label :Localidad %><br />
+    <%= f.label :Colonia %><br />
     <%= f.text_field :address,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Email %><br />
-    <%= f.text_field :email,:class => "inputs formNormal", :required => "required" %>
+    <%= f.email_field :email,:class => "inputs formNormal", :required => "required" %>
   </div>
   <div class="field">
-    <%= f.label :Vialidad %><br />
-    <%= f.number_field :semester,:class => "inputs formNormal" %>
+    <%= f.label :Calle %><br />
+    <%= f.text_field :semester,:class => "inputs formNormal" %>
   </div>
   <div class="field">
     <%= f.label :Telefono %><br />

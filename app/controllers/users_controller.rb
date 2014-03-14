@@ -59,10 +59,10 @@ class UsersController < ApplicationController
       if @user.save
         #Mailer.send_mail(Message.new).deliver
         #Mailer.send_email(Message.new).deliver
-        format.html { redirect_to @app, notice: 'User was successfully created.'  }
+        format.html { redirect_to @app, notice: ''  }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { redirect_to @app ,notice: @user.errors}
+        format.html { redirect_to @app ,alert: "No se pudo agregar, revisa que ingreses los datos correctos"}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
 

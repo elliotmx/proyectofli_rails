@@ -9,8 +9,13 @@ gem 'rails', '3.2.1'
 
 #
 #, :staging do
+<<<<<<< HEAD
 group :production do
  #gem "pg"
+=======
+group :production do 
+ gem "pg"
+>>>>>>> 4c061767142605d0b8fe4ff54b5cf7abc72dd7c3
 end
 
 group :development, :test do
@@ -45,11 +50,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'cancan'
 gem 'newrelic_rpm'
-<<<<<<< HEAD
-gem "chartkick"
-=======
 gem 'chartkick'
->>>>>>> 90f866c2913eb3758b83f67a9b482ae156aeab1d
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

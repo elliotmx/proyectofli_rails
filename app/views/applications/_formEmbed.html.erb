@@ -25,7 +25,7 @@
   </div>
   <div class="field" style="margin-left: 6%;">
      <%= f.label "Selecciona una categoría para tu proyecto"  %><br />
-      <%= f.collection_select(:market_id, Market.all, :id, :description, {},{:class=>'chosen normal'}) %>
+      <%= f.collection_select(:market_id, Market.all, :id, :description, {},{:class=>'chosen_small'}) %>
   </div>
  <br><br>
   <div class="actions" style="margin-left: 6%;">

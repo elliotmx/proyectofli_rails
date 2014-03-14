@@ -17,13 +17,17 @@
 					<p>Concentrado de información de proyectos ingresados a la plataforma.</p>
 				</span>
 				<h3>Proyectos</h3>
-					<%= column_chart User.group("college_id").count, :height => "200px" %>
+					<h4>Iniciados</h4>
+						<!--<%= column_chart({"Football" => 1, "Basketball" => 5}) %>-->
+						<%= column_chart User.group("college_id").count, :height => "100px" %>
+					<h4>Terminados</h4>
+						<%= column_chart User.group("college_id").count, :height => "100px" %>
 				<h3>Escuelas</h3>
-					<%= column_chart User.group("college_id").count, :height => "200px" %>
+					<%= column_chart User.group("college_id").count, :height => "100px" %>
 				<h3>Categorias</h3>
-					<%= column_chart User.group("college_id").count, :height => "200px" %>
+					<%= column_chart User.group("college_id").count, :height => "100px" %>
 				<h3>Alumnos</h3>
-				<%= column_chart User.group("college_id").count, :height => "200px" %>
+					<%= column_chart User.group("college_id").count, :height => "200px" %>
 
 			</div>
 			<!-- section_2 -->
