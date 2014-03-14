@@ -48,6 +48,7 @@ function cargarAccionesInicio(){
   					$("#section_5").show();
               cargarArbolAcciones();
               mostrarLineaAccion();
+              cargarObjetivosJson();
   					break;
   				case 'riesgosBtn':
   					$(".questions_section").hide();
