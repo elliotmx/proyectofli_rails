@@ -1,12 +1,16 @@
 <div id="banner-wrapper" style="margin-top:-30px;"> 
 
-	<div id="aplicacion" class="">
+	<div id="aplicacion">
 		<table>
 		<% @applications.each do |application| %>
 		    <span style="text-align: center;"><h2><%= application.name %></h2></span>
+		    <h4>Descripción corta:</h4>
 		    <span style="text-align: justify;"><%= application.short_description %></span><br>
+		    <h4>Categoria:</h4>
 		    <span style="text-align: justify;"><%= application.market.description %></span><br>
-		    <p style="text-align: justify;"><%= application.tags %></p>
+		    <h4>Tags:</h4>
+		    <span style="text-align: justify;"><%= application.tags %></span>
+
 		    <br/><br/>
 		    <span style="float:left; margin: 0 10px 0 0">
 		    	<%= button_to 'Comenzar', application, :class => "button_2 loginb", :method => :get, :style=>"width:180px;"%>
