@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html ,:js
+  before_filter :authenticate_user!
   # GET /users
   # GET /users.json
   def index
@@ -100,4 +101,22 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+  def cargarInvitedUsers
+
+      #destroy previous content
+      # Question.destroy_all
+
+      #get all questions from the json
+      File.open('invitedusers.json', 'r') do |file|
+        file.each do |line|
+         user_attrs = JSON.parse line
+        puts "show :" + user_attrs.inspect
+        User.create! user_attrs
+      end
+    end
+  end
+
 end

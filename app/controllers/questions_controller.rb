@@ -120,8 +120,8 @@ class QuestionsController < ApplicationController
          user_attrs = JSON.parse line
         puts "show :" + user_attrs.inspect
         Question.create! user_attrs
+        end
       end
-    end
   end
 
 

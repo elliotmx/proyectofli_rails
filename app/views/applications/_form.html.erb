@@ -20,6 +20,11 @@
     <%= f.text_area :short_description, :rows => '4',:style => 'resize: none;',:class=>'inputs normal', :placeholder=>'Descripción corta', :required=>"required"%>
   </div>
   <div class="field" style="margin-left: 6%;">
+     <%= f.label "Selecciona una categoría para tu proyecto"  %><br />
+      <%= f.collection_select(:market_id, Market.all, :id, :description, {},{:class=>'chosen'}) %>
+  </div>
+
+  <div class="field" style="margin-left: 6%;">
     <%= f.label "Tags" %><br />
     <%= f.text_field :tags,:class=>'inputs normal tags', :placeholder=>'Click para agregar'  %>
   </div>

@@ -3,5 +3,6 @@ class Application < ActiveRecord::Base
 	has_many :answers
 	has_many :pdf_previews
 	accepts_nested_attributes_for :pdf_previews
+	belongs_to :market
 	#attr_accessible :pdfpreviews_atributes
 end

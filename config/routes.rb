@@ -22,8 +22,8 @@ Fli::Application.routes.draw do
 
   resources :user_profiles
 
-resources :applications do 
-  collection do 
+resources :applications do
+  collection do
     get :list
   end
 end
@@ -37,11 +37,11 @@ end
   root :to => "home#index"
 
 #Add a route method for close session
-#devise_for :users, 
+#devise_for :users,
 as :user do
     get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
-end  
-  
+end
+
   get 'qsomos', to: 'home#qsomos'
 
   get 'upload', to:  'file_uploader#index'
@@ -51,6 +51,9 @@ end
 
   get 'admin', to: 'dashboard#index'
 
+  get 'charts', to:'home#charts'
+  get 'alumnosr', to:'home#alumnos'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

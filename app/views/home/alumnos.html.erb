@@ -1,0 +1,21 @@
+<h3>Alumnos registrados actualmente</h3>
+
+      <table class="gridtable">
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Email</th>
+           <th>College id</th>
+           <th>password</th>
+        </tr>
+
+      <% InvitedUser.all.each do |invited_user| %>
+        <tr>
+          <td><%= invited_user.id %></td>
+          <td><%= invited_user.name %></td>
+          <td><%= invited_user.email %></td>
+          <td><%= invited_user.college_id %></td>
+          <td><%= Digest::SHA1.hexdigest([Time.now, rand].join).first(8) %></td>
+        </tr>
+      <% end %>
+      </table>

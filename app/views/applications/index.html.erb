@@ -4,7 +4,8 @@
 		<table>
 		<% @applications.each do |application| %>
 		    <span style="text-align: center;"><h2><%= application.name %></h2></span>
-		    <span style="text-align: justify;"><%= application.short_description %></span>
+		    <span style="text-align: justify;"><%= application.short_description %></span><br>
+		    <span style="text-align: justify;"><%= application.market.description %></span><br>
 		    <p style="text-align: justify;"><%= application.tags %></p>
 		    <br/><br/>
 		    <span style="float: right;"><%= link_to 'Comenzar Aplicación', application %>
@@ -19,7 +20,7 @@
 		<span style="text-align: center;">
 		  <h2> Cuentanos tu proyecto!</h2>
 		</span>
-		  <%= render :partial => 'formEmbed', :locals => {:application => Application.new, :iduser => current_user.id} %>
+		<%= render :partial => 'formEmbed', :locals => {:application => Application.new, :iduser => current_user.id} %>
 		<% else %>
 		  
 		<% end %>

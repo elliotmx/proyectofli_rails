@@ -3,11 +3,18 @@ class Ability
 
   def initialize(user)
 
-
-    if user.role? :registered
-            cannot? :destroy , @question
-            canoot? :edit, @question
+    user ||= User.new # guest user (not logged in)
+  
+    if user.roles.name == "admin"
+        can :manage, [User]
+    elsif user.perfil.name == "simple"
+        can :manage,[User]
+    else
+        puts "user perfil" + user.roles.name
+        can :read,:all
     end
+        
+    
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
@@ -35,4 +42,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
   end
+
+  
+
 end

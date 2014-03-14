@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	belongs_to :user_profile
 	belongs_to :college
   has_and_belongs_to_many :applications
-  has_and_belongs_to_many :roles
+  belongs_to :roles
 	accepts_nested_attributes_for :user_profile
 
 	has_attached_file :photo, 
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   	attr_accessible :email, :password, :name, :application_id, 
     :age, :address, :semester, :phone, :extra_phone, :photo,
     :twitter, :linkedin, :faculty_id,:user_profile_id, :password_confirmation,
-    :motivation, :create_from, :provider, :uid, :role_ids,:college_id
+    :motivation, :create_from, :provider, :uid, :role_id,:college_id
 
     validates_uniqueness_of :email, :case_sensitive => false
     #validates_uniqueness_of    :email,     :case_sensitive => false, :allow_blank => true, :if => :email_changed?
@@ -74,16 +74,12 @@ class User < ActiveRecord::Base
 
 
   #admin roles
-  before_save :setup_role
-
-  def role?(role)
-      return !!self.roles.find_by_name(role.to_s.camelize)
-  end
+  #before_save :setup_role
 
   # Default role is "Registered"
   def setup_role 
-    if self.role_ids.empty?     
-      self.role_ids = [2] 
+    if self.roles.nil?     
+      self.role_id = [1] 
     end
   end
 
