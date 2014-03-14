@@ -105,6 +105,7 @@ function cargarAccionesInicio(){
         copiarValoresTxtProblema();
   });
 
+  $('.chosen_small').chosen({width: "350px",disable_search_threshold: 10});
   $('.chosen').chosen({width: "400px",disable_search_threshold: 10});
 	
 }
