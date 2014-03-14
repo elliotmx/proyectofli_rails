@@ -8,7 +8,7 @@
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 <fieldset id="inputs">
   <%= f.email_field :email, :autofocus => true, :class => 'inputs ico username',:placeholder => "Correo Electrónico", :required => "required" %>
-  <%= f.password_field :password , :class => 'inputs ico password',:placeholder => "Contraseña", :required => "required" %>
+  <%= f.password_field :password , :class => 'inputs ico password',:placeholder => "Contraseña", :required => "required", :pattern =>".{8,}", :title => "8 caracteres como mínimo" %>
 </fieldset>
 
  <!--<% if devise_mapping.rememberable? -%>
