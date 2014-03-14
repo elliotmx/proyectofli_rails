@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   #overrided method for redirect user after sign in
   def after_sign_in_path_for(user)
       
-      #applications_path  <- ruta para comenzar aplicaciones
-      invited_users_path
+      applications_path  #<- ruta para comenzar aplicaciones
+      #invited_users_path
   end
 
   #method to handle the "Access Denied" exception.

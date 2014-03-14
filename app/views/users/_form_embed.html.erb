@@ -56,6 +56,7 @@
     <%= f.collection_select(:user_profile_id, UserProfile.all, :id, :description, {},{:class=>'chosen'}) %>
   </div>
   <%= f.hidden_field :create_from , :value => 'user_form'  %>
+   <%= f.hidden_field :role_id , :value => 4  %>
 <div id="botonCentral" style="margin-bottom:20px;">
   <div class="actions">
 

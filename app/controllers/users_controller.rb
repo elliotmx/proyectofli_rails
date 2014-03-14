@@ -62,7 +62,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @app, notice: 'User was successfully created.'  }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to @app ,notice: @user.errors}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
 
@@ -104,19 +104,5 @@ class UsersController < ApplicationController
 
 
 
-  def cargarInvitedUsers
-
-      #destroy previous content
-      # Question.destroy_all
-
-      #get all questions from the json
-      File.open('invitedusers.json', 'r') do |file|
-        file.each do |line|
-         user_attrs = JSON.parse line
-        puts "show :" + user_attrs.inspect
-        User.create! user_attrs
-      end
-    end
-  end
 
 end
