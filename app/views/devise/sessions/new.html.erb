@@ -1,3 +1,12 @@
+<div id="page">
+  <% if flash[:alert] %>
+    <p class="flash-error"><center style="color:red"><%= flash[:alert] %></center></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+  <%= yield %>
+</div>
  <div id="banner-wrapper" style="margin-top:-30px;">
  <div id="login" class="box">
  	<div class= "h1login">

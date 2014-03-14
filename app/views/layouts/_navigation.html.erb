@@ -9,13 +9,4 @@
     <%= link_to 'Login', new_user_session_path %>
     </li>
   <% end %>
-  <% if user_signed_in? %>
-    <li style="display:none">
-    <%= link_to 'Editar Cuenta', edit_user_registration_path %>
-    </li>
-  <% else %>
-    <li style="display:none">
-    <%= link_to 'Registrate', new_user_registration_path %>
-    </li>
-  <% end %>
 </ul>
