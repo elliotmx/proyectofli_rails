@@ -1,9 +1,9 @@
 <div id="page">
   <% if flash[:alert] %>
-    <p class="flash-error"><center style="color:red"><%= flash[:alert] %></center></p>
+    <p class="flash-error"><center style="color:red; font-weight: bold;"><%= flash[:alert] %></center></p>
   <% end %>
   <% if flash[:notice] %>
-    <p class="flash-notice"><%= flash[:notice] %></p>
+    <p class="flash-notice"><center style="color:#049696; font-weight: bold;"><%= flash[:notice] %></center></p>
   <% end %>
   <%= yield %>
 </div>
