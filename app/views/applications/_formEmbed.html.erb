@@ -12,17 +12,22 @@
   <% end %>
 
   <div class="field" style="margin-left: 6%;">
-    <%= f.label "Nombre:" %><br />
+    <%= f.label "Nombre de tu proyecto:" %><br />
     <%= f.text_field :name,:class=>'inputs normal', :placeholder=>'Nombre' %>
+  </div>
+   <div class="field" style="margin-left: 6%;">
+    <%= f.label "etiquetas (separado por comas ',' )"  %><br />
+    <%= f.text_field :tags,:class=>'inputs normal', :placeholder=>'Tags' %>
   </div>
   <div class="field" style="margin-left: 6%;">
     <%= f.label "Descripción corta:"%><br />
     <%= f.text_area :short_description, :rows => '4',:style => 'resize: none;',:class=>'inputs normal', :placeholder=>'Descripción corta' %>
   </div>
   <div class="field" style="margin-left: 6%;">
-    <%= f.label :tags %><br />
-    <%= f.text_field :tags,:class=>'inputs normal', :placeholder=>'Tags' %>
+     <%= f.label "Selecciona una categoría para tu proyecto"  %><br />
+      <%= f.collection_select(:market_id, Market.all, :id, :description, {},{:class=>'chosen normal'}) %>
   </div>
+ <br><br>
   <div class="actions" style="margin-left: 6%;">
     <%= f.submit "Crear",:class => 'button loginb' ,:disable_with => "Guardando"%>
   </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140313063252) do
+ActiveRecord::Schema.define(:version => 20140314033641) do
 
   create_table "answers", :force => true do |t|
     t.text     "value",          :limit => 255
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20140313063252) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "tags"
+    t.integer  "market_id"
   end
 
   create_table "applications_users", :id => false, :force => true do |t|
