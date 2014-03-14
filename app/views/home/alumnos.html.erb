@@ -5,6 +5,7 @@
           <th>Id</th>
           <th>Nombre</th>
           <th>Email</th>
+          <th>Usuario</th>
            <th>College id</th>
            <th>password</th>
         </tr>
@@ -14,6 +15,7 @@
           <td><%= invited_user.id %></td>
           <td><%= invited_user.name %></td>
           <td><%= invited_user.email %></td>
+           <td><%= invited_user.user_id %></td>
           <td><%= invited_user.college_id %></td>
           <td><%= Digest::SHA1.hexdigest([Time.now, rand].join).first(8) %></td>
         </tr>
