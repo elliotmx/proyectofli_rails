@@ -8,9 +8,14 @@
 		    <span style="text-align: justify;"><%= application.market.description %></span><br>
 		    <p style="text-align: justify;"><%= application.tags %></p>
 		    <br/><br/>
-		    <span style="float: right;"><%= link_to 'Comenzar Aplicación', application %>
-		    <%= link_to 'Editar', edit_application_path(application) %>
-		    <%= link_to 'Eliminar', application, confirm: '¿Estás seguro de eliminar?', method: :delete %></span>
+		    <span style="float:left; margin: 0 10px 0 0">
+		    	<%= button_to 'Comenzar', application, :class => "button_2 loginb", :method => :get, :style=>"width:180px;"%>
+		    </span>
+		    <span style="float:left; margin: 0 10px 0 0">
+		    	<%= button_to 'Editar', edit_application_path(application), :class => "button loginb", :method => :get %>
+		    </span>
+		    	<%= button_to 'Eliminar', application, confirm: '¿Estás seguro de eliminar?', method: :delete, :class => "button loginb", :method => :get %>
+		    
 		  
 		<% end %>
 		</table>
