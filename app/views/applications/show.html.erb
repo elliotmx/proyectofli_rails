@@ -15,7 +15,6 @@
 		<%= render :partial => 'users/showappmembers', :locals => {:users => @application.users.all} %>
 		<div id="">
 			<%= render :partial => 'users/editappmembers', :locals => {:users => @application.users.all} %>
-			
 		 </div>
 	<% else %>
 		<p> no tienes Colaboradores aun </p>
@@ -33,9 +32,11 @@
 <!-- iterar secciones para DIV -->
 <% Section.all.each do |section| %>
 	<div style="margin-top: 10px; display:none" id="section_<%= section.id %>" class="questions_section">
-	<h1 id="commentShow"><%= section.description %></h1>
+		<h1><%= section.description %></h1>
 		<% if section.id == 8 %>
 			<%= render "layouts/htmlForRender/pdf_preview" %>
+		<% elsif section.id == 9 %>
+			<%= render "layouts/htmlForRender/material_apoyo" %>
 		<% elsif %>
 			<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.where(:section_id => section.id).order(:position_question).all} %>
 		<% end %>
@@ -45,4 +46,5 @@
 		</div>
 	</div>
 </div>
+
 
