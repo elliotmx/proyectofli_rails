@@ -13,15 +13,15 @@
 
   <div class="field" style="margin-left: 6%;">
     <%= f.label "Nombre de tu proyecto:" %><br />
-    <%= f.text_field :name,:class=>'inputs normal', :placeholder=>'Nombre' %>
+    <%= f.text_field :name,:class=>'inputs normal', :placeholder=>'Nombre', :maxlength => '256' %>
   </div>
    <div class="field" style="margin-left: 6%;">
     <%= f.label "etiquetas (separado por comas ',' )"  %><br />
-    <%= f.text_field :tags,:class=>'inputs normal', :placeholder=>'Ejemplo : industria, agricultura, estudiantes' %>
+    <%= f.text_field :tags,:class=>'inputs normal', :placeholder=>'Ejemplo : industria, agricultura, estudiantes', :maxlength => '256' %>
   </div>
   <div class="field" style="margin-left: 6%;">
     <%= f.label "Descripción corta:"%><br />
-    <%= f.text_area :short_description, :rows => '4',:style => 'resize: none;',:class=>'inputs normal', :placeholder=>'Descripción corta' %>
+    <%= f.text_area :short_description, :rows => '4',:style => 'resize: none;',:class=>'inputs normal', :placeholder=>'Descripción corta', :maxlength => '256' %>
   </div>
   <div class="field" style="margin-left: 6%;">
      <%= f.label "Selecciona una categoría para tu proyecto"  %><br />
