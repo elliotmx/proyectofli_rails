@@ -37,20 +37,33 @@
 				<span style="position:relative; top: -50px; font-size:14px;">
 					<p>Concentrado de información a detalle de proyectos ingresados a la plataforma.</p>
 				</span>
+
+				<% Application.all.each do |application| %>
+					<p><%= application.inspect %> <p>
+					<h1><%= application.name %></h1><br>
+
 				<div id="proyectos">
 					<table style="width:100%; margin-left: 5px;">
 						<tr>
 							<th>Proyecto</th>
 							<th>Categoria</th>
-							<th>Lider</th>
 							<th>Escuela</th>
+							<th>Descripción</th>
 						</tr>
-						<tr ALIGN=CENTER>
-							<td>Tortas Paco y Asociados</td>
-							<td>Comida Restaurante</td>
-							<td>Rubén Josué Ruiz Colchado</td>
-							<td>Univercidad Tecnológica de Querétaro (UTEQ)</td>
-							<td style="min-width:14%;"><input type="button" class="button" value="PDF"></td>
+					<tr ALIGN=CENTER>
+					<td><%= application.name %></td>
+					<td><%= application.market.description%></td>
+					<% if application.users.where(:user_profile_id =>1).first.nil? %>
+					<td> Sin escuela </td>
+					<% else %>
+						<td><%= application.users.where(:user_profile_id =>1).first.college.name %></td>
+					<% end %>
+						
+					<td><%= application.short_description %></td>
+
+					
+					<!--<%= button_to 'x', application, confirm: '¿Estás seguro de eliminar?', method: :delete, :class => "button loginb" %>
+<td style="min-width:14%;"><input type="button" class="button" value="PDF"></td>-->
 						</tr>
 						<tr ALIGN=CENTER>
 							<td colspan="4">Barra Progreso</td>
@@ -58,47 +71,8 @@
 					</table>
 				</div>
 
-				<div id="proyectos">
-					<table style="width:100%; margin-left: 5px;">
-						<tr>
-							<th>Proyecto</th>
-							<th>Categoria</th>
-							<th>Lider</th>
-							<th>Escuela</th>
-						</tr>
-						<tr ALIGN=CENTER>
-							<td>Tortas Paco y Asociados</td>
-							<td>Comida Restaurante</td>
-							<td>Rubén Josué Ruiz Colchado</td>
-							<td>Univercidad Tecnológica de Querétaro (UTEQ)</td>
-							<td style="min-width:14%;"><input type="button" class="button" value="PDF"></td>
-						</tr>
-						<tr ALIGN=CENTER>
-							<td colspan="4">Barra Progreso</td>
-						</tr>
-					</table>
-				</div>
+				<% end %>
 
-				<div id="proyectos">
-					<table style="width:100%; margin-left: 5px;">
-						<tr>
-							<th>Proyecto</th>
-							<th>Categoria</th>
-							<th>Lider</th>
-							<th>Escuela</th>
-						</tr>
-						<tr ALIGN=CENTER>
-							<td>Tortas Paco y Asociados</td>
-							<td>Comida Restaurante</td>
-							<td>Rubén Josué Ruiz Colchado</td>
-							<td>Univercidad Tecnológica de Querétaro (UTEQ)</td>
-							<td style="min-width:14%;"><input type="button" class="button" value="PDF"></td>
-						</tr>
-						<tr ALIGN=CENTER>
-							<td colspan="4">Barra Progreso</td>
-						</tr>
-					</table>
-				</div>
 
 			</div>
 
