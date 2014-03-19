@@ -53,10 +53,10 @@
 					<tr ALIGN=CENTER>
 					<td><%= application.name %></td>
 					<td><%= application.market.description%></td>
-					<% if application.users.where(:user_profile_id =>1).first.nil? %>
+					<% if application.users.where(:user_profile_id =>2).first.nil? %>
 					<td> Sin escuela </td>
 					<% else %>
-						<td><%= application.users.where(:user_profile_id =>1).first.college.name %></td>
+						<td><%= application.users.where(:user_profile_id =>2).first.college.name %></td>
 					<% end %>
 						
 					<td><%= application.short_description %></td>
