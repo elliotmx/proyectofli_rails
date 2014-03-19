@@ -17,17 +17,9 @@
 					<p>Concentrado de información de proyectos ingresados a la plataforma.</p>
 				</span>
 				<h3>Proyectos</h3>
-					<h4>Iniciados</h4>
-						<!--<%= column_chart({"Football" => 1, "Basketball" => 5}) %>-->
+					<h4>Alumnos por escuela</h4>
+					
 						<%= column_chart User.group("college_id").count, :height => "100px" %>
-					<h4>Terminados</h4>
-						<%= column_chart User.group("college_id").count, :height => "100px" %>
-				<h3>Escuelas</h3>
-					<%= column_chart User.group("college_id").count, :height => "100px" %>
-				<h3>Categorias</h3>
-					<%= column_chart User.group("college_id").count, :height => "100px" %>
-				<h3>Alumnos</h3>
-					<%= column_chart User.group("college_id").count, :height => "200px" %>
 
 			</div>
 			<!-- section_2 -->
@@ -50,10 +42,10 @@
 							<th>Escuela</th>
 							<th>Descripción</th>
 						</tr>
-					<tr ALIGN=CENTER>
+					<tr >
 					<td><%= application.name %></td>
 					<td><%= application.market.description%></td>
-					<% if application.users.where(:user_profile_id =>2).first.college.nil? %>
+					<% if  college.nil? %>
 					<td> Sin escuela </td>
 					<% else %>
 						<td><%= application.users.where(:user_profile_id =>2).first.college.name %></td>
@@ -61,13 +53,7 @@
 						
 					<td><%= application.short_description %></td>
 
-					
-					<!--<%= button_to 'x', application, confirm: '¿Estás seguro de eliminar?', method: :delete, :class => "button loginb" %>
-<td style="min-width:14%;"><input type="button" class="button" value="PDF"></td>-->
-						</tr>
-						<tr ALIGN=CENTER>
-							<td colspan="4">Barra Progreso</td>
-						</tr>
+					</tr>
 					</table>
 				</div>
 
