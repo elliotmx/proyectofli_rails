@@ -10,8 +10,8 @@ gem 'rails', '3.2.1'
 #
 #, :staging do
 group :production do 
- #gem "pg"
- #gem "aws-sdk"
+ gem "pg"
+ gem "aws-sdk"
 end
 
 group :development, :test do
