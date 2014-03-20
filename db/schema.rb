@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140320171931) do
+ActiveRecord::Schema.define(:version => 20140320175348) do
 
   create_table "answers", :force => true do |t|
     t.text     "value",          :limit => 255
@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20140320171931) do
     t.text     "activities"
     t.text     "implementation"
     t.text     "cronogram"
-    t.string   "budget"
     t.text     "risks"
     t.integer  "application_id"
     t.string   "document_file_name"
@@ -119,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20140320171931) do
     t.text     "twitter_url"
     t.text     "project_title"
     t.text     "objective_population"
+    t.text     "budget"
   end
 
   add_index "pdf_previews", ["application_id"], :name => "index_pdf_previews_on_application_id"
