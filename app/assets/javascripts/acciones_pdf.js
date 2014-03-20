@@ -27,11 +27,12 @@ function cargarPdfPreview(){
 	$("#pdf_pob_objetivo").html(txtInput);
 	$("#pdf_preview_objective_population").val(txtInput);
 		
-		/*
-	txtInput = $("#pdf_justificacion").val(); --
-	$("#pdf_comp_estrategia").val(txtInput);
-	$("#pdf_preview_components").val(txtInput);
 		
+	txtInput = $("#67").val();
+	$("#pdf_propuesta p").html(txtInput);
+		
+
+		/*
 	txtInput = $("#pdf_justificacion").val(); --
 	$("#pdf_actividades").val(txtInput);
 	$("#pdf_preview_activities").val(txtInput);

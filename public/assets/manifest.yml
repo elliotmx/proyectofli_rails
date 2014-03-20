@@ -20,7 +20,9 @@ contacto.png: contacto-3a0710a0efebcc77766a4e22317d810b.png
 detallesevento2.jpg: detallesevento2-5177c4bcc9aad4ad2d18bcb4a965c068.jpg
 entraFace.png: entraFace-803fe24b5488b2868b670c3a76288e0e.png
 face.png: face-39f99b0b0bd4f3fc3e817cc7c4decf0c.png
+facebook.png: facebook-a042696c5568e38d60656f708e21b0b3.png
 favicon.ico: favicon-f7f0422568b8c3133f322ca02ff2e17c.ico
+fb32.png: fb32-92b4bf14c97069e02c250c0ef6a19125.png
 fliglocal.png: fliglocal-79e6ea4d6ece0f2e290d46e643fbb755.png
 forward_disabled.png: forward_disabled-26544d2b15122e5bfa9c05f24eb3313d.png
 icons.png: icons-6cea898a9b995b5f9e28de3cfb7ad6a6.png
@@ -46,14 +48,16 @@ tip1.png: tip1-91cc2649913734a59a09bb40536bef63.png
 tip2.png: tip2-123882b6ae930c8858f5cd46648e85bf.png
 tip3.png: tip3-63372ef64d8091a57c1313746c7976b2.png
 tip4.png: tip4-0c284c43b5150db786148acf40690f3a.png
+tw32.png: tw32-212e0ca841ac4fa91f7db038b835a87b.png
 twit.png: twit-abd1c0f84bcabd188b7f222000391837.png
+twitter.png: twitter-e6f1ebeddab3e2c7429b87cf9b274f76.png
 vistageneral.png: vistageneral-196da007186304ee9f44f6cb39944310.png
 xlink.png: xlink-1990d450b380b2f715ba9c4b5953c68b.png
 acciones_arbolactividades.js: acciones_arbolactividades-8f5b7c64c284667eea98903831632ae5.js
 acciones_arbolproblemas.js: acciones_arbolproblemas-f509f3be40a5924452a782dc02bce9e9.js
 acciones_inicio.js: acciones_inicio-8939d5e2a909e83dd52d9ee184ab60f9.js
 acciones_lineaAccion.js: acciones_lineaAccion-5467b685378ab627a038fe57f8674382.js
-acciones_pdf.js: acciones_pdf-d81de4576c9641a9db3a5ea757fa6697.js
+acciones_pdf.js: acciones_pdf-e11584e2140b1fefddde455e0ed0cdbb.js
 acciones_tablacomponentes.js: acciones_tablacomponentes-ef16fe00f4a68b2cb6c4a152d1b36da9.js
 acciones_tablarecursos.js: acciones_tablarecursos-e1a70660176e3f392009903e1b9c2946.js
 application.js: application-b71f0da9acb9243fe675d032048c68d5.js
