@@ -56,3 +56,5 @@
 	<% @pdfobj = current_user.applications.first.pdf_previews.last %>
 	<%= render :partial => 'pdf_previews/form_embed', :locals => {:pdf_preview_obj  => 	@pdfobj} %>
 <% end %>
+
+<br>
