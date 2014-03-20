@@ -1,6 +1,5 @@
-<div style="display:none">
 <%= form_for(pdf_preview_obj, :remote => true) do |f| %>
-
+<div style="display:none">
   <div class="field">
     <%= f.label :project_title %><br />
     <%= f.text_field :project_title %>
@@ -45,8 +44,29 @@
     <%= f.label :risks %><br />
     <%= f.text_area :risks %>
   </div>
+
 </div>
+
+  <div class="field" style="display:block">
+    <%= f.label "Pega aquí el link de la página de facebook de tu producto o servicio (URL) para que los jueces puedan encontrarte" %><br />
+    <center><%= f.text_field :facebook_url,:class => "inputs inputContacto" %></center>
+    <br><br>
+  </div>
+  <div class="field" style="display:block">
+    <%= f.label "Pega aquí el link de la página de twitter de tu producto o servicio(URL) para que los jueces puedan encontrarte" %><br />
+    <center><%= f.text_field :twitter_url, :class => "inputs inputContacto" %><center>
+    <br><br>
+  </div>
+
+  <div class="field">
+  <h3 style="color:#E5213B;margin-bottom: 5px;">Importante: </h3>
+   <p>Envia a <span style="font-weight:bold; ">hol@fli.mx</span> la carta de originalidad que puedes encontrar en la siguiente pestaña, escaneada y con tu firma. Indicando el correo del lider en el titulo.</p>
+  <!--<%= f.file_field :document ,:class => "inputs inputContacto"%>-->
+    <br><br>
+  </div>
+ <br><br>
+  <p><p>
   <div class="actions" style="display:block">
-    <center><%= f.submit "Terminar y Enviar a Revisión" ,:class => "button loginb", :id => "btn_pdf_preview"  %></center>
+    <center><%= f.submit "Terminar y Enviar a Revisión" ,:class => "button loginb", :id => "btn_pdf_preview" %></center>
   </div>
 <% end %>

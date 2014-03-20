@@ -14,12 +14,10 @@ var el = $('#respond_application_form');
   alert("Errores " + errors);
 
 <% else %>
+
+  generateNoty('top', 'PDF Actualizado Correctamente');
   
-  <% puts "http://#{request.host}:#{request.port+request.fullpath}" %>
-  //alert( url %>);
-  //generateNoty('top', 'PDF Actualizado Correctamente');
   
-  //generateNotyConfirm('centerRight', 'PDF Actualizado Correctamente','<%= url %>');
   // Clear form
   el.find('input:text,textarea').val('');
   el.find('.errors').empty();

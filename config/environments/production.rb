@@ -18,6 +18,15 @@ Fli::Application.configure do
   :authentication => :plain,
   :enable_starttls_auto => true
 }
+
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['flimx'],
+    :access_key_id => ENV['AKIAJ6CJWVDDUOA4K23Q'],
+    :secret_access_key => ENV['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']
+  }
+}
 # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true

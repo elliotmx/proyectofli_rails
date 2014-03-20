@@ -5,4 +5,5 @@ class Application < ActiveRecord::Base
 	accepts_nested_attributes_for :pdf_previews
 	belongs_to :market
 	#attr_accessible :pdfpreviews_atributes
+
 end

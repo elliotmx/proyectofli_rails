@@ -14,9 +14,9 @@ var el = $('#respond_application_form');
   alert("Errores " + errors);
 
 <% else %>
-  alert("<%= http://#{request.host}:#{request.port+request.fullpath} %>");
-  generateNotyConfirm('centerRight', 'PDF Actualizado Correctamente',);
-  //generateNoty('top', 'PDF Guardado Correctamente');
+//alert("<%= http://#{request.host}:#{request.port+request.fullpath} %>");
+  //generateNotyConfirm('centerRight', 'PDF Actualizado Correctamente',);
+  generateNoty('top', 'PDF Guardado Correctamente');
   //alert("Guardado Correctamente");
 
   // Clear form

@@ -59,10 +59,10 @@ function cargarAccionesInicio(){
   					$("#section_7").show();
   					break;
   				case 'redactarProyectoBtn':
-  					//$(".questions_section").hide();
-            alert("no podrás acceder a esta sección, hasta haber completado todo el proceso");
-           // 		cargarPdfPreview();
-  				//	$("#section_8").show();
+  					$(".questions_section").hide();
+            //alert("no podrás acceder a esta sección, hasta haber completado todo el proceso");
+            		cargarPdfPreview();
+  					$("#section_8").show();
   					break;
   				case 'conexionConvocatoriasBtn':
   					$(".questions_section").hide();
@@ -114,7 +114,6 @@ function cargarAccionesInicio(){
 
 function generateNoty(layout, txt) {
 
-        
       n = noty({
       text: txt,
       type: 'alert',
