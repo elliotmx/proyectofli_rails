@@ -9,13 +9,12 @@ gem 'rails', '3.2.1'
 
 #
 #, :staging do
-<<<<<<< HEAD
-group :production do
- #gem "pg"
-=======
 group :production do 
  gem "pg"
->>>>>>> 4c061767142605d0b8fe4ff54b5cf7abc72dd7c3
+<<<<<<< HEAD
+ #gem "aws-sdk"
+=======
+>>>>>>> 21350ba58d5354ed5ecbf555ebdb3c15a913ef63
 end
 
 group :development, :test do

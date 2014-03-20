@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140320160116) do
+ActiveRecord::Schema.define(:version => 20140320175348) do
 
   create_table "answers", :force => true do |t|
     t.text     "value",          :limit => 255
@@ -101,16 +101,13 @@ ActiveRecord::Schema.define(:version => 20140320160116) do
   create_table "pdf_previews", :force => true do |t|
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
-    t.string   "project_title"
     t.text     "problem"
     t.text     "justification"
     t.text     "objective"
-    t.string   "objective_population"
     t.text     "components"
     t.text     "activities"
     t.text     "implementation"
     t.text     "cronogram"
-    t.string   "budget"
     t.text     "risks"
     t.integer  "application_id"
     t.string   "document_file_name"
@@ -119,6 +116,9 @@ ActiveRecord::Schema.define(:version => 20140320160116) do
     t.datetime "document_updated_at"
     t.text     "facebook_url"
     t.text     "twitter_url"
+    t.text     "project_title"
+    t.text     "objective_population"
+    t.text     "budget"
   end
 
   add_index "pdf_previews", ["application_id"], :name => "index_pdf_previews_on_application_id"
