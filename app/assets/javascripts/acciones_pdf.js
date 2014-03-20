@@ -28,7 +28,7 @@ function cargarPdfPreview(){
 	$("#pdf_preview_objective_population").val(txtInput);
 		
 		
-	txtInput = $("#67").val();
+	txtInput = $("#50").val();
 	$("#pdf_propuesta p").html(txtInput);
 		
 
