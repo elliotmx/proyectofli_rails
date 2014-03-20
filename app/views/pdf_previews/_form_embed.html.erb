@@ -70,6 +70,14 @@
   <p><p>
   <div class="actions" style="display:block">
 
-    <center><%= f.submit "Terminar y Enviar a Revisión" ,:class => "button loginb", :id => "btn_pdf_preview" %></center>
+  <%if PdfPreview.find_by_application_id(current_user.applications.last.id).nil? %>
+    <center>
+      <%= f.submit "Terminar y Enviar a Revisión" ,:class => "button loginb", :id => "btn_pdf_preview" %>
+    </center>
+  <% else %>
+    <center>
+      <%= f.submit "Actualizar y enviar de nuevo" ,:class => "button loginb", :id => "btn_pdf_preview", :style=>"background:rgba(65, 213, 219, 1)" %>
+    </center>
+  <% end %>
   </div>
 <% end %>
