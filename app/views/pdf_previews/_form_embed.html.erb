@@ -48,11 +48,13 @@
 </div>
 
   <div class="field" style="display:block">
-    <%= f.label "Pega aquí el link de la página de facebook de tu producto o servicio (URL) para que los jueces puedan encontrarte" %><br />
-    <center><%= f.text_field :facebook_url,:class => "inputs cien" %></center>
+    <img alt="Logo" src="/assets/fb32.png" />
+  <%= f.label "Pega aquí el link de la página de facebook de tu producto o servicio (URL) para que los jueces puedan encontrarte" %><br />
+    <center> <%= f.text_field :facebook_url,:class => "inputs cien" %></center>
     <br><br>
   </div>
   <div class="field" style="display:block">
+  <img alt="Logo" src="/assets/tw32.png" />
     <%= f.label "Pega aquí el link de la página de twitter de tu producto o servicio(URL) para que los jueces puedan encontrarte" %><br />
     <center><%= f.text_field :twitter_url, :class => "inputs cien" %><center>
     <br><br>
@@ -61,12 +63,25 @@
   <div class="field">
   <h3 style="color:#E5213B;margin-bottom: 5px;">Importante: </h3>
    <p>Envia a <span style="font-weight:bold; ">hola@fli.mx</span> la carta de originalidad que puedes encontrar en la siguiente pestaña, escaneada y con tu firma. Indicando el correo del lider en el titulo.</p>
+<<<<<<< HEAD
   <!--<%= f.file_field :document ,:class => "inputs inputContacto"%>-->
+=======
+  <!--<%= f.file_field :document ,:class => "inputs cien"%>-->
+>>>>>>> 0fbefb7977ab8af2672090c9bd617256c2f8c036
     <br><br>
   </div>
  <br><br>
   <p><p>
   <div class="actions" style="display:block">
-    <center><%= f.submit "Terminar y Enviar a Revisión" ,:class => "button loginb", :id => "btn_pdf_preview" %></center>
+
+  <%if PdfPreview.find_by_application_id(current_user.applications.last.id).nil? %>
+    <center>
+      <%= f.submit "Terminar y Enviar a Revisión" ,:class => "button loginb", :id => "btn_pdf_preview" %>
+    </center>
+  <% else %>
+    <center>
+      <%= f.submit "Actualizar y enviar de nuevo" ,:class => "button loginb", :id => "btn_pdf_preview", :style=>"background:rgba(65, 213, 219, 1)" %>
+    </center>
+  <% end %>
   </div>
 <% end %>
