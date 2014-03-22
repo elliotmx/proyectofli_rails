@@ -17,10 +17,145 @@
 				<span style="position:relative; top: -50px; font-size:14px;">
 					<p>Concentrado de información de proyectos ingresados a la plataforma.</p>
 				</span>
-				<h3>Proyectos</h3>
-					<h4>Usuarios por escuela</h4>
-						<!--<%= column_chart({"Football" => 1, "Basketball" => 5}) %>-->
-						<%= column_chart User.group("college_id").count, :height => "100px" %>
+
+				<h3 style="margin-bottom: 20px;">Proyectos</h3>
+				<center><div id="pro">
+					<table style="width:100%;">
+						<tr ALIGN=CENTER>
+							<th style="color:#1F323F;">120</th>
+							<th style="color:#1F323F;">41</th>
+						</tr>
+						<tr ALIGN=CENTER>
+							<td>Iniciados</td>
+							<td>Terminados</td>
+						</tr>
+					</table>
+				</div></center>
+
+				<h3 style="margin-bottom: 20px;">Proyectos por Escuela</h3>
+				<center><div id="pro">
+					<table style="width:100%;">
+						<tr ALIGN=CENTER>
+							<th style="color:#1F323F;">120</th>
+							<th style="color:#1F323F;">41</th>
+							<th style="color:#1F323F;">120</th>
+							<th style="color:#1F323F;">41</th>
+							<th style="color:#1F323F;">120</th>
+						</tr>
+						<tr ALIGN=CENTER>
+							<td>UAQ</td>
+							<td>COBAQ</td>
+							<td>CECYTEG</td>
+							<td>CONALEP</td>
+							<td>CETIS</td>
+						</tr>
+					</table>
+				</div></center>
+
+				<h3 style="margin-bottom: 20px;">Alumnos por Escuela</h3>
+				<center><div id="pro">
+					<table style="width:100%;">
+						<tr ALIGN=CENTER>
+							<th style="color:#1F323F;">120</th>
+							<th style="color:#1F323F;">41</th>
+							<th style="color:#1F323F;">120</th>
+							<th style="color:#1F323F;">41</th>
+							<th style="color:#1F323F;">120</th>
+						</tr>
+						<tr ALIGN=CENTER>
+							<td>UAQ</td>
+							<td>COBAQ</td>
+							<td>CECYTEG</td>
+							<td>CONALEP</td>
+							<td>CETIS</td>
+						</tr>
+					</table>
+				</div></center>	
+				<h3 style="margin-bottom: 20px;">Proyectos por Categoria</h3>
+				<center><div id="pro2">
+					<table style="width: 70%; margin-top: 15px;">
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">41</th>
+							<th style="width:10%;"></th>
+							<td>Automotriz</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Desarrollo de Software</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Distribución y Venta al por menor</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Educación</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Energía y Ahorro de Energía</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Entretenimiento</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Medios de Comunicación y Contenidos</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Moda</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Publicidad</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Salud y Bienestar</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Agricultura</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Seguridad</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th>23</th>
+							<th style="width:10%;"></th>
+							<td>Viajes, Turismo, Hotelería</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Actividades Pecuarias</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td style="color:#1F323F;">Mineria</td>
+						</tr>
+						<tr ALIGN=LEFT>
+							<th style="color:#1F323F;">23</th>
+							<th style="width:10%;"></th>
+							<td>Alimentos</td>
+						</tr>
+					</table>
+				</div></center>	
 			</div>
 			<!-- FIN section_1 -->
 			
@@ -35,9 +170,8 @@
 				<h3> Total Proyectos: <%= Application.all.count %><br></h3>
 				<% Application.all.each do |application| %>
 					
-
 				<div id="proyectos">
-					<table style="width:100%; margin-left: 5px;">
+					<table style="width:100%;">
 						<tr>
 							<th>Proyecto</th>
 							<th>Categoria</th>
@@ -63,3 +197,8 @@
 		</div>
 	</div>
 </div>
+
+<!-- Ejemplo Graficas
+
+<%= column_chart({"Football" => 1, "Basketball" => 5}) %>
+<%= column_chart User.group("college_id").count, :height => "100px" %>-->
