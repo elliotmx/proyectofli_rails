@@ -1,6 +1,6 @@
 <br>
 <% @u = User.where("user_profile_id = ? and college_id = ?",2,4) %>
-Proyectos Totales UAQ : <%= @u.count %>
+Proyectos Totales CECYTEQ : <%= @u.count %>
 
 <% @u.each do |lider_proyecto| %>
 	<% @ap = lider_proyecto.applications %>
@@ -15,12 +15,18 @@ Proyectos Totales UAQ : <%= @u.count %>
 							<th>Proyecto</th>
 							<th>Categoria</th>
 							<th>Descripción</th>
+							<th>Integrantes</th>
 						</tr>
 					<tr ALIGN=CENTER>
 						<td><%= @app_obj.name %></td>
 					<td><%= @app_obj.market.description%></td>						
 					<td><%= @app_obj.short_description %></td> 
-					
+						</tr>
+						<tr>
+						<td colspan=4>Integrantes: 
+						<% @app.users.each do |usr| %>
+							<%= usr.name %> \
+						<td>
 						</tr>
 					</table>
 			</div>
