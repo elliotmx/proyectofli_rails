@@ -3,7 +3,6 @@
 Proyectos Totales UAQ : <%= @u.count %>
 
 <% @u.each do |lider_proyecto| %>
-	<%= lider_proyecto.id %>
 	<% @ap = lider_proyecto.applications %>
 
 	<%if @ap.empty? %>
@@ -24,5 +23,6 @@ Proyectos Totales UAQ : <%= @u.count %>
 					
 						</tr>
 					</table>
+			</div>
 	<% end %>
 <% end %>
