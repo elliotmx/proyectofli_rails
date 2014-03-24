@@ -9,6 +9,7 @@ Proyectos Totales UAQ : <%= @u.count %>
 	<%if @ap.empty? %>
 		
 	<% else %>
+	<%= debug @ap %>
 			<div id="proyectos">
 					<table style="width:100%;">
 						<tr>
@@ -17,10 +18,9 @@ Proyectos Totales UAQ : <%= @u.count %>
 							<th>Descripción</th>
 						</tr>
 					<tr ALIGN=CENTER>
-						<td><%= @ap.name %></td>
+					<!-- <td><%= @ap.name %></td>
 					<td><%= @ap.market.description%></td>						
-					<td><%= @ap.short_description %></td>
-					
+					<td><%= @ap.short_description %></td> -->
 						</tr>
 					</table>
 	<% end %>
