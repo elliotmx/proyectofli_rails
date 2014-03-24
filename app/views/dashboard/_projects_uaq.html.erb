@@ -3,9 +3,11 @@
 Proyectos Totales UAQ : <%= @u.count %>
 
 <% @u.each do |lider_proyecto| %>
-	<% @app = lider_proyecto.applications %>
-
-	<div id="proyectos">
+	<% if lider_proyecto.applications.first.nil? %>
+		<p> vacio </p>
+	<%else %>
+		<% @a = lider_proyecto.applications.first %>
+		<div id="proyectos">
 				<table style="width:100%;">
 					<tr>
 						<th>Proyecto</th>
@@ -15,10 +17,10 @@ Proyectos Totales UAQ : <%= @u.count %>
 					</tr>
 				<tr ALIGN=CENTER>
 				<td><%= @app.name %></td>
-				<td><%= @app.market.description%></td>	
+				<td><%= @app.markets.description%></td>	
 				<td><%= @app.short_description %></td>
 					</tr>
 				</table>
 		</div>
-
+	<%end %>
 <% end %>
