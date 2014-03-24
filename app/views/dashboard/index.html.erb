@@ -167,31 +167,16 @@
 					<p>Concentrado de información a detalle de proyectos ingresados a la plataforma.</p>
 				</span>
 				
-				<h3> Total Proyectos: <%= Application.all.count %><br></h3>
-				<% Application.all.each do |application| %>
+
+			<%= link_to "Proyectos UAQ", show_uaq_projects_dashboard_index_path,:remote=>true %>
+			<%= link_to "Proyectos COBAQ", show_cobaq_projects_dashboard_index_path,:remote=>true %>
+			<%= link_to "Proyectos CECYTEQ", show_cecyteq_projects_dashboard_index_path,:remote=>true %>
+			<%= link_to "Proyectos CONALEP", show_conalep_projects_dashboard_index_path,:remote =>true %>
+			<%= link_to "Proyectos CETIS", show_cetis_projects_dashboard_index_path,:remote=>true %>
+				
 					
-				<div id="proyectos">
-					<table style="width:100%;">
-						<tr>
-							<th>Proyecto</th>
-							<th>Categoria</th>
-							<th>Escuela</th>
-							<th>Descripción</th>
-						</tr>
-					<tr ALIGN=CENTER>
-					<td><%= application.name %></td>
-					<td><%= application.market.description%></td>
-					<% if application.users.where(:user_profile_id =>2).first.college.nil? %>
-					<td> Sin escuela </td>
-					<% else %>
-						<td><%= application.users.where(:user_profile_id =>2).first.college.name %></td>
-					<% end %>
-						
-					<td><%= application.short_description %></td>
-						</tr>
-					</table>
-				</div>
-				<% end %>
+					<div id="render_projects_by_school">
+						</div>
 			</div>
 			<!-- FIN section_2 -->
 		</div>

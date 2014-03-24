@@ -19,7 +19,7 @@ class ApplicationPdf < Prawn::Document
   move_down 1
   image "#{Rails.root}/app/assets/images/logo_fli_pdf.png"
   move_down 20
-  text "Resumen de Proyecto: #{@pdfpreview.project_title} ", size: 15, style: :bold 
+  text "Resumen de Proyecto: #{@pdfpreview.problem} ", size: 15, style: :bold 
  end
 
  def print_founders()

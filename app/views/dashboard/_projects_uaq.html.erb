@@ -1,0 +1,24 @@
+<br>
+<% @u = User.where("user_profile_id = ? and college_id = ?",2,2) %>
+Proyectos Totales UAQ : <%= @u.count %>
+
+<% @u.each do |lider_proyecto| %>
+	<% @app = lider_proyecto.applications %>
+
+	<div id="proyectos">
+				<table style="width:100%;">
+					<tr>
+						<th>Proyecto</th>
+						<th>Categoria</th>
+						<th>Escuela</th>
+						<th>Descripción</th>
+					</tr>
+				<tr ALIGN=CENTER>
+				<td><%= @app.name %></td>
+				<td><%= @app.market.description%></td>	
+				<td><%= @app.short_description %></td>
+					</tr>
+				</table>
+		</div>
+
+<% end %>

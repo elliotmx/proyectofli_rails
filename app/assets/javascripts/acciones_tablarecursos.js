@@ -73,7 +73,7 @@ function calcularTotal(){
         //sumar todas las celdas de subtotal
         if(celdasDeTotales.length > 0){
             celdasDeTotales.each(function(index,item){
-                  sumTotal += parseInt($(item).html());
+                  sumTotal += parseFloat($(item).html());
             });
         }else{
             sumTotal = 0;

@@ -34,6 +34,17 @@ end
 
   resources :answers
 
+  resources :dashboard do
+    collection do
+      get 'show_uaq_projects'
+      get 'show_cecyteq_projects'
+      get 'show_cetis_projects'
+      get 'show_cobaq_projects'
+      get 'show_conalep_projects'
+    end
+  end
+
+
   root :to => "home#index"
 
 #Add a route method for close session
@@ -49,11 +60,13 @@ end
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
-  get 'admin', to: 'dashboard#index'
+  get 'admin', to: 'dashboard#index'  
+
 
   get 'charts', to:'home#charts'
   get 'alumnosr', to:'home#alumnos'
   
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

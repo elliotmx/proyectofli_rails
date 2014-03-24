@@ -7,7 +7,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+=begin
 DevelopmentStage.create(:description => "Solo tengo la idea en papel"	)
 DevelopmentStage.create(:description => "Tengo un prototipo funcional o programa estructurado (la idea está totalmente
 desarrollada y aplicada, pero no puede ser abiertamente lanzada o utilizada todavia).")
@@ -19,7 +19,7 @@ ProjectScope.create(:id=>30,:description => "Un grupo específico de personas co
 ProjectScope.create(:id=>30,:description => "Varios grupos de personas con los mismos problemas y necesidades")
 ProjectScope.create(:id=>30,:description => "Uno o varios grupos de personas con diferentes problemas y necesidades.")
 
-=begin
+
 
 Market.create(:id=>30,:description => "Automotriz")
 #Market.create(:id => 2, :description => "Comunicaciones y Conectividad")
@@ -105,9 +105,16 @@ Market.create(:id=>30, :description => "Alimentos")
 #UserProfile.create(:id => 2, :description => "Lider")
 #UserProfile.create(:id => 3, :description => "Tutor")
 
-#College.create(:name=>"Colegio New")
+College.create(:id=>2, :name=>"UAQ")
+College.create(:id=>3, :name=>"COBAQ")
+College.create(:id=>4, :name=>"CECYTEQ")
+College.create(:id=>5, :name=>"CONALEP")
+College.create(:id=>6, :name=>"CETIS")
+
 #Faculty.create(:name => "Facultad Ciencias",:idcollege => 1)
+
 #
+
 #Role.create(:name =>"Admin")
 #Role.create(:name =>"user")
 #

@@ -23,12 +23,13 @@ class ApplicationsController < ApplicationController
     #puts " parametros para show application #{params[:id]} "
     @application = Application.find(params[:id])
 
+     @pdf_preview = PdfPreview.find_by_application_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @application }
       format.pdf {
-        pdf = ApplicationPdf.new(@application, view_context)
+        pdf = ApplicationPdf.new(@pdf_preview, view_context)
         send_data pdf.render, filename: 
         "answers.pdf",
         type: "application/pdf",
