@@ -47,7 +47,7 @@ class ApplicationPdf < Prawn::Document
   text @pdfpreview.objective_population + "\n\n"
 
   bold_text("Impacto")
-  text Answer.where("question_id = 50 and application_id = ?", @pdfpreview.application_id).value.to_s+"\n\n"
+  text Answer.where("question_id = 50 and application_id = ?", @pdfpreview.application_id).first.value.to_s+"\n\n"
 
   bold_text("Presupuesto")
   print_table(@pdfpreview.budget,"presupuesto")
