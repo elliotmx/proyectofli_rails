@@ -22,7 +22,7 @@
 				<center><div id="pro">
 					<table style="width:100%;">
 						<tr ALIGN=CENTER>
-							<th style="color:#1F323F;"><%= Application.all.count %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ?",2) %></th>
 							<th style="color:#1F323F;"><%= PdfPreview.select("DISTINCT(application_id)").count %></th>
 						</tr>
 						<tr ALIGN=CENTER>
@@ -36,11 +36,11 @@
 				<center><div id="pro">
 					<table style="width:100%;">
 						<tr ALIGN=CENTER>
-							<th style="color:#1F323F;">120</th>
-							<th style="color:#1F323F;">41</th>
-							<th style="color:#1F323F;">120</th>
-							<th style="color:#1F323F;">41</th>
-							<th style="color:#1F323F;">120</th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,2) %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,3) %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,4) %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,5) %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,6) %></th>
 						</tr>
 						<tr ALIGN=CENTER>
 							<td>UAQ</td>
@@ -52,6 +52,7 @@
 					</table>
 				</div></center>
 
+				<!---
 				<h3 style="margin-bottom: 20px;">Alumnos por Escuela</h3>
 				<center><div id="pro">
 					<table style="width:100%;">
@@ -70,7 +71,8 @@
 							<td>CETIS</td>
 						</tr>
 					</table>
-				</div></center>	
+				</div></center>
+				-->	
 				<h3 style="margin-bottom: 20px;">Proyectos por Categoria</h3>
 				<center><div id="pro2">
 					<table style="width: 70%; margin-top: 15px;">
