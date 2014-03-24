@@ -10,7 +10,6 @@ Proyectos Totales UAQ : <%= @u.count %>
 		
 	<% else %>
 			<div id="proyectos">
-				<%= debug @ap %>
 					<table style="width:100%;">
 						<tr>
 							<th>Proyecto</th>
@@ -18,6 +17,9 @@ Proyectos Totales UAQ : <%= @u.count %>
 							<th>Descripción</th>
 						</tr>
 					<tr ALIGN=CENTER>
+						<td><%= application.name %></td>
+					<td><%= application.market.description%></td>						
+					<td><%= application.short_description %></td>
 					
 						</tr>
 					</table>
