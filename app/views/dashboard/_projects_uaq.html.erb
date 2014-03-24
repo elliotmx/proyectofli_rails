@@ -6,7 +6,7 @@ Proyectos Totales UAQ : <%= @u.count %>
 	<%= lider_proyecto.id %>
 	<% @ap = lider_proyecto.applications %>
 
-	<%if @ap.nil? %>
+	<%if @ap.empty? %>
 		
 	<% else %>
 			<div id="proyectos">

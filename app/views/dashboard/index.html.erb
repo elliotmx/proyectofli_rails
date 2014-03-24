@@ -36,11 +36,11 @@
 				<center><div id="pro">
 					<table style="width:100%;">
 						<tr ALIGN=CENTER>
-							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,2) %></th>
-							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,3) %></th>
-							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,4) %></th>
-							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,5) %></th>
-							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,6) %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,2).count %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,3).count %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,4).count %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,5).count %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ? and college_id = ?",2,6).count %></th>
 						</tr>
 						<tr ALIGN=CENTER>
 							<td>UAQ</td>
