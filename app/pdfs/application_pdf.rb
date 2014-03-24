@@ -47,7 +47,7 @@ class ApplicationPdf < Prawn::Document
   text @pdfpreview.objective_population + "\n\n"
 
   bold_text("Impacto")
-  text "\n\n"
+  text Answer.where("question_id = 50 and application_id = ?", @pdfpreview.application_id)+"\n\n"
 
   bold_text("Presupuesto")
   print_table(@pdfpreview.budget,"presupuesto")
@@ -89,7 +89,7 @@ class ApplicationPdf < Prawn::Document
 
 
   def tbl_presupuesto(hash)
-        
+
         [["Tipo Recurso", "Descripcion","Cantidad","Costo Aprox.", "Sub Total"]] +
         hash.map do |object|
           @sbtotal = object['cantidad'].to_d * object['costo'].to_d 
