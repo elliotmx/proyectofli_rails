@@ -22,8 +22,8 @@
 				<center><div id="pro">
 					<table style="width:100%;">
 						<tr ALIGN=CENTER>
-							<th style="color:#1F323F;">120</th>
-							<th style="color:#1F323F;">41</th>
+							<th style="color:#1F323F;"><%= Application.all.count %></th>
+							<th style="color:#1F323F;"><%= PdfPreview.select("DISTINCT(application_id)").count</th>
 						</tr>
 						<tr ALIGN=CENTER>
 							<td>Iniciados</td>

@@ -6,5 +6,21 @@ Proyectos Totales UAQ : <%= @u.count %>
 	<%= lider_proyecto.id %>
 	<% @ap = lider_proyecto.applications %>
 
-	<%= debug @ap %>
+	<%if @ap.nil? %>
+		
+	<% else %>
+			<div id="proyectos">
+					<table style="width:100%;">
+						<tr>
+							<th>Proyecto</th>
+							<th>Categoria</th>
+							<th>Descripción</th>
+						</tr>
+					<tr ALIGN=CENTER>
+					<td><%= @ap.name %></td>
+					<td><%= @ap.market.description%></td>		
+					<td><%= @ap.short_description %></td>
+						</tr>
+					</table>
+	<% end %>
 <% end %>
