@@ -24,7 +24,7 @@ Proyectos Totales CECYTEQ : <%= @u.count %>
 						</tr>
 						<tr>
 						<td colspan=4>Integrantes: 
-						<% @app.users.each do |usr| %>
+						<% @app_obj.users.each do |usr| %>
 							<%= usr.name %> \
 						<% end %>
 						<td>
