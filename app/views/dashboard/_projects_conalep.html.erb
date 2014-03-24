@@ -15,7 +15,7 @@ Proyectos Totales CONALEP : <%= @u.count %>
 							<th>Proyecto</th>
 							<th>Categoria</th>
 							<th>Descripción</th>
-							<th>Integrantes</th>
+						
 						</tr>
 					<tr ALIGN=CENTER>
 						<td><%= @app_obj.name %></td>
@@ -30,7 +30,13 @@ Proyectos Totales CONALEP : <%= @u.count %>
 						<td>
 						</tr>
 						<tr>
-							<td colspan=4><center><%= link_to "Descargar(PDF)", application_path(@app_obj, :format => 'pdf'),:class=>"inputs inputContacto",:target =>"_blank" %><center><td>
+							<td>
+							<% if PdfPreview.find_by_application_id(@app_obj.id).nil? %>
+								<p style="color:red">(incompleto) No generó PDF</p>
+							<% else %>
+							    <td colspan=4><center><%= link_to "Descargar(PDF)", application_path(@app_obj, :format => 'pdf'),:class=>"inputs inputContacto",:target =>"_blank" %><center><td>
+							<% end %>
+							<td>
 						</tr>
 					</table>
 			</div>
