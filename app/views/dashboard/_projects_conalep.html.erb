@@ -1,6 +1,6 @@
 <br>
 <% @u = User.where("user_profile_id = ? and college_id = ?",2,5) %>
-Proyectos Totales UAQ : <%= @u.count %>
+Proyectos Totales CONALEP : <%= @u.count %>
 
 <% @u.each do |lider_proyecto| %>
 	<% @ap = lider_proyecto.applications %>
@@ -15,12 +15,22 @@ Proyectos Totales UAQ : <%= @u.count %>
 							<th>Proyecto</th>
 							<th>Categoria</th>
 							<th>Descripción</th>
+							<th>Integrantes</th>
 						</tr>
 					<tr ALIGN=CENTER>
 						<td><%= @app_obj.name %></td>
 					<td><%= @app_obj.market.description%></td>						
 					<td><%= @app_obj.short_description %></td> 
-					
+						</tr>
+						<tr>
+						<td colspan=4 style="font-size: 10px; color: rgb(41, 138, 202); text-align: center; font-weight: bold;"> 
+						<% @app_obj.users.each do |usr| %>
+							<%= usr.name %> \
+						<% end %>
+						<td>
+						</tr>
+						<tr>
+							<td colspan=4><%= link_to "Descargar(PDF)", application_path(@app_obj, :format => 'pdf'),:class=>"inputs inputContacto" %><td>
 						</tr>
 					</table>
 			</div>
