@@ -19,7 +19,7 @@ class ApplicationPdf < Prawn::Document
   move_down 1
   image "#{Rails.root}/app/assets/images/logo_fli_pdf.png"
   move_down 20
-  text "Resumen de Proyecto: #{@pdfpreview.problem} ", size: 15, style: :bold 
+  text "Resumen de Proyecto: #{@pdfpreview.project_title} ", size: 15, style: :bold 
  end
 
  def print_founders()
@@ -39,26 +39,23 @@ class ApplicationPdf < Prawn::Document
  def print_body
   move_down 15
   
-  bold_text("Problematica que resuelve el proyecto")
-  text @pdfpreview.problem + "\n\n"
   
-  bold_text("Justificacion")
-  text @pdfpreview.justification + "\n\n"
+  bold_text("Problema")
+  text @pdfpreview.problem + "\n\n"
 
-  bold_text("Objetivo")
-  text @pdfpreview.objective + "\n\n"
-
-  bold_text("Poblacion Objetivo")
+  bold_text("Beneficiarios")
   text @pdfpreview.objective_population + "\n\n"
 
-  bold_text("Actividades")
-  text @pdfpreview.activities + "\n\n"
-
-  bold_text("Riesgos/Plan de Contingencia")
-  print_table(@pdfpreview.risks,"riesgos")
+  bold_text("Impacto")
+  text "\n\n"
 
   bold_text("Presupuesto")
   print_table(@pdfpreview.budget,"presupuesto")
+
+  bold_text("FODA")
+  print_table(@pdfpreview.risks,"riesgos")
+
+  
 
  end
 
@@ -92,15 +89,17 @@ class ApplicationPdf < Prawn::Document
 
 
   def tbl_presupuesto(hash)
+        
         [["Tipo Recurso", "Descripcion","Cantidad","Costo Aprox.", "Sub Total"]] +
         hash.map do |object|
-          [ object['tipoRecurso'].to_s ,object['descripcion'].to_s , object['cantidad'].to_s, object['descripcion'].to_s, object['cantidad'].to_s ]
+          @sbtotal = object['cantidad'].to_d * object['costo'].to_d 
+          [ object['tipoRecurso'].to_s ,object['descripcion'].to_s , object['cantidad'].to_s, object['costo'].to_s, @sbtotal.to_s ]
         end
   end
 
 
   def tbl_riesgos(hash)
-          [["Componentes", "Actividades","Riesgos","Plan de Contingencia"]] +
+          [["Fortaleza", "Oportunidades","Debilidades","Amenazas"]] +
         hash.map do |object|
           [ object['componentes'].to_s ,object['actividades'].to_s , object['riesgos'].to_s, object['plncontingencia'].to_s ]
       end
