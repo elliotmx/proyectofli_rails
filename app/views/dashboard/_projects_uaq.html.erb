@@ -3,24 +3,8 @@
 Proyectos Totales UAQ : <%= @u.count %>
 
 <% @u.each do |lider_proyecto| %>
-	<% if lider_proyecto.applications.first.nil? %>
-		<p> vacio </p>
-	<%else %>
-		<% @a = lider_proyecto.applications.first %>
-		<div id="proyectos">
-				<table style="width:100%;">
-					<tr>
-						<th>Proyecto</th>
-						<th>Categoria</th>
-						<th>Escuela</th>
-						<th>Descripción</th>
-					</tr>
-				<tr ALIGN=CENTER>
-				<td><%= @app.name %></td>
-				<td><%= @app.markets.description%></td>	
-				<td><%= @app.short_description %></td>
-					</tr>
-				</table>
-		</div>
-	<%end %>
+	<%= lider_proyecto.id %>
+	<% @ap = lider_proyecto.applications %>
+
+	<%= debug @ap %>
 <% end %>
