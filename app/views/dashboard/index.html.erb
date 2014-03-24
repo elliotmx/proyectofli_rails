@@ -22,7 +22,7 @@
 				<center><div id="pro">
 					<table style="width:100%;">
 						<tr ALIGN=CENTER>
-							<th style="color:#1F323F;"><%= User.where("user_profile_id = ?",2) %></th>
+							<th style="color:#1F323F;"><%= User.where("user_profile_id = ?",2).count %></th>
 							<th style="color:#1F323F;"><%= PdfPreview.select("DISTINCT(application_id)").count %></th>
 						</tr>
 						<tr ALIGN=CENTER>
