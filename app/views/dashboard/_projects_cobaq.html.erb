@@ -1,1 +1,28 @@
-projects cobaq
+<br>
+<% @u = User.where("user_profile_id = ? and college_id = ?",2,3) %>
+Proyectos Totales UAQ : <%= @u.count %>
+
+<% @u.each do |lider_proyecto| %>
+	<% @ap = lider_proyecto.applications %>
+
+	<%if @ap.empty? %>
+		
+	<% else %>
+	<% @app_obj = @ap.first %>
+			<div id="proyectos">
+					<table style="width:100%;">
+						<tr>
+							<th>Proyecto</th>
+							<th>Categoria</th>
+							<th>Descripción</th>
+						</tr>
+					<tr ALIGN=CENTER>
+						<td><%= @app_obj.name %></td>
+					<td><%= @app_obj.market.description%></td>						
+					<td><%= @app_obj.short_description %></td> 
+					
+						</tr>
+					</table>
+			</div>
+	<% end %>
+<% end %>
