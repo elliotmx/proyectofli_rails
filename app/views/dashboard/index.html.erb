@@ -3,6 +3,24 @@
 </script>
 <%= javascript_include_tag "highcharts", "chartkick" %>
 
+<script>
+	$(document).ready(function(){
+			
+	var altura = $("#menuProyectos").offset().top;	
+				
+		$(window).scroll(function(){
+					
+			if($(window).scrollTop() >= altura){
+				$("#menuProyectos").css("margin-top","0");
+				$("#menuProyectos").css("position","fixed");			
+				
+				}else{
+					$("#menuProyectos").css("margin-top","-67px;");
+					$("#menuProyectos").css("position","static");				
+			}			
+		});
+	});
+		</script>
 
 <div id="banner-wrapper" style="margin-top:-62px;">		
 	<div id="faqBodyPanel">
@@ -168,14 +186,13 @@
 				<span style="position:relative; top: -50px; font-size:14px;">
 					<p>Concentrado de información a detalle de proyectos ingresados a la plataforma.</p>
 				</span>
-				
-			<%= link_to "Proyectos UAQ", show_uaq_projects_dashboard_index_path,:remote=>true %>| 
-			<%= link_to "Proyectos COBAQ", show_cobaq_projects_dashboard_index_path,:remote=>true %>| 
-			<%= link_to "Proyectos CECYTEQ", show_cecyteq_projects_dashboard_index_path,:remote=>true %>| 
-			<%= link_to "Proyectos CONALEP", show_conalep_projects_dashboard_index_path,:remote =>true %>| 
-			<%= link_to "Proyectos CETIS", show_cetis_projects_dashboard_index_path,:remote=>true %>|
-				
-					
+			<div id="menuProyectos">
+			<%= link_to "Proyectos UAQ", show_uaq_projects_dashboard_index_path,:remote=>true, :class=>"buttonMenu" %> 
+			<%= link_to "Proyectos COBAQ", show_cobaq_projects_dashboard_index_path,:remote=>true, :class=>"buttonMenu" %> 
+			<%= link_to "Proyectos CECYTEQ", show_cecyteq_projects_dashboard_index_path,:remote=>true, :class=>"buttonMenu" %>
+			<%= link_to "Proyectos CONALEP", show_conalep_projects_dashboard_index_path,:remote =>true, :class=>"buttonMenu" %>
+			<%= link_to "Proyectos CETIS", show_cetis_projects_dashboard_index_path,:remote=>true, :class=>"buttonMenu" %>
+			</div>	
 					<div id="render_projects_by_school">
 					</div>
 			</div>

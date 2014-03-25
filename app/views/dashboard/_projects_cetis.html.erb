@@ -1,6 +1,6 @@
 <br>
 <% @u = User.where("user_profile_id = ? and college_id = ?",2,6) %>
-Proyectos Totales CETIS : <%= @u.count %>
+Proyectos Totales CETIS : <span style="font-weight: bold;"><%= @u.count %></span>
 
 <% @u.each do |lider_proyecto| %>
 	<% @ap = lider_proyecto.applications %>

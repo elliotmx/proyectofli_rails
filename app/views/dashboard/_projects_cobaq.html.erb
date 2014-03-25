@@ -1,6 +1,6 @@
 <br>
 <% @u = User.where("user_profile_id = ? and college_id = ?",2,3) %>
-Proyectos Totales COBAQ : <%= @u.count %>
+Proyectos Totales COBAQ : <span style="font-weight: bold;"><%= @u.count %></span>
 
 <% @u.each do |lider_proyecto| %>
 	<% @ap = lider_proyecto.applications %>
