@@ -33,8 +33,8 @@
 <% Section.all.each do |section| %>
 	<div style="margin-top: 10px; display:none" id="section_<%= section.id %>" class="questions_section">
 		<h1><%= section.description %></h1>
-		<% if section.id == 8 %>
-			<%= render "layouts/htmlForRender/pdf_preview" %>
+		<% if section.id == 12 %> <!-- cambiar por section.id = 8 >
+			 <%= render "layouts/htmlForRender/pdf_preview" %>
 		<% elsif section.id == 9 %>
 			<%= render "layouts/htmlForRender/material_apoyo" %>
 		<% elsif %>
