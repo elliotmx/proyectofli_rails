@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
   #before_filter :authenticate_user!, :except => [:show, :user]
-  before_filter :authenticate_user!, :except => [:list]
+  before_filter :authenticate_user!, :except => [:list,:show]
   # GET /applications
   # GET /applications.json
   def index
