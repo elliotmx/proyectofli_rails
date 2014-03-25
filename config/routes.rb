@@ -65,6 +65,7 @@ end
 
   get 'charts', to:'home#charts'
   get 'alumnosr', to:'home#alumnos'
+  get 'pterminados', to:'home#terminados'
   
 
   # The priority is based upon order of creation:
