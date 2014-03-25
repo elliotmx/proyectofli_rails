@@ -3,7 +3,7 @@
 <% @proyectos_terminados.each do|pr| %>
 		<div>
 		<% @pr_app = pr.application %>
-		<p>Proyecto <%= pr.project_title %>
+	
 
 		<% @usuarios =  @pr_app.users %>
 		<% @lider_proyecto = @usuarios.find_by_user_profile_id(2) %>
