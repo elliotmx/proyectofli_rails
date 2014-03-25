@@ -30,12 +30,7 @@ Proyectos Totales UAQ : <%= @u.count %>
 						<td>
 						</tr>
 						<tr>
-						<td><%= link_to "Ver Proyecto", application_path(@app_obj),:class=>"inputs inputContacto",:target =>"_blank" %></td>
-							<% if PdfPreview.find_by_application_id(@app_obj.id).nil? %>
-								<td colspan=4 style="color:red"><center>(incompleto) No generó PDF</center></td>
-							<% else %>
-							    <td colspan=4><center><%= link_to "Descargar(PDF)", application_path(@app_obj, :format => 'pdf'),:class=>"inputs inputContacto",:target =>"_blank" %></center><td>
-							<% end %>
+							<%= render :partial=>"partial_links" %>
 						</tr>
 					</table>
 			</div>

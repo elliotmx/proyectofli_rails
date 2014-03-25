@@ -38,7 +38,7 @@
 		<% elsif section.id == 9 %>
 			<%= render "layouts/htmlForRender/material_apoyo" %>
 		<% elsif %>
-			<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.where(:section_id => section.id).order(:position_question).all} %>
+			<%= render :partial => 'answers/form', :locals => {:questionsIn => Question.where(:section_id => section.id).order(:position_question).all, :app =>@application} %>
 		<% end %>
 	</div>
 <% end %>
