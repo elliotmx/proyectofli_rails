@@ -13,7 +13,7 @@
 	if Answer.where("question_id = ? and application_id = ?" , i.id, app.id).first.nil?
 			@respuesta = ""				
 	else
-		@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, app.id)
+		@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, app.id).first.value
 	end
 
 	%>
