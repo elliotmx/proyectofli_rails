@@ -1,15 +1,19 @@
 <% @proyectos_terminados = PdfPreview.select("DISTINCT(application_id)") %>
 
 <% @proyectos_terminados.each do|pr| %>
-		<% @pr_app = pr.applications.first %>
+		<div>
+		<% @pr_app = pr.application %>
 		<p>Proyecto <%= pr.project_title %>
 
-		<% @usuarios =  @u.applications.users %>
+		<% @usuarios =  @pr_app.users %>
 		<% @lider_proyecto = @usuarios.find_by_user_profile_id(2) %>
 
 		<%= @lider_proyecto.name %>
 
 		<% @inv_user_search = InvitedUser.find_by_email(@lider_proyecto.email) %>
-		<%= debug @inv_user_search %>
-
+		<% @coordinador = User.find(@inv_user_search.user_id) %>
+		<br>
+		coordinador: <%= @coordinador.name %>
+		</div>
+		<br>
 <% end %> 
