@@ -7,18 +7,23 @@
 
 		<% @usuarios =  @pr_app.users %>
 		<% @lider_proyecto = @usuarios.find_by_user_profile_id(2) %>
-
+		
+		<% if @lider_proyecto.blank? %>
+			<p>Sin lider proyecto </p>
+		<% else %>
+			
 		<%= @lider_proyecto.name %>
-
 		<% @inv_user_search = InvitedUser.find_by_email(@lider_proyecto.email) %>
 
-		<% if @inv_user_search.blank? %>
-			<p>Sin coincidencia</p>
-		<% else %>
+			<% if @inv_user_search.blank? %>
+				<p>Sin coincidencia</p>
+			<% else %>
 			<% @coordinador = User.find(@inv_user_search.user_id) %>
-			<br>
-			coordinador: <%= @coordinador.name %>
+				<br>
+				coordinador: <%= @coordinador.name %>
 			</div>
-		<br>
+			<br>
+			<% end %>
 		<% end %>
+		
 <% end %> 
