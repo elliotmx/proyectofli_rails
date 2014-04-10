@@ -33,6 +33,9 @@
 
 			<% if user_signed_in? %>
 				<li> <%= link_to 'Mi proyecto',  applications_path %> </li>
+				<% if (current_user.role.name == "Admin") %>
+					<li> <%= link_to 'Admin Panel',  dashboard_index_path %> </li>
+				<% end %>
 				<!-- <li> <%= link_to 'Alta Seleccionados',  invited_users_path %> </li>
 				<li><a href="#">Tutorial</a></li>-->
 			<% end %>
@@ -60,7 +63,7 @@
 	    			</div>
   			<% else %>
 		  			<div id="btn_subeIdea">
-						<%= link_to 'Comienza!',  '#', :class => 'button'%>
+						<%= link_to 'Comienza!',  new_user_session_path, :class => 'button'%>
 					</div>
     
 	  		<% end %>
