@@ -107,9 +107,9 @@ class ApplicationPdf < Prawn::Document
 
   def tbl_colaboradores
     @a = Application.find(@pdfpreview.application_id)
-    [["Nombre", "Edad", "Email", "Rol"]]+
+    [["Nombre", "Edad", "Email","Telefóno", "Rol"]]+
     @a.users.map do |object|
-        [ object.name, object.age, object.email, object.user_profile.description]
+        [ object.name, object.age, object.email,object.phone,object.user_profile.description]
     end
   end
 
