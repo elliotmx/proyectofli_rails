@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
   #before_filter :authenticate_user!, :except => [:show, :user]
-  before_filter :authenticate_user!, :except => [:list]
+  before_filter :authenticate_user!, :except => [:list,:show]
   # GET /applications
   # GET /applications.json
   def index
@@ -20,8 +20,12 @@ class ApplicationsController < ApplicationController
   # GET /applications/1
   # GET /applications/1.json
   def show
-    #puts " parametros para show application #{params[:id]} "
-    @application = Application.find(params[:id])
+    #puts " parametros para show application #{params[:id]} "}
+    if (current_user.role.name == "Admin")
+      @application = Application.find(params[:id])
+    else
+      @application = Application.find(current_user.applications.first)
+    end
 
      @pdf_preview = PdfPreview.find_by_application_id(params[:id])
 

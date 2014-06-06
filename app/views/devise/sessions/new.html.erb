@@ -17,7 +17,7 @@
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 <fieldset id="inputs">
   <%= f.email_field :email, :autofocus => true, :class => 'inputs ico username',:placeholder => "Correo Electrónico", :required => "required" %>
-  <%= f.password_field :password , :class => 'inputs ico password',:placeholder => "Contraseña", :required => "required", :pattern =>".{13,}", :title => "Acceso solo a Jueces" %>
+  <%= f.password_field :password , :class => 'inputs ico password',:placeholder => "Contraseña", :required => "required", :title => "Acceso solo a Jueces" %>
 </fieldset>
 
  <!--<% if devise_mapping.rememberable? -%>

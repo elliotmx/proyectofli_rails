@@ -1,6 +1,6 @@
 <br>
 <% @u = User.where("user_profile_id = ? and college_id = ?",2,4) %>
-Proyectos Totales CECYTEQ : <%= @u.count %>
+Proyectos Totales CECYTEQ : <span style="font-weight: bold;"><%= @u.count %></span>
 
 <% @u.each do |lider_proyecto| %>
 	<% @ap = lider_proyecto.applications %>
@@ -20,23 +20,18 @@ Proyectos Totales CECYTEQ : <%= @u.count %>
 					<tr ALIGN=CENTER>
 						<td><%= @app_obj.name %></td>
 					<td><%= @app_obj.market.description%></td>						
-					<td><%= @app_obj.short_description %></td> 
+					<td style="width: 60%;"><%= @app_obj.short_description %></td> 
 						</tr>
-						<tr>
+						<tr ALIGN=CENTER>
 						<td colspan=4 style="font-size: 10px; color: rgb(41, 138, 202); text-align: center; font-weight: bold;"> 
 						<% @app_obj.users.each do |usr| %>
 							<%= usr.name %> \
 						<% end %>
 						<td>
 						</tr>
-						<tr>
-							<td>
-							<% if PdfPreview.find_by_application_id(@app_obj.id).nil? %>
-								<td colspan=4 style="color:red"><center>(incompleto) No generó PDF</center></td>
-							<% else %>
-							    <td colspan=4><center><%= link_to "Descargar(PDF)", application_path(@app_obj, :format => 'pdf'),:class=>"inputs inputContacto",:target =>"_blank" %></center><td>
-							<% end %>
-							<td>
+						<tr ALIGN=CENTER>
+							<%= render :partial=>"partial_links" %>
+							
 						</tr>
 					</table>
 			</div>

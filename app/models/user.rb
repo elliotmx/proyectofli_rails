@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	belongs_to :user_profile
 	belongs_to :college
   has_and_belongs_to_many :applications
-  belongs_to :roles
+  belongs_to :role
 	accepts_nested_attributes_for :user_profile
 
 	has_attached_file :photo, 
@@ -74,12 +74,12 @@ class User < ActiveRecord::Base
 
 
   #admin roles
-  #before_save :setup_role
+  before_save :setup_role
 
   # Default role is "Registered"
   def setup_role 
-    if self.roles.nil?     
-      self.role_id = [1] 
+    if self.role.nil?     
+      self.role_id = 2
     end
   end
 

@@ -4,13 +4,14 @@ class ApplicationController < ActionController::Base
   #overrided method for redirect user after sign in
   def after_sign_in_path_for(user)
       
-      adminjueces_path  #<- ruta para comenzar aplicaciones
+      #adminjueces_path  #<- ruta para comenzar aplicaciones
       #invited_users_path
+      applications_path
   end
 
   #method to handle the "Access Denied" exception.
   def has_role?(current_user,role)
-  	return !!current_user.roles.find_by_name(role.to_s.camelize)
+  	return !!current_user.name
   end
 
 

@@ -4,11 +4,18 @@
 	<% questionsIn.each do |i| %>
 		
 	<%	
-	if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
+	#if Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.nil?
+	#		@respuesta = ""				
+	#else
+	#	@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.value
+	#end
+	#MODIFICACION PARA VER TODOS LOS PROYECTOS
+	if Answer.where("question_id = ? and application_id = ?" , i.id, app.id).first.nil?
 			@respuesta = ""				
 	else
-		@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, current_user.applications.first.id).first.value
-	end 
+		@respuesta = Answer.where("question_id = ? and application_id = ?" , i.id, app.id).first.value
+	end
+
 	%>
 	<!-- PARA PREGUNTAS QUE NECESITAN MOSTRAR UNA SERIE DE OPCIONES -->
 		<% if i.field_type == "radio" %> 
