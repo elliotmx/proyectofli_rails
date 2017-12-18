@@ -7,7 +7,6 @@
   <link href="http://fonts.googleapis.com/css?family=Oleo+Script:400" rel="stylesheet" type="text/css" />
 
   <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= stylesheet_link_tag "primitives.latest", :media => "all" %>
   <%= stylesheet_link_tag "jquery.tags", :media => "all" %>
   <%= stylesheet_link_tag "jquery.datatables", :media => "all" %>
   <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
@@ -23,7 +22,7 @@
   <%= javascript_include_tag "acciones_tablarecursos", :media => "all" %>
   <%= javascript_include_tag "acciones_tablacomponentes", :media => "all" %>
   <%= javascript_include_tag "d.custom_application", :media => "all" %>
- 
+
 
 
   <%= csrf_meta_tags %>
@@ -37,6 +36,6 @@
 
 
 <%= yield %>
-<%= render 'layouts/footer' %> 
+<%= render 'layouts/footer' %>
 </body>
 </html>

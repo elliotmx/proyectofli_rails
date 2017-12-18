@@ -9,98 +9,101 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140320175348) do
+ActiveRecord::Schema.define(version: 20140320175348) do
 
-  create_table "answers", :force => true do |t|
-    t.text     "value",          :limit => 255
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "question_id"
     t.integer  "application_id"
   end
 
-  add_index "answers", ["id"], :name => "index_answers_on_id", :unique => true
+  add_index "answers", ["id"], name: "index_answers_on_id", unique: true, using: :btree
 
-  create_table "applications", :force => true do |t|
+  create_table "applications", force: :cascade do |t|
     t.string   "name"
     t.string   "short_description"
     t.string   "video_url"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "tags"
     t.integer  "market_id"
   end
 
-  create_table "applications_users", :id => false, :force => true do |t|
+  create_table "applications_users", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "application_id"
   end
 
-  create_table "colleges", :force => true do |t|
+  create_table "colleges", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
     t.string   "telefono"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "comments", :force => true do |t|
+  create_table "comments", force: :cascade do |t|
     t.string   "text"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "development_stages", :force => true do |t|
+  create_table "development_stages", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "faculties", :force => true do |t|
+  create_table "faculties", force: :cascade do |t|
     t.string   "name"
     t.integer  "idcollege"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "file_uploaders", :force => true do |t|
+  create_table "file_uploaders", force: :cascade do |t|
     t.string   "name"
     t.text     "url"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "invited_users", :force => true do |t|
+  create_table "invited_users", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "email"
     t.integer  "college_id"
     t.integer  "user_id"
   end
 
-  create_table "markets", :force => true do |t|
+  create_table "markets", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "messages", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "messages", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name"
     t.string   "email"
     t.string   "subject"
     t.text     "body"
   end
 
-  create_table "pdf_previews", :force => true do |t|
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+  create_table "pdf_previews", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "problem"
     t.text     "justification"
     t.text     "objective"
@@ -121,20 +124,20 @@ ActiveRecord::Schema.define(:version => 20140320175348) do
     t.text     "budget"
   end
 
-  add_index "pdf_previews", ["application_id"], :name => "index_pdf_previews_on_application_id"
+  add_index "pdf_previews", ["application_id"], name: "index_pdf_previews_on_application_id", using: :btree
 
-  create_table "project_scopes", :force => true do |t|
+  create_table "project_scopes", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "questions", :force => true do |t|
+  create_table "questions", force: :cascade do |t|
     t.string   "spa_description"
     t.string   "eng_description"
     t.boolean  "active"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "section_id"
     t.string   "html_for_field"
     t.string   "field_type"
@@ -143,36 +146,36 @@ ActiveRecord::Schema.define(:version => 20140320175348) do
     t.string   "pop_name"
   end
 
-  create_table "roles", :force => true do |t|
+  create_table "roles", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "roles_users", :id => false, :force => true do |t|
+  create_table "roles_users", id: false, force: :cascade do |t|
     t.integer "role_id"
     t.integer "user_id"
   end
 
-  create_table "sections", :force => true do |t|
+  create_table "sections", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "service_types", :force => true do |t|
+  create_table "service_types", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "user_profiles", :force => true do |t|
+  create_table "user_profiles", force: :cascade do |t|
     t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
     t.string   "address"
@@ -185,16 +188,16 @@ ActiveRecord::Schema.define(:version => 20140320175348) do
     t.string   "photo"
     t.integer  "motivation"
     t.integer  "user_profile_id"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "photo_file_name"
     t.integer  "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -209,7 +212,7 @@ ActiveRecord::Schema.define(:version => 20140320175348) do
     t.integer  "role_id"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

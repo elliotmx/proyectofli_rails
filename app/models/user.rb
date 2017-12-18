@@ -5,23 +5,16 @@ class User < ActiveRecord::Base
   belongs_to :role
 	accepts_nested_attributes_for :user_profile
 
-	has_attached_file :photo, 
+	has_attached_file :photo,
     :styles  => {:small => "300X300>", :thumbnail => "80x80#"},
     :default_url => ActionController::Base.helpers.asset_path("missing_original.png")
-  
-	# Include default devise modules. Others available are:  
-  	# :token_authenticatable, :lockable, :timeoutable and :activatable  
-  	# :confirmable  
-  devise :database_authenticatable, :registerable,   
+
+	# Include default devise modules. Others available are:
+  	# :token_authenticatable, :lockable, :timeoutable and :activatable
+  	# :confirmable
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable ,
           :omniauthable, :omniauth_providers => [:facebook] 
-  
-  	# Setup accessible (or protected) attributes for your model  
-    # :password_confirmation
-  	attr_accessible :email, :password, :name, :application_id, 
-    :age, :address, :semester, :phone, :extra_phone, :photo,
-    :twitter, :linkedin, :faculty_id,:user_profile_id, :password_confirmation,
-    :motivation, :create_from, :provider, :uid, :role_id,:college_id
 
     validates_uniqueness_of :email, :case_sensitive => false
     #validates_uniqueness_of    :email,     :case_sensitive => false, :allow_blank => true, :if => :email_changed?
@@ -32,15 +25,15 @@ class User < ActiveRecord::Base
 
 
   after_create :send_admin_mail
-  
+
   def send_admin_mail
-      #Mailer.send_mail(Message.new).deliver 
+      #Mailer.send_mail(Message.new).deliver
   end
 
      #LOGIN CON FACEBOOK
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    logger.info "provider : " + auth.provider + " " + " uid:" + auth.uid 
+    logger.info "provider : " + auth.provider + " " + " uid:" + auth.uid
     logger.info "entra en metodo find_for_facebook_oauth"
     unless user
       logger.info "entra en metodo find_for_facebook_oauth unless user"
@@ -65,7 +58,7 @@ class User < ActiveRecord::Base
         user.name     = data["name"]     if user.name.blank?
         user.uid      = data["id"]       if user.uid.blank?
         user.provider = "facebook"
-        
+
         #logger.info user.inspect
         logger.info "data inspect " + data.inspect
       end
@@ -77,8 +70,8 @@ class User < ActiveRecord::Base
   before_save :setup_role
 
   # Default role is "Registered"
-  def setup_role 
-    if self.role.nil?     
+  def setup_role
+    if self.role.nil?
       self.role_id = 2
     end
   end
