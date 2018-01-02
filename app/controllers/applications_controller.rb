@@ -34,7 +34,7 @@ class ApplicationsController < ApplicationController
       format.json { render json: @application }
       format.pdf {
         pdf = ApplicationPdf.new(@pdf_preview, view_context)
-        send_data pdf.render, filename: 
+        send_data pdf.render, filename:
         "answers.pdf",
         type: "application/pdf",
         disposition: "inline"
@@ -62,7 +62,7 @@ class ApplicationsController < ApplicationController
   def create
     #@application = Application.new(params[:application])
 
-    @application = current_user.applications.create(params[:application])
+    @application = current_user.applications.create(application_params[:application])
     respond_to do |format|
       if @application.save
         format.html { redirect_to @application, notice: '' }
@@ -80,7 +80,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
 
     respond_to do |format|
-      if @application.update_attributes(params[:application])
+      if @application.update_attributes(application_params[:application])
         format.html { redirect_to @application, notice: '' }
         format.json { head :no_content }
       else
@@ -94,7 +94,7 @@ class ApplicationsController < ApplicationController
   # DELETE /applications/1.json
   def destroy
     @application = Application.find(params[:id])
-    
+
     @application.destroy
     @application.answers.destroy_all
 
@@ -104,4 +104,9 @@ class ApplicationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def application_params
+    params.require(:application).permit( :name, :short_description, :video_url, :tags, :market_id)
+  end
+
 end

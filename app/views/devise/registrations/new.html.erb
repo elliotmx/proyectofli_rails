@@ -8,7 +8,7 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
   <%= f.text_field :name, :autofocus => true, :class => 'inputs normal',:placeholder => "Nombre" %>
-  	
+
   <%= f.email_field :email, :class => 'inputs normal',:placeholder => "Correo Electrónico"  %>
 
   <%= f.collection_select(:college_id, College.all, :id, :name ) %>
@@ -20,13 +20,15 @@
   <%= f.hidden_field :uid,:class => 'inputs normal', :placeholder=>"uid" %>
 
   <%= f.hidden_field :provider,:class => 'inputs normal', :placeholder=>"facebook" %>
-  
+
   <%= f.hidden_field :user_profile_id, :value => 2 %>
 <br/><br/>
 <fieldset id="actions" style="margin-top: 20px;">
   <%= f.submit "Registrarme",:class => 'button loginb', :style => 'position: relative; top: -20px;'  %>
 <% end %>
-<%= render "devise/shared/links" %>
+<div class="row">
+  <%= render "devise/shared/links" %>
+</div>
 </fieldset>
 </div>
 </div>
