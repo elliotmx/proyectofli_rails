@@ -80,7 +80,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
 
     respond_to do |format|
-      if @application.update_attributes(application_params[:application])
+      if @application.update_attributes(application_params)
         format.html { redirect_to @application, notice: '' }
         format.json { head :no_content }
       else

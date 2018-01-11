@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       #params[:user].delete(:password)
       #params[:user].delete(:password_confirmation)
     #end
-      @user = User.find(user_params[:id])
+      @user = User.find(params[:id])
   end
 
   # POST /users
@@ -77,11 +77,11 @@ class UsersController < ApplicationController
       user_params.delete(:password_confirmation)
       user_params.delete(:create_from)
     end
-    @user = User.find(user_params[:id])
+    @user = User.find(params[:id])
 
     respond_to do |format|
-      if @user.update_attributes(user_params[:user])
-        format.html { redirect_to current_user.applications.first, notice: 'Usuario Actualizado' }
+      if @user.update_attributes(user_params.except(:create_from))
+        format.html { redirect_to dashboard_path, notice: 'Usuario Actualizado' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
