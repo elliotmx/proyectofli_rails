@@ -1,4 +1,5 @@
 <p><%= devise_error_messages! %></p>
+
 <div id="banner-wrapper" style="margin-top:-30px;">
  <div id="registro" class="box">
   <div class= "h1registro">
@@ -11,7 +12,9 @@
 
   <%= f.email_field :email, :class => 'inputs normal',:placeholder => "Correo Electrónico"  %>
 
-  <%= f.collection_select(:college_id, College.all, :id, :name ) %>
+ <!-- <%= f.collection_select(:college_id, College.all, :id, :name ) %> -->
+
+  <p class="titulos-chicos">Define una contraseña</p>
 
   <%= f.password_field :password, :class => 'inputs normal',:placeholder => "Contraseña" %>
 
@@ -24,7 +27,7 @@
   <%= f.hidden_field :user_profile_id, :value => 2 %>
 <br/><br/>
 <fieldset id="actions" style="margin-top: 20px;">
-  <%= f.submit "Registrarme",:class => 'button loginb', :style => 'position: relative; top: -20px;'  %>
+  <%= f.submit "Registrarme",:class => 'loginb', :style => 'position: relative; top: -61px;'  %>
 <% end %>
 <div class="row">
   <%= render "devise/shared/links" %>

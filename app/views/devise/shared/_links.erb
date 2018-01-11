@@ -1,14 +1,22 @@
+<!--
 <%- if controller_name != 'sessions' %>
   <%= button_to "Entrar", new_session_path(resource_name),:class => 'button loginb', :style => 'position: relative; left: 265px; top: -15px;'  %>
 <% end -%>
+-->
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= button_to "Registrate", new_registration_path(resource_name), :method => "get",:class => 'button loginb',:style => 'left: 238px;
 position: relative; top: -15px;'  %>
 <% end -%>
 
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= button_to "Con Facebook", omniauth_authorize_path(resource_name, provider), :class => 'button-f',:style =>'background: url(http://www.zaporeak-sabores.com/wp-content/uploads/2015/01/facebook_icon_relleno.png) no-repeat scroll 0 0 #3b5998;
+    background-position: -8px -10px; background-size: 70px;',:onMouseOver=>"this.style.cssText='color: #3b5998'" ,:onMouseOut=>"this.style.cssText='color: white', this.style.background='url(http://www.zaporeak-sabores.com/wp-content/uploads/2015/01/facebook_icon_relleno.png) no-repeat scroll 0 0 #3b5998',this.style.backgroundSize='70px',this.style.backgroundPosition='-8px -10px'" %>
+  <% end -%>
+
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
-  <%= link_to "¿Has olvidado tu contraseña?", new_password_path(resource_name), :style => 'margin-top: -137px; margin-right: 10px;' %><br />
+  <%= link_to "¿Has olvidado tu contraseña?", new_password_path(resource_name), :style => 'font-size: 20px; margin-right: 127px; margin-top: 3%; font-family: aileron light;' %><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
@@ -19,9 +27,5 @@ position: relative; top: -15px;'  %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to image_tag("entraFace.png", :border => 0), omniauth_authorize_path(resource_name, provider), :style => 'top: -128px;
-right: 3px; position: relative;' %><br />
-  <% end -%>
+
 <% end -%>
