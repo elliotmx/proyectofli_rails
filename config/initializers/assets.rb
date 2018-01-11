@@ -15,6 +15,7 @@ Rails.application.config.assets.precompile += %w( jquery.chosen.css )
 Rails.application.config.assets.precompile += %w( jquery.tags.min.js )
 Rails.application.config.assets.precompile += %w( jquery.noty.js )
 Rails.application.config.assets.precompile += %w( jquery.noty.theme.default.js )
+Rails.application.config.assets.precompile += %w( highcharts.js )
 
 Rails.application.config.assets.precompile += %w( jquery.noty.layout.top.js )
 Rails.application.config.assets.precompile += %w( jquery.noty.layout.centerRight.js )
