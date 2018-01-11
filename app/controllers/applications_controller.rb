@@ -62,7 +62,7 @@ class ApplicationsController < ApplicationController
   def create
     #@application = Application.new(params[:application])
 
-    @application = current_user.applications.create(application_params[:application])
+    @application = current_user.applications.create(application_params)
     respond_to do |format|
       if @application.save
         format.html { redirect_to @application, notice: '' }
