@@ -13,7 +13,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+# Ignore all public folder
+/public/assets
 
 #ignore the gem file
 Gemfile

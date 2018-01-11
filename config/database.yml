@@ -11,11 +11,12 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: fli_development
-  pool: 5
+  user: zury
+  password: zurydb
+  port: 5432
   host: localhost
-  port: 5433
-  user: magmalabs
+  database: flidb
+
   #username: root
   #password:
   #host: localhost

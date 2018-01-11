@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def qsomos
   end
+
+  def index2
+  end
 end

@@ -47,6 +47,8 @@ Rails.application.routes.draw do
 
   root :to => "home#index"
 
+  get 'index2', to: 'home#index2'
+
   get 'qsomos', to: 'home#qsomos'
 
   get 'upload', to:  'file_uploader#index'
